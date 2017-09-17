@@ -1,3 +1,4 @@
+package concurrency;
 //: concurrency/LiftOff.java
 // Demonstration of the Runnable interface.
 
@@ -14,6 +15,7 @@ public class LiftOff implements Runnable {
       (countDown > 0 ? countDown : "Liftoff!") + "), ";
   }
   public void run() {
+    System.out.println("线程ID:" + Thread.currentThread().getId());
     while(countDown-- > 0) {
       System.out.print(status());
       Thread.yield();

@@ -1,16 +1,20 @@
+package concurrency;
 //: concurrency/NaiveExceptionHandling.java
 // {ThrowsException}
+
 import java.util.concurrent.*;
 
+/**
+ * 无法捕获异常，因为不在一个线程中
+ */
 public class NaiveExceptionHandling {
-  public static void main(String[] args) {
-    try {
-      ExecutorService exec =
-        Executors.newCachedThreadPool();
-      exec.execute(new ExceptionThread());
-    } catch(RuntimeException ue) {
-      // This statement will NOT execute!
-      System.out.println("Exception has been handled!");
+    public static void main(String[] args) {
+        try {
+            ExecutorService exec = Executors.newCachedThreadPool();
+            exec.execute(new ExceptionThread());
+        } catch (RuntimeException ue) {
+            // This statement will NOT execute!
+            System.out.println("Exception has been handled!");
+        }
     }
-  }
 } ///:~
