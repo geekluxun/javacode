@@ -7,6 +7,9 @@ import java.io.*;
 
 import static net.mindview.util.Print.*;
 
+/**
+ * 通过队列形式实现
+ */
 class LiftOffRunner implements Runnable {
     private BlockingQueue<LiftOff> rockets;
 
