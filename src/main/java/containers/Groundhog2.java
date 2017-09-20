@@ -8,6 +8,10 @@ public class Groundhog2 extends Groundhog {
         super(n);
     }
 
+    /**
+     * 使用 编号作为hashcode
+     * @return
+     */
     public int hashCode() {
         return number;
     }

@@ -181,8 +181,7 @@ public class Countries {
                 return size;
             }
 
-            private class Iter
-                    implements Iterator<Map.Entry<String, String>> {
+            private class Iter implements Iterator<Map.Entry<String, String>> {
                 // Only one Entry object per Iterator:
                 private Entry entry = new Entry(-1);
 
@@ -231,8 +230,7 @@ public class Countries {
         return select(size); // A partial map
     }
 
-    static List<String> names =
-            new ArrayList<String>(map.keySet());
+    static List<String> names = new ArrayList<String>(map.keySet());
 
     // All the names:
     public static List<String> names() {

@@ -2,9 +2,9 @@ package containers;
 //: containers/SimpleHashMap.java
 // A demonstration hashed Map.
 
-import java.util.*;
+import net.mindview.util.Countries;
 
-import net.mindview.util.*;
+import java.util.*;
 
 public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
     // Choose a prime number for the hash table
@@ -13,14 +13,14 @@ public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
     // You can't have a physical array of generics,
     // but you can upcast to one:
     @SuppressWarnings("unchecked")
-    LinkedList<MapEntry<K, V>>[] buckets =
-            new LinkedList[SIZE];
+    LinkedList<MapEntry<K, V>>[] buckets = new LinkedList[SIZE];
 
     public V put(K key, V value) {
         V oldValue = null;
         int index = Math.abs(key.hashCode()) % SIZE;
         if (buckets[index] == null)
             buckets[index] = new LinkedList<MapEntry<K, V>>();
+
         LinkedList<MapEntry<K, V>> bucket = buckets[index];
         MapEntry<K, V> pair = new MapEntry<K, V>(key, value);
         boolean found = false;
@@ -34,6 +34,7 @@ public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
                 break;
             }
         }
+        //没有找到 则插入
         if (!found)
             buckets[index].add(pair);
         return oldValue;
@@ -59,8 +60,7 @@ public class SimpleHashMap<K, V> extends AbstractMap<K, V> {
     }
 
     public static void main(String[] args) {
-        SimpleHashMap<String, String> m =
-                new SimpleHashMap<String, String>();
+        SimpleHashMap<String, String> m = new SimpleHashMap<String, String>();
         m.putAll(Countries.capitals(25));
         System.out.println(m);
         System.out.println(m.get("ERITREA"));

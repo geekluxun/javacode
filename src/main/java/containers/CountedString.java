@@ -7,8 +7,7 @@ import java.util.*;
 import static net.mindview.util.Print.*;
 
 public class CountedString {
-    private static List<String> created =
-            new ArrayList<String>();
+    private static List<String> created = new ArrayList<String>();
     private String s;
     private int id = 0;
 
@@ -38,15 +37,15 @@ public class CountedString {
     }
 
     public boolean equals(Object o) {
-        return o instanceof CountedString &&
+        return  o instanceof CountedString &&
                 s.equals(((CountedString) o).s) &&
                 id == ((CountedString) o).id;
     }
 
     public static void main(String[] args) {
-        Map<CountedString, Integer> map =
-                new HashMap<CountedString, Integer>();
+        Map<CountedString, Integer> map = new HashMap<CountedString, Integer>();
         CountedString[] cs = new CountedString[5];
+
         for (int i = 0; i < cs.length; i++) {
             cs[i] = new CountedString("hi");
             map.put(cs[i], i); // Autobox int -> Integer
