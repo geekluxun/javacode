@@ -2,6 +2,7 @@
 package typeinfo;
 
 public interface Operation {
-  String description();
-  void command();
+    String description();
+
+    void command();
 } ///:~

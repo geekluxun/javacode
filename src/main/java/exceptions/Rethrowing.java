@@ -1,44 +1,53 @@
+package exceptions;
 //: exceptions/Rethrowing.java
 // Demonstrating fillInStackTrace()
 
 public class Rethrowing {
-  public static void f() throws Exception {
-    System.out.println("originating the exception in f()");
-    throw new Exception("thrown from f()");
-  }
-  public static void g() throws Exception {
-    try {
-      f();
-    } catch(Exception e) {
-      System.out.println("Inside g(),e.printStackTrace()");
-      e.printStackTrace(System.out);
-      throw e;
+    public static void f() throws Exception {
+        System.out.println("originating the exception in f()");
+        throw new Exception("thrown from f()");
     }
-  }
-  public static void h() throws Exception {
-    try {
-      f();
-    } catch(Exception e) {
-      System.out.println("Inside h(),e.printStackTrace()");
-      e.printStackTrace(System.out);
-      throw (Exception)e.fillInStackTrace();
+
+    public static void g() throws Exception {
+        try {
+            f();
+        } catch (Exception e) {
+            System.out.println("Inside g(),e.printStackTrace()");
+            e.printStackTrace(System.out);
+            throw e;
+        }
     }
-  }
-  public static void main(String[] args) {
-    try {
-      g();
-    } catch(Exception e) {
-      System.out.println("main: printStackTrace()");
-      e.printStackTrace(System.out);
+
+    public static void h() throws Exception {
+        try {
+            f();
+        } catch (Exception e) {
+            System.out.println("Inside h(),e.printStackTrace()");
+            e.printStackTrace(System.out);
+            //通过此方法上一级异常捕获时打印的栈轨迹将是从此处开始的栈调用轨迹！！！
+            throw (Exception) e.fillInStackTrace();
+        }
     }
-    try {
-      h();
-    } catch(Exception e) {
-      System.out.println("main: printStackTrace()");
-      e.printStackTrace(System.out);
+
+    public static void main(String[] args) {
+        try {
+            g();
+        } catch (Exception e) {
+            System.out.println("main: printStackTrace()");
+            e.printStackTrace(System.out);
+        }
+
+        System.out.println("=====================");
+        try {
+            h();
+        } catch (Exception e) {
+            System.out.println("main: printStackTrace()");
+            //从抛出点到此处的调用栈轨迹
+            e.printStackTrace(System.out);
+        }
     }
-  }
-} /* Output:
+}
+/* Output:
 originating the exception in f()
 Inside g(),e.printStackTrace()
 java.lang.Exception: thrown from f()

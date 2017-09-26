@@ -23,7 +23,8 @@ public class OrdinaryArguments {
         ds.set(derived);
         ds.set(base); // Compiles: overloaded, not overridden!
     }
-} /* Output:
+}
+/* Output:
 DerivedSetter.set(Derived)
 OrdinarySetter.set(Base)
 *///:~

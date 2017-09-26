@@ -3,6 +3,7 @@
 package net.mindview.util;
 
 public class CountingGenerator {
+
     public static class Boolean implements Generator<java.lang.Boolean> {
         private boolean value = false;
 
@@ -20,8 +21,7 @@ public class CountingGenerator {
         }
     }
 
-    static char[] chars = ("abcdefghijklmnopqrstuvwxyz" +
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ").toCharArray();
+    static char[] chars = ("abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ").toCharArray();
 
     public static class Character implements Generator<java.lang.Character> {
         int index = -1;
@@ -59,8 +59,7 @@ public class CountingGenerator {
         }
     }
 
-    public static class
-    Integer implements Generator<java.lang.Integer> {
+    public static class Integer implements Generator<java.lang.Integer> {
         private int value = 0;
 
         public java.lang.Integer next() {
@@ -75,6 +74,7 @@ public class CountingGenerator {
             return value++;
         }
     }
+
 
     public static class Float implements Generator<java.lang.Float> {
         private float value = 0;

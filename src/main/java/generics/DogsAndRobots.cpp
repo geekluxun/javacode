@@ -1,3 +1,4 @@
+package generics;
 //: generics/DogsAndRobots.cpp
 
 class Dog {

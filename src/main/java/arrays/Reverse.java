@@ -1,19 +1,24 @@
+package arrays;
+
 //: arrays/Reverse.java
 // The Collections.reverseOrder() Comparator
+
 import java.util.*;
+
 import net.mindview.util.*;
+
 import static net.mindview.util.Print.*;
 
 public class Reverse {
-  public static void main(String[] args) {
-    CompType[] a = Generated.array(
-      new CompType[12], CompType.generator());
-    print("before sorting:");
-    print(Arrays.toString(a));
-    Arrays.sort(a, Collections.reverseOrder());
-    print("after sorting:");
-    print(Arrays.toString(a));
-  }
+    public static void main(String[] args) {
+        CompType[] a = Generated.array(
+                new CompType[12], CompType.generator());
+        print("before sorting:");
+        print(Arrays.toString(a));
+        Arrays.sort(a, Collections.reverseOrder());
+        print("after sorting:");
+        print(Arrays.toString(a));
+    }
 } /* Output:
 before sorting:
 [[i = 58, j = 55], [i = 93, j = 61], [i = 61, j = 29]

@@ -4,49 +4,54 @@
 import static net.mindview.util.Print.*;
 
 interface Counter2 {
-  int next();
-}	
+    int next();
+}
 
 public class LocalInnerClass {
-  private int count = 0;
-  Counter2 getCounter(final String name) {
-    // A local inner class:
-    class LocalCounter implements Counter2 {
-      public LocalCounter() {
-        // Local inner class can have a constructor
-        print("LocalCounter()");
-      }
-      public int next() {
-        printnb(name); // Access local final
-        return count++;
-      }
+    private int count = 0;
+
+    Counter2 getCounter(final String name) {
+        // A local inner class:
+        class LocalCounter implements Counter2 {
+            public LocalCounter() {
+                // Local inner class can have a constructor
+                print("LocalCounter()");
+            }
+
+            public int next() {
+                printnb(name); // Access local final
+                return count++;
+            }
+        }
+        return new LocalCounter();
     }
-    return new LocalCounter();
-  }	
-  // The same thing with an anonymous inner class:
-  Counter2 getCounter2(final String name) {
-    return new Counter2() {
-      // Anonymous inner class cannot have a named
-      // constructor, only an instance initializer:
-      {
-        print("Counter()");
-      }
-      public int next() {
-        printnb(name); // Access local final
-        return count++;
-      }
-    };
-  }	
-  public static void main(String[] args) {
-    LocalInnerClass lic = new LocalInnerClass();
-    Counter2
-      c1 = lic.getCounter("Local inner "),
-      c2 = lic.getCounter2("Anonymous inner ");
-    for(int i = 0; i < 5; i++)
-      print(c1.next());
-    for(int i = 0; i < 5; i++)
-      print(c2.next());
-  }
+
+    // The same thing with an anonymous inner class:
+    Counter2 getCounter2(final String name) {
+        return new Counter2() {
+            // Anonymous inner class cannot have a named
+            // constructor, only an instance initializer:
+            {
+                print("Counter()");
+            }
+
+            public int next() {
+                printnb(name); // Access local final
+                return count++;
+            }
+        };
+    }
+
+    public static void main(String[] args) {
+        LocalInnerClass lic = new LocalInnerClass();
+        Counter2
+                c1 = lic.getCounter("Local inner "),
+                c2 = lic.getCounter2("Anonymous inner ");
+        for (int i = 0; i < 5; i++)
+            print(c1.next());
+        for (int i = 0; i < 5; i++)
+            print(c2.next());
+    }
 } /* Output:
 LocalCounter()
 Counter()
