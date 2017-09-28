@@ -1,6 +1,6 @@
 //: io/TestEOF.java
 // Testing for end of file while reading a byte at a time.
-
+package io;
 import java.io.*;
 
 public class TestEOF {

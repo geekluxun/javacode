@@ -1,6 +1,6 @@
 //: io/GetData.java
 // Getting different representations from a ByteBuffer
-
+package io;
 import java.nio.*;
 
 import static net.mindview.util.Print.*;

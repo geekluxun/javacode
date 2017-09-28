@@ -1,7 +1,7 @@
 //: operators/ShortCircuit.java
 // Demonstrates short-circuiting behavior
 // with logical operators.
-
+package operators;
 import static net.mindview.util.Print.*;
 
 public class ShortCircuit {

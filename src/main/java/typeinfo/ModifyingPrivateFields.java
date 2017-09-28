@@ -1,5 +1,5 @@
 //: typeinfo/ModifyingPrivateFields.java
-
+package typeinfo;
 import java.lang.reflect.*;
 
 class WithPrivateFinalField {

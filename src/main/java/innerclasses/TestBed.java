@@ -1,7 +1,7 @@
 //: innerclasses/TestBed.java
 // Putting test code in a nested class.
 // {main: TestBed$Tester}
-
+package innerclasses;
 public class TestBed {
     public void f() {
         System.out.println("f()");

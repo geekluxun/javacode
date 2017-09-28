@@ -2,7 +2,7 @@
 // Demonstrates the use of the File class to
 // create directories and manipulate files.
 // {Args: MakeDirectoriesTest}
-
+package io;
 import java.io.*;
 
 public class MakeDirectories {

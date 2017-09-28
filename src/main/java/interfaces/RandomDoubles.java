@@ -1,5 +1,5 @@
 //: interfaces/RandomDoubles.java
-
+package interfaces;
 import java.util.*;
 
 public class RandomDoubles {

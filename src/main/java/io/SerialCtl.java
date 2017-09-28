@@ -1,7 +1,7 @@
 //: io/SerialCtl.java
 // Controlling serialization by adding your own
 // writeObject() and readObject() methods.
-
+package io;
 import java.io.*;
 
 public class SerialCtl implements Serializable {

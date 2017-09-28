@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/Mugs.java
 // Java "Instance Initialization."
 

@@ -1,6 +1,6 @@
 //: operators/URShift.java
 // Test of unsigned right shift.
-
+package operators;
 import static net.mindview.util.Print.*;
 
 public class URShift {

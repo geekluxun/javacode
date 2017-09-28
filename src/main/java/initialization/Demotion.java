@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/Demotion.java
 // Demotion of primitives and overloading.
 

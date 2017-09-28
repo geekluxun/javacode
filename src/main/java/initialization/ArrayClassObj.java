@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/ArrayClassObj.java
 // Creating an array of nonprimitive objects.
 

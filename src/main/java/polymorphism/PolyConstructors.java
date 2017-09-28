@@ -1,7 +1,7 @@
 //: polymorphism/PolyConstructors.java
 // Constructors and polymorphism
 // don't produce what you might expect.
-
+package polymorphism;
 import static net.mindview.util.Print.*;
 
 class Glyph {

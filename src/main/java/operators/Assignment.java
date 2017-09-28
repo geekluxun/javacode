@@ -1,6 +1,6 @@
 //: operators/Assignment.java
 // Assignment with objects is a bit tricky.
-
+package operators;
 import static net.mindview.util.Print.*;
 
 class Tank {

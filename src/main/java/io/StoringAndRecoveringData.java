@@ -1,5 +1,5 @@
 //: io/StoringAndRecoveringData.java
-
+package io;
 import java.io.*;
 
 public class StoringAndRecoveringData {

@@ -1,7 +1,7 @@
 //: io/RecoverCADState.java
 // Restoring the state of the pretend CAD system.
 // {RunFirst: StoreCADState}
-
+package io;
 import java.io.*;
 import java.util.*;
 

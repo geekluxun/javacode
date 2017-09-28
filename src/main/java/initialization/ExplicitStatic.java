@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/ExplicitStatic.java
 // Explicit static initialization with the "static" clause.
 

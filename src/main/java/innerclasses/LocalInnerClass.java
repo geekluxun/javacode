@@ -1,3 +1,4 @@
+package innerclasses;
 //: innerclasses/LocalInnerClass.java
 // Holds a sequence of Objects.
 

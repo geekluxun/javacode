@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/SimpleConstructor.java
 // Demonstration of a simple constructor.
 

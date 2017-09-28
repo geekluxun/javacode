@@ -1,6 +1,6 @@
 //: polymorphism/ReferenceCounting.java
 // Cleaning up shared member objects.
-
+package polymorphism;
 import static net.mindview.util.Print.*;
 
 class Shared {

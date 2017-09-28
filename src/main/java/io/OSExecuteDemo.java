@@ -1,6 +1,6 @@
 //: io/OSExecuteDemo.java
 // Demonstrates standard I/O redirection.
-
+package io;
 import net.mindview.util.*;
 
 public class OSExecuteDemo {

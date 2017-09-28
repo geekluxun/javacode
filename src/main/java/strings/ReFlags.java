@@ -1,5 +1,5 @@
 //: strings/ReFlags.java
-
+package strings;
 import java.util.regex.*;
 
 public class ReFlags {

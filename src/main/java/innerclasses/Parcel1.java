@@ -1,6 +1,6 @@
 //: innerclasses/Parcel1.java
 // Creating inner classes.
-
+package innerclasses;
 public class Parcel1 {
     class Contents {
         private int i = 11;

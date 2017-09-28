@@ -1,7 +1,7 @@
 //: io/LockingMappedFiles.java
 // Locking portions of a mapped file.
 // {RunByHand}
-
+package io;
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;

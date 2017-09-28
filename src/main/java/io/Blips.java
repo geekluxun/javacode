@@ -1,6 +1,6 @@
 //: io/Blips.java
 // Simple use of Externalizable & a pitfall.
-
+package io;
 import java.io.*;
 
 import static net.mindview.util.Print.*;

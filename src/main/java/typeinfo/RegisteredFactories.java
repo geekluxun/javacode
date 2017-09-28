@@ -1,6 +1,6 @@
 //: typeinfo/RegisteredFactories.java
 // Registering Class Factories in the base class.
-
+package typeinfo;
 import typeinfo.factory.*;
 
 import java.util.*;

@@ -1,5 +1,5 @@
 //: io/BufferedInputFile.java
-
+package io;
 import java.io.*;
 
 public class BufferedInputFile {

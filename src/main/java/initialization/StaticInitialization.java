@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/StaticInitialization.java
 // Specifying initial values in a class definition.
 

@@ -2,7 +2,7 @@
 // Using reflection to show all the methods of a class,
 // even if the methods are defined in the base class.
 // {Args: ShowMethods}
-
+package typeinfo;
 import java.lang.reflect.*;
 import java.util.regex.*;
 

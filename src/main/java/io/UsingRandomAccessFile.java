@@ -1,5 +1,5 @@
 //: io/UsingRandomAccessFile.java
-
+package io;
 import java.io.*;
 
 public class UsingRandomAccessFile {

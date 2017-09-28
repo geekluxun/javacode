@@ -1,6 +1,6 @@
 //: innerclasses/Sequence.java
 // Holds a sequence of Objects.
-
+package innerclasses;
 interface Selector {
     boolean end();
 

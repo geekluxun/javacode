@@ -1,6 +1,6 @@
 //: polymorphism/StaticPolymorphism.java
 // Static methods are not polymorphic.
-
+package polymorphism;
 class StaticSuper {
     public static String staticGet() {
         return "Base staticGet()";

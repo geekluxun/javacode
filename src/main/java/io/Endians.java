@@ -1,6 +1,6 @@
 //: io/Endians.java
 // Endian differences and data storage.
-
+package io;
 import java.nio.*;
 import java.util.*;
 

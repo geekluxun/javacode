@@ -1,4 +1,5 @@
 //: innerclasses/Wrapping.java
+package innerclasses;
 public class Wrapping {
     private int i;
 

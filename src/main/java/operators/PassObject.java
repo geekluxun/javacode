@@ -1,7 +1,7 @@
 //: operators/PassObject.java
 // Passing objects to methods may not be
 // what you're used to.
-
+package operators;
 import static net.mindview.util.Print.*;
 
 class Letter {

@@ -1,6 +1,6 @@
 //: interfaces/RandomWords.java
 // Implementing an interface to conform to a method.
-
+package interfaces;
 import java.nio.*;
 import java.util.*;
 

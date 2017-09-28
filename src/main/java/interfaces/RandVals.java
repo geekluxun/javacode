@@ -1,7 +1,7 @@
 //: interfaces/RandVals.java
 // Initializing interface fields with
 // non-constant initializers.
-
+package interfaces;
 import java.util.*;
 
 public interface RandVals {

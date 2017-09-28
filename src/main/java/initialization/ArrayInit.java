@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/ArrayInit.java
 // Array initialization.
 

@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/InitialValues.java
 // Shows default initial values.
 

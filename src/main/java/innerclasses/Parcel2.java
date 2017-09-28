@@ -1,6 +1,6 @@
 //: innerclasses/Parcel2.java
 // Returning a reference to an inner class.
-
+package innerclasses;
 public class Parcel2 {
     class Contents {
         private int i = 11;

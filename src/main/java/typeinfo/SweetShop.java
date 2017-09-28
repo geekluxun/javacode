@@ -1,6 +1,6 @@
 //: typeinfo/SweetShop.java
 // Examination of the way the class loader works.
-
+package typeinfo;
 import static net.mindview.util.Print.*;
 
 class Candy {

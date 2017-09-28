@@ -1,6 +1,6 @@
 //: innerclasses/Parcel6.java
 // Nesting a class within a scope.
-
+package innerclasses;
 public class Parcel6 {
     private void internalTracking(boolean b) {
         if (b) {

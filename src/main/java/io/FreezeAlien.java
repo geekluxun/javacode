@@ -1,6 +1,6 @@
 //: io/FreezeAlien.java
 // Create a serialized output file.
-
+package io;
 import java.io.*;
 
 public class FreezeAlien {

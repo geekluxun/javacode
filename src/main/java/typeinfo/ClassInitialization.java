@@ -1,5 +1,5 @@
 //: typeinfo/ClassInitialization.java
-
+package typeinfo;
 import java.util.*;
 
 class Initable {

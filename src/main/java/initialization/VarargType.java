@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/VarargType.java
 
 public class VarargType {

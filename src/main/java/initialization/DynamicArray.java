@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/DynamicArray.java
 // Array initialization.
 

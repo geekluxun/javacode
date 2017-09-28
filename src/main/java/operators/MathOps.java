@@ -1,6 +1,6 @@
 //: operators/MathOps.java
 // Demonstrates the mathematical operators.
-
+package operators;
 import java.util.*;
 
 import static net.mindview.util.Print.*;

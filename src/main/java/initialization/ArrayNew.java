@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/ArrayNew.java
 // Creating arrays with new.
 

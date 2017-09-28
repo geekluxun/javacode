@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/BananaPeel.java
 
 class Banana {

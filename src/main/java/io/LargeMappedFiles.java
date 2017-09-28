@@ -1,7 +1,7 @@
 //: io/LargeMappedFiles.java
 // Creating a very large file using mapping.
 // {RunByHand}
-
+package io;
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;

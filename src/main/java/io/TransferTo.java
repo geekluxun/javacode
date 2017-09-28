@@ -1,7 +1,7 @@
 //: io/TransferTo.java
 // Using transferTo() between channels
 // {Args: TransferTo.java TransferTo.txt}
-
+package io;
 import java.nio.channels.*;
 import java.io.*;
 

@@ -1,5 +1,5 @@
 //: operators/Casting.java
-
+package operators;
 public class Casting {
     public static void main(String[] args) {
         int i = 200;

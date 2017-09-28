@@ -1,5 +1,5 @@
 //: strings/Receipt.java
-
+package strings;
 import java.util.*;
 
 public class Receipt {

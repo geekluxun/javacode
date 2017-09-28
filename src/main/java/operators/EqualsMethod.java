@@ -1,5 +1,5 @@
 //: operators/EqualsMethod.java
-
+package operators;
 public class EqualsMethod {
     public static void main(String[] args) {
         Integer n1 = new Integer(47);

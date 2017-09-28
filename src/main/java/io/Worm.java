@@ -1,6 +1,6 @@
 //: io/Worm.java
 // Demonstrates object serialization.
-
+package io;
 import java.io.*;
 import java.util.*;
 

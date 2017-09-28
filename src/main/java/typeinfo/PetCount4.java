@@ -1,5 +1,5 @@
 //: typeinfo/PetCount4.java
-
+package typeinfo;
 import typeinfo.pets.*;
 import net.mindview.util.*;
 

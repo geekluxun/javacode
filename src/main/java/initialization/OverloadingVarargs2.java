@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/OverloadingVarargs2.java
 // {CompileTimeError} (Won't compile)
 

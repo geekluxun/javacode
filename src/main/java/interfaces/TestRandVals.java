@@ -1,5 +1,5 @@
 //: interfaces/TestRandVals.java
-
+package interfaces;
 import static net.mindview.util.Print.*;
 
 public class TestRandVals {

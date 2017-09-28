@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/SimpleConstructor2.java
 // Constructors can have arguments.
 

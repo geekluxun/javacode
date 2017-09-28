@@ -1,7 +1,7 @@
 //: io/ChannelCopy.java
 // Copying a file using channels and buffers
 // {Args: ChannelCopy.java test.txt}
-
+package io;
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;

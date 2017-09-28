@@ -1,6 +1,6 @@
 //: io/ChangeSystemOut.java
 // Turn System.out into a PrintWriter.
-
+package io;
 import java.io.*;
 
 public class ChangeSystemOut {

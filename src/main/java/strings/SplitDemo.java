@@ -1,5 +1,5 @@
 //: strings/SplitDemo.java
-
+package strings;
 import java.util.regex.*;
 import java.util.*;
 

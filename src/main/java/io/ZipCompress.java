@@ -2,7 +2,7 @@
 // Uses Zip compression to compress any
 // number of files given on the command line.
 // {Args: ZipCompress.java}
-
+package io;
 import java.util.zip.*;
 import java.io.*;
 import java.util.*;

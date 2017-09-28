@@ -2,7 +2,7 @@
 // Try to recover a serialized file without the
 // class of object that's stored in that file.
 // {RunByHand}
-
+package io.xfiles;
 import java.io.*;
 
 public class ThawAlien {

@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/AutoboxingVarargs.java
 
 public class AutoboxingVarargs {

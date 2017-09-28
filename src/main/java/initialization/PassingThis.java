@@ -1,3 +1,5 @@
+package initialization;
+
 //: initialization/PassingThis.java
 
 class Person {

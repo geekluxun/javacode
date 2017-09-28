@@ -1,6 +1,6 @@
 //: io/DirectoryDemo.java
 // Sample use of Directory utilities.
-
+package io;
 import java.io.*;
 
 import net.mindview.util.*;

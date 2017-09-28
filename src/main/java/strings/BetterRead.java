@@ -1,5 +1,5 @@
 //: strings/BetterRead.java
-
+package strings;
 import java.util.*;
 
 public class BetterRead {

@@ -1,7 +1,7 @@
 //: polymorphism/RTTI.java
 // Downcasting & Runtime type information (RTTI).
 // {ThrowsException}
-
+package polymorphism;
 class Useful {
     public void f() {
     }

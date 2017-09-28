@@ -1,5 +1,5 @@
 //: io/MemoryInput.java
-
+package io;
 import java.io.*;
 
 public class MemoryInput {

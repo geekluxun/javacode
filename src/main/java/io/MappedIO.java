@@ -1,5 +1,5 @@
 //: io/MappedIO.java
-
+package io;
 import java.nio.*;
 import java.nio.channels.*;
 import java.io.*;

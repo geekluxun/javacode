@@ -1,6 +1,6 @@
 //: interfaces/Adventure.java
 // Multiple interfaces.
-
+package interfaces;
 interface CanFight {
     void fight();
 }

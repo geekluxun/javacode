@@ -1,6 +1,6 @@
 //: io/Blip3.java
 // Reconstructing an externalizable object.
-
+package io;
 import java.io.*;
 
 import static net.mindview.util.Print.*;

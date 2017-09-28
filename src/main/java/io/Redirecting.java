@@ -1,6 +1,6 @@
 //: io/Redirecting.java
 // Demonstrates standard I/O redirection.
-
+package io;
 import java.io.*;
 
 public class Redirecting {

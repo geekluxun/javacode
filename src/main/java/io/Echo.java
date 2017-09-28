@@ -1,7 +1,7 @@
 //: io/Echo.java
 // How to read from standard input.
 // {RunByHand}
-
+package io;
 import java.io.*;
 
 public class Echo {

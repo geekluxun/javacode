@@ -1,6 +1,6 @@
 //: reusing/Chess.java
 // Inheritance, constructors and arguments.
-
+package reusing;
 import static net.mindview.util.Print.*;
 
 class Game {
