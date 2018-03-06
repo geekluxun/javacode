@@ -20,9 +20,11 @@ class ExchangerProducer<T> implements Runnable {
     public void run() {
         try {
             while (!Thread.interrupted()) {
+                /** 生产出size个对象放在list中*/
                 for (int i = 0; i < ExchangerDemo.size; i++)
                     holder.add(generator.next());
                 // Exchange full for empty:
+                /** 等待交换线程到交换点，否则一直阻塞 参数是交换的对象，返回值是从交换线程交换回的对象*/
                 holder = exchanger.exchange(holder);
             }
         } catch (InterruptedException e) {
@@ -44,7 +46,9 @@ class ExchangerConsumer<T> implements Runnable {
     public void run() {
         try {
             while (!Thread.interrupted()) {
+                /** 等待交换线程到交换点，否则一直阻塞 参数是交换的对象，返回值是从交换线程交换回的对象*/
                 holder = exchanger.exchange(holder);
+                /** 消费交换回的对象*/
                 for (T x : holder) {
                     value = x; // Fetch out value
                     holder.remove(x); // OK for CopyOnWriteArrayList
@@ -68,6 +72,7 @@ public class ExchangerDemo {
             delay = new Integer(args[1]);
 
         ExecutorService exec = Executors.newCachedThreadPool();
+        /** 两个线程通过xc关联，构成交换线程*/
         Exchanger<List<Fat>> xc = new Exchanger<List<Fat>>();
 
         List<Fat>

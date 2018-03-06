@@ -29,6 +29,8 @@ class Horse implements Runnable {
                     strides += rand.nextInt(3); // Produces 0, 1 or 2
                 }
                 //挂起等待所有任务都到栅栏处 此示例是指7
+                System.out.println("threadid:" + Thread.currentThread().getId());
+
                 barrier.await();
             }
         } catch (InterruptedException e) {

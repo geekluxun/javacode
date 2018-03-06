@@ -1,6 +1,8 @@
 //: innerclasses/Parcel8.java
 // Calling the base-class constructor.
 
+import innerclasses.Wrapping;
+
 public class Parcel8 {
     public Wrapping wrapping(int x) {
         // Base constructor call:
