@@ -8,6 +8,7 @@ public class BasicGeneratorDemo {
 
         /**
          * 构造CountedObject对象
+         * CountedObject需要提供默认构造器
          */
         Generator<CountedObject> gen = BasicGenerator.create(CountedObject.class);
 

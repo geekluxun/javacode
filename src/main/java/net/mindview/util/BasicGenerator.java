@@ -3,6 +3,10 @@
 // with a default (no-arg) constructor.
 package net.mindview.util;
 
+/**
+ * 一个通用的生成器
+ * @param <T>
+ */
 public class BasicGenerator<T> implements Generator<T> {
     private Class<T> type;
 
@@ -15,6 +19,7 @@ public class BasicGenerator<T> implements Generator<T> {
      *
      * @return
      */
+    @Override
     public T next() {
         try {
             // Assumes type is a public class:

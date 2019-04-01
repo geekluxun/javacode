@@ -2,6 +2,7 @@ package generics;
 
 //: generics/LimitsOfInference.java
 
+import net.mindview.util.New;
 import typeinfo.pets.*;
 
 import java.util.*;
@@ -14,6 +15,6 @@ public class LimitsOfInference {
         /**
          *  泛型类型推断在传递参数时不适用
          */
-        // f(New.map()); // Does not compile
+         //f(New.map()); // Does not compile
     }
 } ///:~

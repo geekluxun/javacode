@@ -6,24 +6,25 @@ import net.mindview.util.*;
 import static net.mindview.util.Tuple.*;
 
 public class TupleTest2 {
+    static TwoTuple<A, B> twoTuple;
     static TwoTuple<String, Integer> f() {
-        return tuple("hi", 47);
+        return Tuple.tuple("hi", 47);
     }
 
     static TwoTuple f2() {
-        return tuple("hi", 47);
+        return Tuple.tuple("hi", 47);
     }
 
     static ThreeTuple<Amphibian, String, Integer> g() {
-        return tuple(new Amphibian(), "hi", 47);
+        return Tuple.tuple(new Amphibian(), "hi", 47);
     }
 
     static FourTuple<Vehicle, Amphibian, String, Integer> h() {
-        return tuple(new Vehicle(), new Amphibian(), "hi", 47);
+        return Tuple.tuple(new Vehicle(), new Amphibian(), "hi", 47);
     }
 
     static FiveTuple<Vehicle, Amphibian, String, Integer, Double> k() {
-        return tuple(new Vehicle(), new Amphibian(),
+        return Tuple.tuple(new Vehicle(), new Amphibian(),
                 "hi", 47, 11.1);
     }
 
@@ -35,6 +36,7 @@ public class TupleTest2 {
         System.out.println(h());
         System.out.println(k());
     }
+    
 }
 /* Output: (80% match)
 (hi, 47)

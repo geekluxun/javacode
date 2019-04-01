@@ -8,7 +8,7 @@ public class IterableFibonacci extends Fibonacci implements Iterable<Integer> {
     private int n;
 
     /**
-     * 指定上线
+     * 指定上限
      * @param count
      */
     public IterableFibonacci(int count) {
@@ -19,17 +19,19 @@ public class IterableFibonacci extends Fibonacci implements Iterable<Integer> {
      * 适配器设计模式
      * @return
      */
+    @Override
     public Iterator<Integer> iterator() {
         return new Iterator<Integer>() {
+            @Override
             public boolean hasNext() {
                 return n > 0;
             }
-
+            @Override
             public Integer next() {
                 n--;
                 return IterableFibonacci.this.next();
             }
-
+            @Override
             public void remove() { // Not implemented
                 throw new UnsupportedOperationException();
             }
