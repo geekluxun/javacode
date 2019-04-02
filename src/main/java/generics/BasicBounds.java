@@ -64,6 +64,12 @@ interface Weight {
 
 // As with inheritance, you can have only one
 // concrete class but multiple interfaces:
+
+/**
+ * 泛型参数T通过继承一个类和多个接口，实现了更多的类行为
+ * 注意：第一个必须是类
+ * @param <T>
+ */
 class Solid<T extends Dimension & HasColor & Weight> {
     T item;
 
@@ -109,8 +115,11 @@ class Bounded extends Dimension implements HasColor, Weight {
 public class BasicBounds {
     public static void main(String[] args) {
         Solid<Bounded> solid = new Solid<Bounded>(new Bounded());
+        // HasColor接口中
         solid.color();
+        // Dimension类中
         solid.getY();
+        // Weight接口中
         solid.weight();
     }
 } ///:~

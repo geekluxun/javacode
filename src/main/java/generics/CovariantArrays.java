@@ -15,6 +15,10 @@ class Orange extends Fruit {
 
 public class CovariantArrays {
     public static void main(String[] args) {
+        /**
+         * 此处使用了子类的示例赋给父类的引用，但fruit只能当做Apple来操作
+         * fruit实际的数组类型是Apple[]
+         */
         Fruit[] fruit = new Apple[10];
         fruit[0] = new Apple(); // OK
         fruit[1] = new Jonathan(); // OK

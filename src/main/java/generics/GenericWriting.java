@@ -10,15 +10,20 @@ public class GenericWriting {
 
     static List<Apple> apples = new ArrayList<Apple>();
     static List<Fruit> fruit = new ArrayList<Fruit>();
-
+    
     static void f1() {
         writeExact(apples, new Apple());
         // writeExact(fruit, new Apple()); // Error:
         // Incompatible types: found Fruit, required Apple
     }
 
-    static <T> void
-    writeWithWildcard(List<? super T> list, T item) {
+    /**
+     * 此处使用了通配符? super T，这样就可以把一个Apple传给List<Fruit>
+     * @param list
+     * @param item
+     * @param <T>
+     */
+    static <T> void writeWithWildcard(List<? super T> list, T item) {
         list.add(item);
     }
 

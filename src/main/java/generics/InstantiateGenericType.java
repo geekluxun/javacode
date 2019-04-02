@@ -3,6 +3,10 @@ package generics;
 
 import static net.mindview.util.Print.*;
 
+/**
+ * Class对象作为工厂对象
+ * @param <T>
+ */
 class ClassAsFactory<T> {
     T x;
 
@@ -24,6 +28,9 @@ public class InstantiateGenericType {
 
         print("ClassAsFactory<Employee> succeeded");
 
+        /**
+         * 因为Integer没有提供无参构造函数，所以异常
+         */
         try {
             ClassAsFactory<Integer> fi = new ClassAsFactory<Integer>(Integer.class);
         } catch (Exception e) {

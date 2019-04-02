@@ -9,6 +9,9 @@ class Foo2<T> {
     private T x;
 
     public <F extends FactoryI<T>> Foo2(F factory) {
+        /**
+         * 调用显示的工厂创建方法
+         */
         x = factory.create();
     }
     // ...

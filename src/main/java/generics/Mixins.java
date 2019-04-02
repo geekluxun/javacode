@@ -13,7 +13,7 @@ class TimeStampedImp implements TimeStamped {
     public TimeStampedImp() {
         timeStamp = new Date().getTime();
     }
-
+    @Override
     public long getStamp() {
         return timeStamp;
     }
@@ -27,6 +27,7 @@ class SerialNumberedImp implements SerialNumbered {
     private static long counter = 1;
     private final long serialNumber = counter++;
 
+    @Override
     public long getSerialNumber() {
         return serialNumber;
     }
@@ -50,16 +51,18 @@ class BasicImp implements Basic {
     }
 }
 
-class Mixin extends BasicImp
-        implements TimeStamped, SerialNumbered {
+/**
+ * 这里的混型使用了代理
+ */
+class Mixin extends BasicImp implements TimeStamped, SerialNumbered {
     private TimeStamped timeStamp = new TimeStampedImp();
-    private SerialNumbered serialNumber =
-            new SerialNumberedImp();
+    private SerialNumbered serialNumber = new SerialNumberedImp();
 
+    @Override
     public long getStamp() {
         return timeStamp.getStamp();
     }
-
+    @Override
     public long getSerialNumber() {
         return serialNumber.getSerialNumber();
     }
@@ -70,10 +73,8 @@ public class Mixins {
         Mixin mixin1 = new Mixin(), mixin2 = new Mixin();
         mixin1.set("test string 1");
         mixin2.set("test string 2");
-        System.out.println(mixin1.get() + " " +
-                mixin1.getStamp() + " " + mixin1.getSerialNumber());
-        System.out.println(mixin2.get() + " " +
-                mixin2.getStamp() + " " + mixin2.getSerialNumber());
+        System.out.println(mixin1.get() + " " + mixin1.getStamp() + " " + mixin1.getSerialNumber());
+        System.out.println(mixin2.get() + " " + mixin2.getStamp() + " " + mixin2.getSerialNumber());
     }
 } /* Output: (Sample)
 test string 1 1132437151359 1

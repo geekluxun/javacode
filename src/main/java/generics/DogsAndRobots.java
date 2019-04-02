@@ -33,8 +33,7 @@ class Robot implements Performs {
 }
 
 class Communicate {
-    public static <T extends Performs>
-    void perform(T performer) {
+    public static <T extends Performs> void perform(T performer) {
         performer.speak();
         performer.sit();
     }

@@ -13,8 +13,14 @@ import java.util.List;
 // Collection. We cannot generalize using generics in
 // this case.
 public class Fill {
-    public static <T> void fill(Collection<T> collection,
-                                Class<? extends T> classToken, int size) {
+    /**
+     * 这个方法不够泛化，只能接受Collection,另外，需要容器元素提供默认构造器
+     * @param collection
+     * @param classToken
+     * @param size
+     * @param <T>
+     */
+    public static <T> void fill(Collection<T> collection, Class<? extends T> classToken, int size) {
         for (int i = 0; i < size; i++)
             // Assumes default constructor:
             try {
@@ -44,8 +50,7 @@ class FillTest {
         Fill.fill(contracts, TitleTransfer.class, 2);
         for (Contract c : contracts)
             System.out.println(c);
-        SimpleQueue<Contract> contractQueue =
-                new SimpleQueue<Contract>();
+        SimpleQueue<Contract> contractQueue = new SimpleQueue<Contract>();
         // Won't work. fill() is not generic enough:
         // Fill.fill(contractQueue, Contract.class, 3);
     }

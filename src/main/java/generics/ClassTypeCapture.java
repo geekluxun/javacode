@@ -10,10 +10,19 @@ class House extends Building {
 public class ClassTypeCapture<T> {
     Class<T> kind;
 
+    /**
+     * 编译器保证类型标签Class匹配泛型参数
+     * @param kind
+     */
     public ClassTypeCapture(Class<T> kind) {
         this.kind = kind;
     }
 
+    /**
+     * 通过类的Class对象实现 instanceof
+     * @param arg
+     * @return
+     */
     public boolean f(Object arg) {
         return kind.isInstance(arg);
     }
