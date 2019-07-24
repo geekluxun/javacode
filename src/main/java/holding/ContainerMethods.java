@@ -2,7 +2,7 @@ package holding;
 
 //: holding/ContainerMethods.java
 
-import net.mindview.util.*;
+import net.mindview.util.ContainerMethodDifferences;
 
 public class ContainerMethods {
     public static void main(String[] args) {

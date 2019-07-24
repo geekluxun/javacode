@@ -2,9 +2,11 @@
 // A very simple version of the "grep" program.
 // {Args: JGrep.java "\\b[Ssct]\\w+"}
 package strings;
-import java.util.regex.*;
 
-import net.mindview.util.*;
+import net.mindview.util.TextFile;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class JGrep {
     public static void main(String[] args) throws Exception {
@@ -20,7 +22,7 @@ public class JGrep {
             m.reset(line);
             while (m.find())
                 System.out.println(index++ + ": " +
-                        m.group() + ": " + m.start());
+                    m.group() + ": " + m.start());
         }
     }
 } /* Output: (Sample)

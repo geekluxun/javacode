@@ -2,11 +2,14 @@ package containers;
 //: containers/CollectionMethods.java
 // Things you can do with all Collections.
 
-import java.util.*;
+import net.mindview.util.Countries;
 
-import net.mindview.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class CollectionMethods {
     public static void main(String[] args) {
@@ -50,7 +53,7 @@ public class CollectionMethods {
         // Is a Collection in this Collection?
         print("c.containsAll(c2) = " + c.containsAll(c2));
         Collection<String> c3 =
-                ((List<String>) c).subList(3, 5);
+            ((List<String>) c).subList(3, 5);
         // Keep all the elements that are in both
         // c2 and c3 (an intersection of sets):
 

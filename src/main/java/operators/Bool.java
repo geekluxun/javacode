@@ -1,9 +1,10 @@
 //: operators/Bool.java
 // Relational and logical operators.
 package operators;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import java.util.Random;
+
+import static net.mindview.util.Print.print;
 
 public class Bool {
     public static void main(String[] args) {
@@ -23,9 +24,9 @@ public class Bool {
 //! print("i || j is " + (i || j));
 //! print("!i is " + !i);
         print("(i < 10) && (j < 10) is "
-                + ((i < 10) && (j < 10)));
+            + ((i < 10) && (j < 10)));
         print("(i < 10) || (j < 10) is "
-                + ((i < 10) || (j < 10)));
+            + ((i < 10) || (j < 10)));
     }
 } /* Output:
 i = 58

@@ -4,11 +4,14 @@ package concurrency;
 // closing the underlying resource.
 // {RunByHand}
 
-import java.net.*;
-import java.util.concurrent.*;
-import java.io.*;
+import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class CloseResource {
     public static void main(String[] args) throws Exception {

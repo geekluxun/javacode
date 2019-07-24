@@ -1,7 +1,7 @@
 package holding;
 //: holding/GenericsAndUpcasting.java
 
-import java.util.*;
+import java.util.ArrayList;
 
 class GrannySmith extends Apple {
 }

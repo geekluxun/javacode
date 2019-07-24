@@ -2,7 +2,7 @@
 // A Game framework using Factory Methods.
 package interfaces;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 interface Game {
     boolean move();

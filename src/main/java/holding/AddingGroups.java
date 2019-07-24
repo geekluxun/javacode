@@ -17,7 +17,7 @@ public class AddingGroups {
         Collections.addAll(collection, 11, 12, 13, 14, 15);
         Collections.addAll(collection, moreInts);
 
-        for (Integer item: collection) {
+        for (Integer item : collection) {
             System.out.println(item);
         }
         // Produces a list "backed by" an array:

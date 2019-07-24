@@ -1,8 +1,8 @@
 //: enumerated/CarWash.java
 
-import java.util.*;
+import java.util.EnumSet;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class CarWash {
     public enum Cycle {
@@ -46,7 +46,7 @@ public class CarWash {
     }
 
     EnumSet<Cycle> cycles =
-            EnumSet.of(Cycle.BASIC, Cycle.RINSE);
+        EnumSet.of(Cycle.BASIC, Cycle.RINSE);
 
     public void add(Cycle cycle) {
         cycles.add(cycle);

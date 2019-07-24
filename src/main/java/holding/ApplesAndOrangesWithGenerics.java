@@ -1,7 +1,7 @@
 package holding;
 //: holding/ApplesAndOrangesWithGenerics.java
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class ApplesAndOrangesWithGenerics {
     public static void main(String[] args) {

@@ -1,6 +1,7 @@
 //: arrays/RaggedArray.java
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Random;
 
 public class RaggedArray {
     public static void main(String[] args) {

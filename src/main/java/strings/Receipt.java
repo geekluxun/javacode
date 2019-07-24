@@ -1,6 +1,7 @@
 //: strings/Receipt.java
 package strings;
-import java.util.*;
+
+import java.util.Formatter;
 
 public class Receipt {
     private double total = 0;
@@ -20,7 +21,7 @@ public class Receipt {
         f.format("%-15s %5s %10.2f\n", "Tax", "", total * 0.06);
         f.format("%-15s %5s %10s\n", "", "", "-----");
         f.format("%-15s %5s %10.2f\n", "Total", "",
-                total * 1.06);
+            total * 1.06);
     }
 
     public static void main(String[] args) {

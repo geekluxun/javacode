@@ -4,6 +4,7 @@ package generics;
 
 /**
  * 因为运行时的类型擦除，所有需要运行时知道确切的操作类型的操作都无法工作
+ *
  * @param <T>
  */
 public class Erased<T> {

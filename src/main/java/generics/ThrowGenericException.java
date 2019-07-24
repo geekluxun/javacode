@@ -1,10 +1,12 @@
 package generics;
 //: generics/ThrowGenericException.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 类型参数E在throws子句中出现
+ *
  * @param <T>
  * @param <E>
  */

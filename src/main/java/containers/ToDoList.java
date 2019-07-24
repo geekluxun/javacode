@@ -2,7 +2,7 @@ package containers;
 //: containers/ToDoList.java
 // A more complex use of PriorityQueue.
 
-import java.util.*;
+import java.util.PriorityQueue;
 
 class ToDoList extends PriorityQueue<ToDoList.ToDoItem> {
     static class ToDoItem implements Comparable<ToDoItem> {
@@ -29,7 +29,7 @@ class ToDoList extends PriorityQueue<ToDoList.ToDoItem> {
 
         public String toString() {
             return Character.toString(primary) +
-                    secondary + ": " + item;
+                secondary + ": " + item;
         }
     }
 

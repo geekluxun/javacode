@@ -1,10 +1,12 @@
 //: strings/TheReplacements.java
 package strings;
-import java.util.regex.*;
 
-import net.mindview.util.*;
+import net.mindview.util.TextFile;
 
-import static net.mindview.util.Print.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static net.mindview.util.Print.print;
 
 /*! Here's a block of text to use as input to
     the regular expression matcher. Note that we'll
@@ -17,8 +19,8 @@ public class TheReplacements {
         String s = TextFile.read("TheReplacements.java");
         // Match the specially commented block of text above:
         Matcher mInput =
-                Pattern.compile("/\\*!(.*)!\\*/", Pattern.DOTALL)
-                        .matcher(s);
+            Pattern.compile("/\\*!(.*)!\\*/", Pattern.DOTALL)
+                .matcher(s);
         if (mInput.find())
             s = mInput.group(1); // Captured by parentheses
         // Replace two or more spaces with a single space:

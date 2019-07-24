@@ -2,7 +2,7 @@
 // List of any length, containing sample data.
 package net.mindview.util;
 
-import java.util.*;
+import java.util.AbstractList;
 
 public class CountingIntegerList extends AbstractList<Integer> {
     private int size;

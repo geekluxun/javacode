@@ -2,9 +2,9 @@
 // No latent typing in Java
 package generics;
 
-import typeinfo.pets.*;
+import typeinfo.pets.Dog;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class PerformingDog extends Dog implements Performs {
     public void speak() {

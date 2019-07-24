@@ -3,7 +3,7 @@
 // {ThrowsException}
 package holding;
 
-import java.util.*;
+import java.util.ArrayList;
 
 class Apple {
     private static long counter;

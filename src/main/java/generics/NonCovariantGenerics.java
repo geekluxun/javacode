@@ -1,8 +1,5 @@
 package generics;
 
-import java.util.ArrayList;
-import java.util.List;
-
 //: generics/NonCovariantGenerics.java
 // {CompileTimeError} (Won't compile)
 public class NonCovariantGenerics {

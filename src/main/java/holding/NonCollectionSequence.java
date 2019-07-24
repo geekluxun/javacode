@@ -1,9 +1,10 @@
 package holding;
 //: holding/NonCollectionSequence.java
 
-import typeinfo.pets.*;
+import typeinfo.pets.Pet;
+import typeinfo.pets.Pets;
 
-import java.util.*;
+import java.util.Iterator;
 
 class PetSequence {
     protected Pet[] pets = Pets.createArray(8);

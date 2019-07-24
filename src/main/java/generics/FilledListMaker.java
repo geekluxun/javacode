@@ -1,7 +1,8 @@
 package generics;
 //: generics/FilledListMaker.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FilledListMaker<T> {
     List<T> create(T t, int n) {

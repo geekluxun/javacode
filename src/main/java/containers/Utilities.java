@@ -4,11 +4,11 @@ package containers;
 
 import java.util.*;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class Utilities {
     static List<String> list = Arrays.asList(
-            "one Two three Four five six one".split(" "));
+        "one Two three Four five six one".split(" "));
 
     public static void main(String[] args) {
         print(list);
@@ -48,7 +48,7 @@ public class Utilities {
         // Converting an old-style Vector
         // to a List via an Enumeration:
         ArrayList<String> arrayList =
-                Collections.list(v.elements());
+            Collections.list(v.elements());
         print("arrayList: " + arrayList);
     }
 } /* Output:

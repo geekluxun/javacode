@@ -3,9 +3,9 @@
 
 package generics;
 
-import java.util.*;
+import net.mindview.util.Generator;
 
-import net.mindview.util.*;
+import java.util.*;
 
 class Customer {
     private static long counter = 1;
@@ -20,6 +20,7 @@ class Customer {
 
     /**
      * 创建多个
+     *
      * @return
      */
     // A method to produce Generator objects:
@@ -48,11 +49,11 @@ class Teller {
      */
     // A single Generator object:
     public static Generator<Teller> generator =
-            new Generator<Teller>() {
-                public Teller next() {
-                    return new Teller();
-                }
-            };
+        new Generator<Teller>() {
+            public Teller next() {
+                return new Teller();
+            }
+        };
 }
 
 public class BankTeller {

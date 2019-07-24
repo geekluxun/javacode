@@ -2,7 +2,7 @@
 // Cleanup and inheritance.
 package polymorphism;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Characteristic {
     private String s;
@@ -32,9 +32,9 @@ class Description {
 
 class LivingCreature {
     private Characteristic p =
-            new Characteristic("is alive");
+        new Characteristic("is alive");
     private Description t =
-            new Description("Basic Living Creature");
+        new Description("Basic Living Creature");
 
     LivingCreature() {
         print("LivingCreature()");
@@ -49,9 +49,9 @@ class LivingCreature {
 
 class Animal extends LivingCreature {
     private Characteristic p =
-            new Characteristic("has heart");
+        new Characteristic("has heart");
     private Description t =
-            new Description("Animal not Vegetable");
+        new Description("Animal not Vegetable");
 
     Animal() {
         print("Animal()");
@@ -67,9 +67,9 @@ class Animal extends LivingCreature {
 
 class Amphibian extends Animal {
     private Characteristic p =
-            new Characteristic("can live in water");
+        new Characteristic("can live in water");
     private Description t =
-            new Description("Both water and land");
+        new Description("Both water and land");
 
     Amphibian() {
         print("Amphibian()");

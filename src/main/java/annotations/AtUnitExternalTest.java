@@ -2,8 +2,8 @@
 // Creating non-embedded tests.
 package annotations;
 
-import net.mindview.atunit.*;
-import net.mindview.util.*;
+import net.mindview.atunit.Test;
+import net.mindview.util.OSExecute;
 
 public class AtUnitExternalTest extends AtUnitExample1 {
     @Test
@@ -18,7 +18,7 @@ public class AtUnitExternalTest extends AtUnitExample1 {
 
     public static void main(String[] args) throws Exception {
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit AtUnitExternalTest");
+            "java net.mindview.atunit.AtUnit AtUnitExternalTest");
     }
 } /* Output:
 annotations.AtUnitExternalTest

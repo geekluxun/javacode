@@ -1,7 +1,7 @@
 package generics;
 //: generics/GenericArrayWithTypeToken.java
 
-import java.lang.reflect.*;
+import java.lang.reflect.Array;
 
 public class GenericArrayWithTypeToken<T> {
     private T[] array;

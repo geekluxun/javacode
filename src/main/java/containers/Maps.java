@@ -2,12 +2,13 @@ package containers;
 //: containers/Maps.java
 // Things you can do with Maps.
 
-import java.util.concurrent.*;
+import net.mindview.util.CountingMapData;
+
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
-import net.mindview.util.*;
-
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 public class Maps {
     public static void printKeys(Map<Integer, String> map) {
@@ -30,7 +31,7 @@ public class Maps {
         print("map.containsKey(11): " + map.containsKey(11));
         print("map.get(11): " + map.get(11));
         print("map.containsValue(\"F0\"): "
-                + map.containsValue("F0"));
+            + map.containsValue("F0"));
         Integer key = map.keySet().iterator().next();
 
         print("First key in map: " + key);

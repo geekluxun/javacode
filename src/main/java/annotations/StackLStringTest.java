@@ -2,8 +2,8 @@
 // Applying @Unit to generics.
 package annotations;
 
-import net.mindview.atunit.*;
-import net.mindview.util.*;
+import net.mindview.atunit.Test;
+import net.mindview.util.OSExecute;
 
 public class StackLStringTest extends StackL<String> {
     @Test
@@ -32,7 +32,7 @@ public class StackLStringTest extends StackL<String> {
 
     public static void main(String[] args) throws Exception {
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit StackLStringTest");
+            "java net.mindview.atunit.AtUnit StackLStringTest");
     }
 } /* Output:
 annotations.StackLStringTest

@@ -1,11 +1,15 @@
 package holding;
 //: holding/PetMap.java
 
-import typeinfo.pets.*;
+import typeinfo.pets.Cat;
+import typeinfo.pets.Dog;
+import typeinfo.pets.Hamster;
+import typeinfo.pets.Pet;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class PetMap {
     public static void main(String[] args) {

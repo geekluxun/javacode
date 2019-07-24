@@ -4,7 +4,9 @@
 package net.mindview.util;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.TreeSet;
 
 public class TextFile extends ArrayList<String> {
     // Read a file as a single string:
@@ -32,7 +34,7 @@ public class TextFile extends ArrayList<String> {
     public static void write(String fileName, String text) {
         try {
             PrintWriter out = new PrintWriter(
-                    new File(fileName).getAbsoluteFile());
+                new File(fileName).getAbsoluteFile());
             try {
                 out.print(text);
             } finally {
@@ -59,7 +61,7 @@ public class TextFile extends ArrayList<String> {
     public void write(String fileName) {
         try {
             PrintWriter out = new PrintWriter(
-                    new File(fileName).getAbsoluteFile());
+                new File(fileName).getAbsoluteFile());
             try {
                 for (String item : this)
                     out.println(item);

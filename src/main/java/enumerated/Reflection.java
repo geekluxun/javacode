@@ -1,12 +1,15 @@
 //: enumerated/Reflection.java
 // Analyzing enums using reflection.
 
-import java.lang.reflect.*;
-import java.util.*;
+import net.mindview.util.OSExecute;
 
-import net.mindview.util.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.Type;
+import java.util.Set;
+import java.util.TreeSet;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 enum Explore {HERE, THERE}
 
@@ -29,7 +32,7 @@ public class Reflection {
         Set<String> exploreMethods = analyze(Explore.class);
         Set<String> enumMethods = analyze(Enum.class);
         print("Explore.containsAll(Enum)? " +
-                exploreMethods.containsAll(enumMethods));
+            exploreMethods.containsAll(enumMethods));
         printnb("Explore.removeAll(Enum): ");
         exploreMethods.removeAll(enumMethods);
         print(exploreMethods);

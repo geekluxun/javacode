@@ -1,10 +1,10 @@
 //: annotations/HashSetTest.java
 package annotations;
 
-import java.util.*;
+import net.mindview.atunit.Test;
+import net.mindview.util.OSExecute;
 
-import net.mindview.atunit.*;
-import net.mindview.util.*;
+import java.util.HashSet;
 
 public class HashSetTest {
     HashSet<String> testObject = new HashSet<String>();
@@ -29,7 +29,7 @@ public class HashSetTest {
 
     public static void main(String[] args) throws Exception {
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit HashSetTest");
+            "java net.mindview.atunit.AtUnit HashSetTest");
     }
 } /* Output:
 annotations.HashSetTest

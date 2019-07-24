@@ -3,11 +3,12 @@ package arrays;
 //: arrays/ComparatorTest.java
 // Implementing a Comparator for a class.
 
-import java.util.*;
+import net.mindview.util.Generated;
 
-import net.mindview.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class CompTypeComparator implements Comparator<CompType> {
     public int compare(CompType o1, CompType o2) {
@@ -18,7 +19,7 @@ class CompTypeComparator implements Comparator<CompType> {
 public class ComparatorTest {
     public static void main(String[] args) {
         CompType[] a = Generated.array(
-                new CompType[12], CompType.generator());
+            new CompType[12], CompType.generator());
         print("before sorting:");
         print(Arrays.toString(a));
         Arrays.sort(a, new CompTypeComparator());

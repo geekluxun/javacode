@@ -1,9 +1,9 @@
 //: interfaces/classprocessor/Apply.java
 package interfaces.classprocessor;
 
-import java.util.*;
+import java.util.Arrays;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Processor {
     public String name() {
@@ -41,7 +41,7 @@ public class Apply {
     }
 
     public static String s =
-            "Disagreement with beliefs is by definition incorrect";
+        "Disagreement with beliefs is by definition incorrect";
 
     public static void main(String[] args) {
         process(new Upcase(), s);

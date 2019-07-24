@@ -2,7 +2,7 @@ package containers;
 //: containers/Tester.java
 // Applies Test objects to lists of different containers.
 
-import java.util.*;
+import java.util.List;
 
 public class Tester<C> {
     public static int fieldWidth = 8;

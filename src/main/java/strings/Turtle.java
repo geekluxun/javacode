@@ -1,7 +1,8 @@
 //: strings/Turtle.java
 package strings;
-import java.io.*;
-import java.util.*;
+
+import java.io.PrintStream;
+import java.util.Formatter;
 
 public class Turtle {
     private String name;
@@ -19,9 +20,9 @@ public class Turtle {
     public static void main(String[] args) {
         PrintStream outAlias = System.out;
         Turtle tommy = new Turtle("Tommy",
-                new Formatter(System.out));
+            new Formatter(System.out));
         Turtle terry = new Turtle("Terry",
-                new Formatter(outAlias));
+            new Formatter(outAlias));
         tommy.move(0, 0);
         terry.move(4, 8);
         tommy.move(3, 4);

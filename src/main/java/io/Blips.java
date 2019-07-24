@@ -1,9 +1,10 @@
 //: io/Blips.java
 // Simple use of Externalizable & a pitfall.
 package io;
+
 import java.io.*;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Blip1 implements Externalizable {
     public Blip1() {
@@ -11,12 +12,12 @@ class Blip1 implements Externalizable {
     }
 
     public void writeExternal(ObjectOutput out)
-            throws IOException {
+        throws IOException {
         print("Blip1.writeExternal");
     }
 
     public void readExternal(ObjectInput in)
-            throws IOException, ClassNotFoundException {
+        throws IOException, ClassNotFoundException {
         print("Blip1.readExternal");
     }
 }
@@ -27,31 +28,31 @@ class Blip2 implements Externalizable {
     }
 
     public void writeExternal(ObjectOutput out)
-            throws IOException {
+        throws IOException {
         print("Blip2.writeExternal");
     }
 
     public void readExternal(ObjectInput in)
-            throws IOException, ClassNotFoundException {
+        throws IOException, ClassNotFoundException {
         print("Blip2.readExternal");
     }
 }
 
 public class Blips {
     public static void main(String[] args)
-            throws IOException, ClassNotFoundException {
+        throws IOException, ClassNotFoundException {
         print("Constructing objects:");
         Blip1 b1 = new Blip1();
         Blip2 b2 = new Blip2();
         ObjectOutputStream o = new ObjectOutputStream(
-                new FileOutputStream("Blips.out"));
+            new FileOutputStream("Blips.out"));
         print("Saving objects:");
         o.writeObject(b1);
         o.writeObject(b2);
         o.close();
         // Now get them back:
         ObjectInputStream in = new ObjectInputStream(
-                new FileInputStream("Blips.out"));
+            new FileInputStream("Blips.out"));
         print("Recovering b1:");
         b1 = (Blip1) in.readObject();
         // OOPS! Throws an exception:

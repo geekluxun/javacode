@@ -2,7 +2,7 @@ package generics;
 //: generics/EpicBattle.java
 // Demonstrating bounds in Java generics.
 
-import java.util.*;
+import java.util.List;
 
 interface SuperPower {
 }
@@ -32,7 +32,7 @@ class SuperHero<POWER extends SuperPower> {
 }
 
 class SuperSleuth<POWER extends XRayVision>
-        extends SuperHero<POWER> {
+    extends SuperHero<POWER> {
     SuperSleuth(POWER power) {
         super(power);
     }
@@ -43,7 +43,7 @@ class SuperSleuth<POWER extends XRayVision>
 }
 
 class CanineHero<POWER extends SuperHearing & SuperSmell>
-        extends SuperHero<POWER> {
+    extends SuperHero<POWER> {
     CanineHero(POWER power) {
         super(power);
     }

@@ -1,7 +1,6 @@
-
 package generics;//: generics/UseList2.java
 
-import java.util.*;
+import java.util.List;
 
 public class UseList2<W, T> {
     void f1(List<T> v) {

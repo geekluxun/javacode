@@ -1,8 +1,10 @@
 package annotations;
 //: annotations/UseCaseTracker.java
 
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class UseCaseTracker {
     public static void
@@ -11,7 +13,7 @@ public class UseCaseTracker {
             UseCase uc = m.getAnnotation(UseCase.class);
             if (uc != null) {
                 System.out.println("Found Use Case:" + uc.id() +
-                        " " + uc.description());
+                    " " + uc.description());
                 useCases.remove(new Integer(uc.id()));
             }
         }

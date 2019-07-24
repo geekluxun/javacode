@@ -1,6 +1,7 @@
 //: operators/Exponents.java
 // "e" means "10 to the power."
 package operators;
+
 public class Exponents {
     public static void main(String[] args) {
         // Uppercase and lowercase 'e' are the same:

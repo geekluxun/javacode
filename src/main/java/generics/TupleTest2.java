@@ -3,10 +3,9 @@ package generics;
 
 import net.mindview.util.*;
 
-import static net.mindview.util.Tuple.*;
-
 public class TupleTest2 {
     static TwoTuple<A, B> twoTuple;
+
     static TwoTuple<String, Integer> f() {
         return Tuple.tuple("hi", 47);
     }
@@ -25,7 +24,7 @@ public class TupleTest2 {
 
     static FiveTuple<Vehicle, Amphibian, String, Integer, Double> k() {
         return Tuple.tuple(new Vehicle(), new Amphibian(),
-                "hi", 47, 11.1);
+            "hi", 47, 11.1);
     }
 
     public static void main(String[] args) {
@@ -36,7 +35,7 @@ public class TupleTest2 {
         System.out.println(h());
         System.out.println(k());
     }
-    
+
 }
 /* Output: (80% match)
 (hi, 47)

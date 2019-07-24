@@ -2,7 +2,10 @@ package containers;
 //: containers/FailFast.java
 // Demonstrates the "fail-fast" behavior.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 
 public class FailFast {
     public static void main(String[] args) {

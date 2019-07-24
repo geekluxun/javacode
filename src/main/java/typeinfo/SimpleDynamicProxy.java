@@ -1,7 +1,9 @@
 package typeinfo;
 //: typeinfo/SimpleDynamicProxy.java
 
-import java.lang.reflect.*;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 class DynamicProxyHandler implements InvocationHandler {
     private Object proxied;
@@ -37,9 +39,9 @@ class SimpleDynamicProxy {
         // Insert a proxy and call again:
         // 这里把实际对象real 传给处理器
         Interface proxy = (Interface) Proxy.newProxyInstance(
-                Interface.class.getClassLoader(),
-                new Class[]{Interface.class},
-                new DynamicProxyHandler(real));
+            Interface.class.getClassLoader(),
+            new Class[]{Interface.class},
+            new DynamicProxyHandler(real));
         consumer(proxy);
     }
 }

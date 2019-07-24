@@ -1,7 +1,7 @@
 //: enumerated/TrafficLight.java
 // Enums in switch statements.
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 // Define an enum type:
 enum Signal {

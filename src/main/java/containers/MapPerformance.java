@@ -7,7 +7,7 @@ import java.util.*;
 
 public class MapPerformance {
     static List<Test<Map<Integer, Integer>>> tests =
-            new ArrayList<Test<Map<Integer, Integer>>>();
+        new ArrayList<Test<Map<Integer, Integer>>>();
 
     static {
         tests.add(new Test<Map<Integer, Integer>>("put") {
@@ -52,7 +52,7 @@ public class MapPerformance {
         Tester.run(new HashMap<Integer, Integer>(), tests);
         Tester.run(new LinkedHashMap<Integer, Integer>(), tests);
         Tester.run(
-                new IdentityHashMap<Integer, Integer>(), tests);
+            new IdentityHashMap<Integer, Integer>(), tests);
         Tester.run(new WeakHashMap<Integer, Integer>(), tests);
         Tester.run(new Hashtable<Integer, Integer>(), tests);
     }

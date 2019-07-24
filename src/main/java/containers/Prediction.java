@@ -2,7 +2,7 @@ package containers;
 //: containers/Prediction.java
 // Predicting the weather with groundhogs.
 
-import java.util.*;
+import java.util.Random;
 
 public class Prediction {
     private static Random rand = new Random(47);

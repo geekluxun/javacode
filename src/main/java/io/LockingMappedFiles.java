@@ -2,9 +2,13 @@
 // Locking portions of a mapped file.
 // {RunByHand}
 package io;
-import java.nio.*;
-import java.nio.channels.*;
-import java.io.*;
+
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
 
 public class LockingMappedFiles {
     static final int LENGTH = 0x8FFFFFF; // 128 MB
@@ -12,9 +16,9 @@ public class LockingMappedFiles {
 
     public static void main(String[] args) throws Exception {
         fc =
-                new RandomAccessFile("test.dat", "rw").getChannel();
+            new RandomAccessFile("test.dat", "rw").getChannel();
         MappedByteBuffer out =
-                fc.map(FileChannel.MapMode.READ_WRITE, 0, LENGTH);
+            fc.map(FileChannel.MapMode.READ_WRITE, 0, LENGTH);
         for (int i = 0; i < LENGTH; i++)
             out.put((byte) 'x');
         new LockAndModify(out, 0, 0 + LENGTH / 3);

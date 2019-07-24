@@ -3,14 +3,16 @@ package concurrency;
 // Can only pass constants, immutables, "disconnected
 // objects," or other active objects as arguments
 // to asynch methods.
-import java.util.concurrent.*;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.*;
+
+import static net.mindview.util.Print.print;
 
 public class ActiveObjectDemo {
     private ExecutorService ex =
-            Executors.newSingleThreadExecutor();
+        Executors.newSingleThreadExecutor();
     private Random rand = new Random(47);
 
     // Insert a random delay to produce the effect
@@ -18,7 +20,7 @@ public class ActiveObjectDemo {
     private void pause(int factor) {
         try {
             TimeUnit.MILLISECONDS.sleep(
-                    100 + rand.nextInt(factor));
+                100 + rand.nextInt(factor));
         } catch (InterruptedException e) {
             print("sleep() interrupted");
         }
@@ -54,7 +56,7 @@ public class ActiveObjectDemo {
         ActiveObjectDemo d1 = new ActiveObjectDemo();
         // Prevents ConcurrentModificationException:
         List<Future<?>> results =
-                new CopyOnWriteArrayList<Future<?>>();
+            new CopyOnWriteArrayList<Future<?>>();
         for (float f = 0.0f; f < 1.0f; f += 0.2f)
             results.add(d1.calculateFloat(f, f));
         for (int i = 0; i < 5; i++)

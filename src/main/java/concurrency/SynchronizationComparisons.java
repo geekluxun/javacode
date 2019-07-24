@@ -3,21 +3,26 @@ package concurrency;
 // Comparing the performance of explicit Locks
 // and Atomics versus the synchronized keyword.
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
-import java.util.concurrent.locks.*;
-import java.util.*;
+import java.util.Random;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printf;
 
 abstract class Accumulator {
     public static long cycles = 50000L;
     // Number of Modifiers and Readers during each test:
     private static final int N = 4;
     public static ExecutorService exec =
-            Executors.newFixedThreadPool(N * 2);
+        Executors.newFixedThreadPool(N * 2);
     private static CyclicBarrier barrier =
-            new CyclicBarrier(N * 2 + 1);
+        new CyclicBarrier(N * 2 + 1);
     protected volatile int index = 0;
     protected volatile long value = 0;
     protected long duration = 0;
@@ -80,7 +85,7 @@ abstract class Accumulator {
     public static void
     report(Accumulator acc1, Accumulator acc2) {
         printf("%-22s: %.2f\n", acc1.id + "/" + acc2.id,
-                (double) acc1.duration / (double) acc2.duration);
+            (double) acc1.duration / (double) acc2.duration);
     }
 }
 

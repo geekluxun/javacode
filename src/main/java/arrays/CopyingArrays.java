@@ -1,9 +1,9 @@
 //: arrays/CopyingArrays.java
 // Using System.arraycopy()
 
-import java.util.*;
+import java.util.Arrays;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class CopyingArrays {
     public static void main(String[] args) {

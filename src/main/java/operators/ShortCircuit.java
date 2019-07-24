@@ -2,7 +2,8 @@
 // Demonstrates short-circuiting behavior
 // with logical operators.
 package operators;
-import static net.mindview.util.Print.*;
+
+import static net.mindview.util.Print.print;
 
 public class ShortCircuit {
     static boolean test1(int val) {

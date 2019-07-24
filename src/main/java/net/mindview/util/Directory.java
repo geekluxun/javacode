@@ -4,9 +4,12 @@
 // or by walking a directory tree.
 package net.mindview.util;
 
-import java.util.regex.*;
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FilenameFilter;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public final class Directory {
     public static File[]
@@ -16,7 +19,7 @@ public final class Directory {
 
             public boolean accept(File dir, String name) {
                 return pattern.matcher(
-                        new File(name).getName()).matches();
+                    new File(name).getName()).matches();
             }
         });
     }
@@ -43,7 +46,7 @@ public final class Directory {
 
         public String toString() {
             return "dirs: " + PPrint.pformat(dirs) +
-                    "\n\nfiles: " + PPrint.pformat(files);
+                "\n\nfiles: " + PPrint.pformat(files);
         }
     }
 

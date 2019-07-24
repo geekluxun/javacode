@@ -1,7 +1,7 @@
 //: net/mindview/util/Enums.java
 package net.mindview.util;
 
-import java.util.*;
+import java.util.Random;
 
 public class Enums {
     private static Random rand = new Random(47);

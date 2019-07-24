@@ -1,6 +1,7 @@
 //: interfaces/Adventure.java
 // Multiple interfaces.
 package interfaces;
+
 interface CanFight {
     void fight();
 }
@@ -19,7 +20,7 @@ class ActionCharacter {
 }
 
 class Hero extends ActionCharacter
-        implements CanFight, CanSwim, CanFly {
+    implements CanFight, CanSwim, CanFly {
     public void swim() {
     }
 

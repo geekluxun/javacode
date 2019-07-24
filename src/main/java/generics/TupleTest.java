@@ -1,7 +1,10 @@
 package generics;
 //: generics/TupleTest.java
 
-import net.mindview.util.*;
+import net.mindview.util.FiveTuple;
+import net.mindview.util.FourTuple;
+import net.mindview.util.ThreeTuple;
+import net.mindview.util.TwoTuple;
 
 class Amphibian {
 }

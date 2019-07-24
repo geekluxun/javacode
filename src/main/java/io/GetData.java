@@ -1,9 +1,11 @@
 //: io/GetData.java
 // Getting different representations from a ByteBuffer
 package io;
-import java.nio.*;
 
-import static net.mindview.util.Print.*;
+import java.nio.ByteBuffer;
+
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 public class GetData {
     private static final int BSIZE = 1024;

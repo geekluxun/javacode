@@ -15,6 +15,7 @@ import java.util.List;
 public class Fill {
     /**
      * 这个方法不够泛化，只能接受Collection,另外，需要容器元素提供默认构造器
+     *
      * @param collection
      * @param classToken
      * @param size

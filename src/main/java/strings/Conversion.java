@@ -1,7 +1,8 @@
 //: strings/Conversion.java
 package strings;
-import java.math.*;
-import java.util.*;
+
+import java.math.BigInteger;
+import java.util.Formatter;
 
 public class Conversion {
     public static void main(String[] args) {
@@ -31,7 +32,7 @@ public class Conversion {
 
         BigInteger w = new BigInteger("50000000000000");
         System.out.println(
-                "w = new BigInteger(\"50000000000000\")");
+            "w = new BigInteger(\"50000000000000\")");
         f.format("d: %d\n", w);
         // f.format("c: %c\n", w);
         f.format("b: %b\n", w);

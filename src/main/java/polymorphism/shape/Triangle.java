@@ -1,7 +1,7 @@
 //: polymorphism/shape/Triangle.java
 package polymorphism.shape;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class Triangle extends Shape {
     public void draw() {

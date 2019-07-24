@@ -2,7 +2,7 @@ package exceptions;
 //: exceptions/ExceptionMethods.java
 // Demonstrating the Exception Methods.
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class ExceptionMethods {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class ExceptionMethods {
             print("Caught Exception");
             print("getMessage():" + e.getMessage());
             print("getLocalizedMessage():" +
-                    e.getLocalizedMessage());
+                e.getLocalizedMessage());
             print("toString():" + e);
             print("printStackTrace():");
             e.printStackTrace(System.out);

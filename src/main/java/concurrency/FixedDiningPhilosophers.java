@@ -3,10 +3,12 @@ package concurrency;
 // Dining philosophers without deadlock.
 // {Args: 5 5 timeout}
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
- *  解决哲学家就餐死锁问题
+ * 解决哲学家就餐死锁问题
  */
 public class FixedDiningPhilosophers {
     public static void main(String[] args) throws Exception {
@@ -23,10 +25,9 @@ public class FixedDiningPhilosophers {
             sticks[i] = new Chopstick();
 
         for (int i = 0; i < size; i++)
-            if (i < (size - 1)){
+            if (i < (size - 1)) {
                 exec.execute(new Philosopher(sticks[i], sticks[i + 1], i, ponder));
-            }
-            else {
+            } else {
                 //最后一个哲学家先拿起和放下左边的筷子 来破除循环加锁
                 exec.execute(new Philosopher(sticks[0], sticks[i], i, ponder));
             }

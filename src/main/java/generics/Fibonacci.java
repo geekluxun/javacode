@@ -2,12 +2,12 @@ package generics;
 //: generics/Fibonacci.java
 // Generate a Fibonacci sequence.
 
-import net.mindview.util.*;
+import net.mindview.util.Generator;
 
 // 基本类型不能作为类型参数 ,int 会被装箱成Integer
 public class Fibonacci implements Generator<Integer> {
     private int count = 0;
-    
+
     @Override
     public Integer next() {
         return fib(count++);

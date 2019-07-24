@@ -2,9 +2,11 @@
 // Display a directory listing using regular expressions.
 // {Args: "D.*\.java"}
 package io;
-import java.util.regex.*;
-import java.io.*;
-import java.util.*;
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class DirList {
     public static void main(String[] args) {

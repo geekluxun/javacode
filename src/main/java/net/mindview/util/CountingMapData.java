@@ -2,7 +2,10 @@
 // Unlimited-length Map containing sample data.
 package net.mindview.util;
 
-import java.util.*;
+import java.util.AbstractMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class CountingMapData extends AbstractMap<Integer, String> {
     private int size;

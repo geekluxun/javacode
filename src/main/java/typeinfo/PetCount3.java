@@ -1,17 +1,21 @@
 //: typeinfo/PetCount3.java
 // Using isInstance()
 package typeinfo;
-import typeinfo.pets.*;
 
-import java.util.*;
+import net.mindview.util.MapData;
+import typeinfo.pets.LiteralPetCreator;
+import typeinfo.pets.Pet;
+import typeinfo.pets.Pets;
 
-import net.mindview.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 public class PetCount3 {
     static class PetCounter
-            extends LinkedHashMap<Class<? extends Pet>, Integer> {
+        extends LinkedHashMap<Class<? extends Pet>, Integer> {
         public PetCounter() {
             super(MapData.map(LiteralPetCreator.allTypes, 0));
         }
@@ -19,7 +23,7 @@ public class PetCount3 {
         public void count(Pet pet) {
             // Class.isInstance() eliminates instanceofs:
             for (Map.Entry<Class<? extends Pet>, Integer> pair
-                    : entrySet())
+                : entrySet())
                 if (pair.getKey().isInstance(pet))
                     put(pair.getKey(), pair.getValue() + 1);
         }
@@ -27,7 +31,7 @@ public class PetCount3 {
         public String toString() {
             StringBuilder result = new StringBuilder("{");
             for (Map.Entry<Class<? extends Pet>, Integer> pair
-                    : entrySet()) {
+                : entrySet()) {
                 result.append(pair.getKey().getSimpleName());
                 result.append("=");
                 result.append(pair.getValue());

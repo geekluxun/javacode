@@ -2,10 +2,11 @@
 // Assertions and exceptions can be used in @Tests.
 package annotations;
 
-import java.io.*;
+import net.mindview.atunit.Test;
+import net.mindview.util.OSExecute;
 
-import net.mindview.atunit.*;
-import net.mindview.util.*;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class AtUnitExample2 {
     public String methodOne() {
@@ -41,7 +42,7 @@ public class AtUnitExample2 {
 
     public static void main(String[] args) throws Exception {
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit AtUnitExample2");
+            "java net.mindview.atunit.AtUnit AtUnitExample2");
     }
 } /* Output:
 annotations.AtUnitExample2

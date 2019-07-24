@@ -2,7 +2,7 @@ package concurrency;
 //: concurrency/Joining.java
 // Understanding join().
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Sleeper extends Thread {
     private int duration;
@@ -47,9 +47,9 @@ class Joiner extends Thread {
 public class Joining {
     public static void main(String[] args) {
         Sleeper sleepy = new Sleeper("Sleepy", 1500),
-                grumpy = new Sleeper("Grumpy", 1500);
-        Joiner  dopey = new Joiner("Dopey", sleepy),
-                doc = new Joiner("Doc", grumpy);
+            grumpy = new Sleeper("Grumpy", 1500);
+        Joiner dopey = new Joiner("Dopey", sleepy),
+            doc = new Joiner("Doc", grumpy);
         //打断线程grumpy sleep
         grumpy.interrupt();
     }

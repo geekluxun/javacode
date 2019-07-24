@@ -1,6 +1,6 @@
 //: control/IfElse2.java
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class IfElse2 {
     static int test(int testval, int target) {

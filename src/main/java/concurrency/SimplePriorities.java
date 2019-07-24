@@ -2,7 +2,8 @@ package concurrency;
 //: concurrency/SimplePriorities.java
 // Shows the use of thread priorities.
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * 线程的优先级
@@ -27,7 +28,7 @@ public class SimplePriorities implements Runnable {
             // An expensive, interruptable operation:
             for (int i = 1; i < 100000; i++) {
                 d += (Math.PI + Math.E) / (double) i;
-                if (i % 1000 == 0){
+                if (i % 1000 == 0) {
                     //同级优先级线程获得CPU ，但不能保证一定让出
                     Thread.yield();
                     //System.out.println("ThreadId:" + Thread.currentThread().getId() + " i:" + i);
@@ -41,7 +42,7 @@ public class SimplePriorities implements Runnable {
 
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             exec.execute(new SimplePriorities(Thread.MIN_PRIORITY));
         }
         exec.execute(new SimplePriorities(Thread.MAX_PRIORITY));

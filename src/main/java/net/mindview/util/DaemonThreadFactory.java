@@ -1,7 +1,7 @@
 //: net/mindview/util/DaemonThreadFactory.java
 package net.mindview.util;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ThreadFactory;
 
 /**
  * 线程工厂

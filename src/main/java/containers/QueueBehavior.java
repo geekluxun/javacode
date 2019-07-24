@@ -2,10 +2,15 @@ package containers;
 //: containers/QueueBehavior.java
 // Compares the behavior of some of the queues
 
-import java.util.concurrent.*;
-import java.util.*;
+import net.mindview.util.Generator;
 
-import net.mindview.util.*;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
 
 public class QueueBehavior {
     private static int count = 10;
@@ -22,7 +27,7 @@ public class QueueBehavior {
 
     static class Gen implements Generator<String> {
         String[] s = ("one two three four five six seven " +
-                "eight nine ten").split(" ");
+            "eight nine ten").split(" ");
         int i;
 
         public String next() {

@@ -2,7 +2,7 @@
 // Creating a Deque from a LinkedList.
 package net.mindview.util;
 
-import java.util.*;
+import java.util.LinkedList;
 
 public class Deque<T> {
     private LinkedList<T> deque = new LinkedList<T>();

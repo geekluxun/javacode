@@ -2,9 +2,12 @@ package containers;
 //: containers/CountedString.java
 // Creating a good hashCode().
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class CountedString {
     private static List<String> created = new ArrayList<String>();
@@ -23,7 +26,7 @@ public class CountedString {
 
     public String toString() {
         return "String: " + s + " id: " + id +
-                " hashCode(): " + hashCode();
+            " hashCode(): " + hashCode();
     }
 
     public int hashCode() {
@@ -37,9 +40,9 @@ public class CountedString {
     }
 
     public boolean equals(Object o) {
-        return  o instanceof CountedString &&
-                s.equals(((CountedString) o).s) &&
-                id == ((CountedString) o).id;
+        return o instanceof CountedString &&
+            s.equals(((CountedString) o).s) &&
+            id == ((CountedString) o).id;
     }
 
     public static void main(String[] args) {

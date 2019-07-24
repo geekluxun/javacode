@@ -2,8 +2,8 @@
 // Creating non-embedded tests.
 package annotations;
 
-import net.mindview.atunit.*;
-import net.mindview.util.*;
+import net.mindview.atunit.Test;
+import net.mindview.util.OSExecute;
 
 public class AtUnitComposition {
     AtUnitExample1 testObject = new AtUnitExample1();
@@ -11,7 +11,7 @@ public class AtUnitComposition {
     @Test
     boolean _methodOne() {
         return
-                testObject.methodOne().equals("This is methodOne");
+            testObject.methodOne().equals("This is methodOne");
     }
 
     @Test
@@ -21,7 +21,7 @@ public class AtUnitComposition {
 
     public static void main(String[] args) throws Exception {
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit AtUnitComposition");
+            "java net.mindview.atunit.AtUnit AtUnitComposition");
     }
 } /* Output:
 annotations.AtUnitComposition

@@ -3,21 +3,22 @@
 // and send the output to the console.
 package net.mindview.util;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class OSExecute {
     public static void command(String command) {
         boolean err = false;
         try {
             Process process =
-                    new ProcessBuilder(command.split(" ")).start();
+                new ProcessBuilder(command.split(" ")).start();
             BufferedReader results = new BufferedReader(
-                    new InputStreamReader(process.getInputStream()));
+                new InputStreamReader(process.getInputStream()));
             String s;
             while ((s = results.readLine()) != null)
                 System.out.println(s);
             BufferedReader errors = new BufferedReader(
-                    new InputStreamReader(process.getErrorStream()));
+                new InputStreamReader(process.getErrorStream()));
             // Report errors and return nonzero value
             // to calling process if there are problems:
             while ((s = errors.readLine()) != null) {
@@ -34,6 +35,6 @@ public class OSExecute {
         }
         if (err)
             throw new OSExecuteException("Errors executing " +
-                    command);
+                command);
     }
 } ///:~

@@ -1,7 +1,7 @@
 //: enumerated/NotClasses.java
 // {Exec: javap -c LikeClasses}
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 enum LikeClasses {
     WINKEN {

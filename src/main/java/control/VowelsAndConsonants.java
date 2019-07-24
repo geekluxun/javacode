@@ -1,9 +1,10 @@
 //: control/VowelsAndConsonants.java
 // Demonstrates the switch statement.
 
-import java.util.*;
+import java.util.Random;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 public class VowelsAndConsonants {
     public static void main(String[] args) {

@@ -1,9 +1,10 @@
 package containers;
 //: containers/DequeTest.java
 
-import net.mindview.util.*;
+import net.mindview.util.Deque;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 public class DequeTest {
 

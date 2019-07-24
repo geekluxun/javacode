@@ -2,11 +2,11 @@ package containers;
 //: containers/LinkedHashMapDemo.java
 // What you can do with a LinkedHashMap.
 
-import java.util.*;
+import net.mindview.util.CountingMapData;
 
-import net.mindview.util.*;
+import java.util.LinkedHashMap;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class LinkedHashMapDemo {
     public static void main(String[] args) {

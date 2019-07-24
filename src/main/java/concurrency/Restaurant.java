@@ -2,9 +2,12 @@ package concurrency;
 //: concurrency/Restaurant.java
 // The producer-consumer approach to task cooperation.
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 class Meal {
     private final int orderNum;

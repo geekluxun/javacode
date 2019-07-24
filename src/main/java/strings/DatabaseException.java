@@ -1,10 +1,11 @@
 //: strings/DatabaseException.java
 package strings;
+
 public class DatabaseException extends Exception {
     public DatabaseException(int transactionID, int queryID,
                              String message) {
         super(String.format("(t%d, q%d) %s", transactionID,
-                queryID, message));
+            queryID, message));
     }
 
     public static void main(String[] args) {

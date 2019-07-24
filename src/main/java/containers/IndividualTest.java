@@ -2,9 +2,12 @@ package containers;
 //: containers/IndividualTest.java
 
 import holding.MapOfList;
-import typeinfo.pets.*;
+import typeinfo.pets.Individual;
+import typeinfo.pets.Pet;
 
-import java.util.*;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class IndividualTest {
     public static void main(String[] args) {

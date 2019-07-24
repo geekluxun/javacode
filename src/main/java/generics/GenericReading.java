@@ -1,7 +1,8 @@
 package generics;
 //: generics/GenericReading.java
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class GenericReading {
     static <T> T readExact(List<T> list) {
@@ -42,7 +43,7 @@ public class GenericReading {
 
     static void f3() {
         CovariantReader<Fruit> fruitReader =
-                new CovariantReader<Fruit>();
+            new CovariantReader<Fruit>();
         Fruit f = fruitReader.readCovariant(fruit);
         Fruit a = fruitReader.readCovariant(apples);
     }

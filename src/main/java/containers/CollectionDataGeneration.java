@@ -3,9 +3,11 @@ package containers;
 //: containers/CollectionDataGeneration.java
 // Using the Generators defined in the Arrays chapter.
 
-import java.util.*;
+import net.mindview.util.CollectionData;
+import net.mindview.util.RandomGenerator;
 
-import net.mindview.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public class CollectionDataGeneration {
     public static void main(String[] args) {

@@ -1,10 +1,13 @@
 package concurrency;
 //: concurrency/CountDownLatchDemo.java
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.Random;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 // Performs some portion of a task:
 class TaskPortion implements Runnable {

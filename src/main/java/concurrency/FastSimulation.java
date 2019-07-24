@@ -1,18 +1,20 @@
 package concurrency;
 //: concurrency/FastSimulation.java
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
-import java.util.*;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class FastSimulation {
     static final int N_ELEMENTS = 100000;
     static final int N_GENES = 30;
     static final int N_EVOLVERS = 50;
     static final AtomicInteger[][] GRID =
-            new AtomicInteger[N_ELEMENTS][N_GENES];
+        new AtomicInteger[N_ELEMENTS][N_GENES];
     static Random rand = new Random(47);
 
     static class Evolver implements Runnable {
@@ -28,10 +30,10 @@ public class FastSimulation {
                     int oldvalue = GRID[element][i].get();
                     // Perform some kind of modeling calculation:
                     int newvalue = oldvalue +
-                            GRID[previous][i].get() + GRID[next][i].get();
+                        GRID[previous][i].get() + GRID[next][i].get();
                     newvalue /= 3; // Average the three values
                     if (!GRID[element][i]
-                            .compareAndSet(oldvalue, newvalue)) {
+                        .compareAndSet(oldvalue, newvalue)) {
                         // Policy here to deal with failure. Here, we
                         // just report it and ignore it; our model
                         // will eventually deal with it.

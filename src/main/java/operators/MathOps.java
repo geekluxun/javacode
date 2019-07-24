@@ -1,9 +1,10 @@
 //: operators/MathOps.java
 // Demonstrates the mathematical operators.
 package operators;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import java.util.Random;
+
+import static net.mindview.util.Print.print;
 
 public class MathOps {
     public static void main(String[] args) {

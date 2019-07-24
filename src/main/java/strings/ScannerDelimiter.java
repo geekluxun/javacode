@@ -1,6 +1,7 @@
 //: strings/ScannerDelimiter.java
 package strings;
-import java.util.*;
+
+import java.util.Scanner;
 
 public class ScannerDelimiter {
     public static void main(String[] args) {

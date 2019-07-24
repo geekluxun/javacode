@@ -1,6 +1,7 @@
 //: interfaces/TestRandVals.java
 package interfaces;
-import static net.mindview.util.Print.*;
+
+import static net.mindview.util.Print.print;
 
 public class TestRandVals {
     public static void main(String[] args) {

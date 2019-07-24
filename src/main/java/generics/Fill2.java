@@ -39,13 +39,13 @@ public class Fill2 {
 // To adapt a base type, you must use composition.
 // Make any Collection Addable using composition:
 class AddableCollectionAdapter<T> implements Addable<T> {
-    
+
     private Collection<T> c;
 
     public AddableCollectionAdapter(Collection<T> c) {
         this.c = c;
     }
-    
+
     @Override
     public void add(T item) {
         c.add(item);
@@ -72,13 +72,13 @@ class Fill2Test {
         // Adapt a Collection:
         List<Coffee> carrier = new ArrayList<Coffee>();
         Fill2.fill(new AddableCollectionAdapter<Coffee>(carrier), Coffee.class, 3);
-        
+
         // Helper method captures the type:
         Fill2.fill(Adapter.collectionAdapter(carrier), Latte.class, 2);
         for (Coffee c : carrier)
             print(c);
         print("----------------------");
-        
+
         // Use an adapted class:
         AddableSimpleQueue<Coffee> coffeeQueue = new AddableSimpleQueue<Coffee>();
         Fill2.fill(coffeeQueue, Mocha.class, 4);

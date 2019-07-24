@@ -2,9 +2,10 @@ package exceptions;
 //: exceptions/TurnOffChecking.java
 // "Turning off" Checked exceptions.
 
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class WrapCheckedException {
     void throwRuntimeException(int type) {

@@ -1,6 +1,7 @@
 //: operators/Literals.java
 package operators;
-import static net.mindview.util.Print.*;
+
+import static net.mindview.util.Print.print;
 
 public class Literals {
     public static void main(String[] args) {

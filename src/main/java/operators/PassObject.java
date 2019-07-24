@@ -2,7 +2,8 @@
 // Passing objects to methods may not be
 // what you're used to.
 package operators;
-import static net.mindview.util.Print.*;
+
+import static net.mindview.util.Print.print;
 
 class Letter {
     char c;

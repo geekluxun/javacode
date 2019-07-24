@@ -2,7 +2,8 @@ package concurrency;
 //: concurrency/NaiveExceptionHandling.java
 // {ThrowsException}
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * 无法捕获异常，因为不在一个线程中

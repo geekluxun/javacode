@@ -2,7 +2,8 @@
 // A Future and the Callable that produced it.
 package net.mindview.util;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
 
 public class TaskItem<R, C extends Callable<R>> {
     public final Future<R> future;

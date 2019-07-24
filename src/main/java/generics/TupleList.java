@@ -2,9 +2,9 @@ package generics;
 //: generics/TupleList.java
 // Combining generic types to make complex generic types.
 
-import java.util.*;
+import net.mindview.util.FourTuple;
 
-import net.mindview.util.*;
+import java.util.ArrayList;
 
 public class TupleList<A, B, C, D> extends ArrayList<FourTuple<A, B, C, D>> {
 

@@ -2,9 +2,12 @@ package containers;
 //: containers/SortedSetDemo.java
 // What you can do with a TreeSet.
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class SortedSetDemo {
     public static void main(String[] args) {

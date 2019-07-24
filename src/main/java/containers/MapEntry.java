@@ -2,7 +2,7 @@ package containers;
 //: containers/MapEntry.java
 // A simple Map.Entry for sample Map implementations.
 
-import java.util.*;
+import java.util.Map;
 
 public class MapEntry<K, V> implements Map.Entry<K, V> {
     private K key;
@@ -35,8 +35,8 @@ public class MapEntry<K, V> implements Map.Entry<K, V> {
         if (!(o instanceof MapEntry)) return false;
         MapEntry me = (MapEntry) o;
         return
-        (key == null ? me.getKey() == null : key.equals(me.getKey())) &&
-        (value == null ? me.getValue() == null : value.equals(me.getValue()));
+            (key == null ? me.getKey() == null : key.equals(me.getKey())) &&
+                (value == null ? me.getValue() == null : value.equals(me.getValue()));
     }
 
     public String toString() {

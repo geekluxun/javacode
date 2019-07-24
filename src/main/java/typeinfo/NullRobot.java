@@ -1,4 +1,3 @@
-
 package typeinfo;
 
 import net.mindview.util.Null;
@@ -35,7 +34,7 @@ class NullRobotProxyHandler implements InvocationHandler {
 
     public Object
     invoke(Object proxy, Method method, Object[] args)
-            throws Throwable {
+        throws Throwable {
         return method.invoke(proxied, args);
     }
 }
@@ -44,15 +43,15 @@ public class NullRobot {
     public static Robot
     newNullRobot(Class<? extends Robot> type) {
         return (Robot) Proxy.newProxyInstance(
-                NullRobot.class.getClassLoader(),
-                new Class[]{Null.class, Robot.class},
-                new NullRobotProxyHandler(type));
+            NullRobot.class.getClassLoader(),
+            new Class[]{Null.class, Robot.class},
+            new NullRobotProxyHandler(type));
     }
 
     public static void main(String[] args) {
         Robot[] bots = {
-                new SnowRemovalRobot("SnowBee"),
-                newNullRobot(SnowRemovalRobot.class)
+            new SnowRemovalRobot("SnowBee"),
+            newNullRobot(SnowRemovalRobot.class)
         };
         for (Robot bot : bots)
             Robot.Test.test(bot);

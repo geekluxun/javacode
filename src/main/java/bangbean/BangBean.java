@@ -5,8 +5,8 @@ package bangbean;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.TooManyListenersException;
 
 public class
 BangBean extends JPanel implements Serializable {
@@ -63,7 +63,7 @@ BangBean extends JPanel implements Serializable {
     // This is a unicast listener, which is
     // the simplest form of listener management:
     public void addActionListener(ActionListener l)
-            throws TooManyListenersException {
+        throws TooManyListenersException {
         if (actionListener != null)
             throw new TooManyListenersException();
         actionListener = l;
@@ -78,16 +78,16 @@ BangBean extends JPanel implements Serializable {
             Graphics g = getGraphics();
             g.setColor(tColor);
             g.setFont(
-                    new Font("TimesRoman", Font.BOLD, fontSize));
+                new Font("TimesRoman", Font.BOLD, fontSize));
             int width = g.getFontMetrics().stringWidth(text);
             g.drawString(text, (getSize().width - width) / 2,
-                    getSize().height / 2);
+                getSize().height / 2);
             g.dispose();
             // Call the listener's method:
             if (actionListener != null)
                 actionListener.actionPerformed(
-                        new ActionEvent(BangBean.this,
-                                ActionEvent.ACTION_PERFORMED, null));
+                    new ActionEvent(BangBean.this,
+                        ActionEvent.ACTION_PERFORMED, null));
         }
     }
 

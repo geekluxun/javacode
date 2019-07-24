@@ -1,5 +1,6 @@
 //: operators/Equivalence.java
 package operators;
+
 public class Equivalence {
     public static void main(String[] args) {
         Integer n1 = new Integer(47);

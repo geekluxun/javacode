@@ -1,8 +1,11 @@
 package concurrency;
 //: concurrency/NotifyVsNotifyAll.java
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 class Blocker {
     //此处显示了从Thread 循环退出的两个路劲，1、
@@ -17,10 +20,12 @@ class Blocker {
             // OK to exit this way
         }
     }
+
     //只在这个对象上加上同步锁
     synchronized void prod() {
         notify();
     }
+
     //只在这个对象上加上同步锁
     synchronized void prodAll() {
         notifyAll();
@@ -55,6 +60,7 @@ public class NotifyVsNotifyAll {
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             boolean prod = true;
+
             //  Task 上的对象即使调用了prodAll  也不会唤醒Task2,因为两个是完全独立的blocker
             public void run() {
                 if (prod) {

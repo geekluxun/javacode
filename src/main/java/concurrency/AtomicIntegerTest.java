@@ -1,9 +1,11 @@
 package concurrency;
 //: concurrency/AtomicIntegerTest.java
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
-import java.util.*;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerTest implements Runnable {
     private AtomicInteger i = new AtomicInteger(0);

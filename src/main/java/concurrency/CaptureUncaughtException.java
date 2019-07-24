@@ -1,7 +1,9 @@
 package concurrency;
 //: concurrency/CaptureUncaughtException.java
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 class ExceptionThread2 implements Runnable {
     public void run() {

@@ -1,9 +1,10 @@
 //: io/Blip3.java
 // Reconstructing an externalizable object.
 package io;
+
 import java.io.*;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class Blip3 implements Externalizable {
     private int i;
@@ -26,7 +27,7 @@ public class Blip3 implements Externalizable {
     }
 
     public void writeExternal(ObjectOutput out)
-            throws IOException {
+        throws IOException {
         print("Blip3.writeExternal");
         // You must do this:
         out.writeObject(s);
@@ -34,7 +35,7 @@ public class Blip3 implements Externalizable {
     }
 
     public void readExternal(ObjectInput in)
-            throws IOException, ClassNotFoundException {
+        throws IOException, ClassNotFoundException {
         print("Blip3.readExternal");
         // You must do this:
         s = (String) in.readObject();
@@ -42,18 +43,18 @@ public class Blip3 implements Externalizable {
     }
 
     public static void main(String[] args)
-            throws IOException, ClassNotFoundException {
+        throws IOException, ClassNotFoundException {
         print("Constructing objects:");
         Blip3 b3 = new Blip3("A String ", 47);
         print(b3);
         ObjectOutputStream o = new ObjectOutputStream(
-                new FileOutputStream("Blip3.out"));
+            new FileOutputStream("Blip3.out"));
         print("Saving object:");
         o.writeObject(b3);
         o.close();
         // Now get it back:
         ObjectInputStream in = new ObjectInputStream(
-                new FileInputStream("Blip3.out"));
+            new FileInputStream("Blip3.out"));
         print("Recovering b3:");
         b3 = (Blip3) in.readObject();
         print(b3);

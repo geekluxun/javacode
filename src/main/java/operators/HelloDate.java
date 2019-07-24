@@ -1,8 +1,9 @@
 //: operators/HelloDate.java
 package operators;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import java.util.Date;
+
+import static net.mindview.util.Print.print;
 
 public class HelloDate {
     public static void main(String[] args) {

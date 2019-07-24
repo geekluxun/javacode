@@ -3,9 +3,10 @@
 // {Args: annotations.database.Member}
 package annotations.database;
 
-import java.lang.annotation.*;
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TableCreator {
     public static void main(String[] args) throws Exception {
@@ -18,7 +19,7 @@ public class TableCreator {
             DBTable dbTable = cl.getAnnotation(DBTable.class);
             if (dbTable == null) {
                 System.out.println(
-                        "No DBTable annotations in class " + className);
+                    "No DBTable annotations in class " + className);
                 continue;
             }
             String tableName = dbTable.name();
@@ -39,7 +40,7 @@ public class TableCreator {
                     else
                         columnName = sInt.name();
                     columnDefs.add(columnName + " INT" +
-                            getConstraints(sInt.constraints()));
+                        getConstraints(sInt.constraints()));
                 }
                 if (anns[0] instanceof SQLString) {
                     SQLString sString = (SQLString) anns[0];
@@ -49,18 +50,18 @@ public class TableCreator {
                     else
                         columnName = sString.name();
                     columnDefs.add(columnName + " VARCHAR(" +
-                            sString.value() + ")" +
-                            getConstraints(sString.constraints()));
+                        sString.value() + ")" +
+                        getConstraints(sString.constraints()));
                 }
                 StringBuilder createCommand = new StringBuilder(
-                        "CREATE TABLE " + tableName + "(");
+                    "CREATE TABLE " + tableName + "(");
                 for (String columnDef : columnDefs)
                     createCommand.append("\n    " + columnDef + ",");
                 // Remove trailing comma
                 String tableCreate = createCommand.substring(
-                        0, createCommand.length() - 1) + ");";
+                    0, createCommand.length() - 1) + ");";
                 System.out.println("Table Creation SQL for " +
-                        className + " is :\n" + tableCreate);
+                    className + " is :\n" + tableCreate);
             }
         }
     }

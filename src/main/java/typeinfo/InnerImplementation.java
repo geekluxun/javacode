@@ -2,9 +2,9 @@ package typeinfo;
 //: typeinfo/InnerImplementation.java
 // Private inner classes can't hide from reflection.
 
-import typeinfo.interfacea.*;
+import typeinfo.interfacea.A;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class InnerA {
     private static class C implements A {

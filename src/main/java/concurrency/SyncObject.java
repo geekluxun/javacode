@@ -1,7 +1,9 @@
 package concurrency;
 //: concurrency/SyncObject.java
 // Synchronizing on another object.
-import static net.mindview.util.Print.*;
+
+import static net.mindview.util.Print.print;
+
 /**
  * 两个同步是独立的，可以同时进入
  */

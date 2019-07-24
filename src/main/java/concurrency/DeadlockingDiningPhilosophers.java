@@ -3,7 +3,9 @@ package concurrency;
 // Demonstrates how deadlock can be hidden in a program.
 // {Args: 0 5 timeout}
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 哲学家就餐死锁示例

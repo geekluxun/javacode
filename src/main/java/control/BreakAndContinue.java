@@ -1,7 +1,7 @@
 //: control/BreakAndContinue.java
 // Demonstrates break and continue keywords.
 
-import static net.mindview.util.Range.*;
+import static net.mindview.util.Range.range;
 
 public class BreakAndContinue {
     public static void main(String[] args) {

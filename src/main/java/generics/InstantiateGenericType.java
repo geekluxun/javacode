@@ -1,10 +1,11 @@
 package generics;
 //: generics/InstantiateGenericType.java
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 /**
  * Class对象作为工厂对象
+ *
  * @param <T>
  */
 class ClassAsFactory<T> {

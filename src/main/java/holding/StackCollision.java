@@ -1,8 +1,6 @@
 package holding;
 //: holding/StackCollision.java
 
-import net.mindview.util.*;
-
 public class StackCollision {
     public static void main(String[] args) {
         net.mindview.util.Stack<String> stack = new net.mindview.util.Stack<String>();

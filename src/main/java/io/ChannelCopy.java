@@ -2,9 +2,11 @@
 // Copying a file using channels and buffers
 // {Args: ChannelCopy.java test.txt}
 package io;
-import java.nio.*;
-import java.nio.channels.*;
-import java.io.*;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 
 public class ChannelCopy {
     private static final int BSIZE = 1024;
@@ -15,8 +17,8 @@ public class ChannelCopy {
             System.exit(1);
         }
         FileChannel
-                in = new FileInputStream(args[0]).getChannel(),
-                out = new FileOutputStream(args[1]).getChannel();
+            in = new FileInputStream(args[0]).getChannel(),
+            out = new FileOutputStream(args[1]).getChannel();
         ByteBuffer buffer = ByteBuffer.allocate(BSIZE);
         while (in.read(buffer) != -1) {
             buffer.flip(); // Prepare for writing

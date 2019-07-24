@@ -1,9 +1,11 @@
 package holding;
 //: holding/SimpleIteration.java
 
-import typeinfo.pets.*;
+import typeinfo.pets.Pet;
+import typeinfo.pets.Pets;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 public class SimpleIteration {
     public static void main(String[] args) {

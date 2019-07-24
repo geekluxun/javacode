@@ -1,8 +1,11 @@
-package  containers;
+package containers;
 //: containers/TypesForSets.java
 // Methods necessary to put your own type in a Set.
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 class SetType {
     int i;
@@ -45,7 +48,7 @@ public class TypesForSets {
         try {
             for (int i = 0; i < 10; i++)
                 set.add(
-                        type.getConstructor(int.class).newInstance(i));
+                    type.getConstructor(int.class).newInstance(i));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -1,6 +1,7 @@
 //: reusing/BlankFinal.java
 // "Blank" final fields.
 package reusing;
+
 class Poppet {
     private int i;
 

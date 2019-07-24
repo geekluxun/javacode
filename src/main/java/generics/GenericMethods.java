@@ -4,6 +4,7 @@ package generics;
 public class GenericMethods {
     /**
      * 泛型方法
+     *
      * @param x
      * @param <T>
      */

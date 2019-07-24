@@ -2,7 +2,7 @@
 // Using anonymous inner classes with the Game framework.
 package innerclasses;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 interface Game {
     boolean move();

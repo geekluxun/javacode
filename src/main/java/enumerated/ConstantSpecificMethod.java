@@ -1,13 +1,13 @@
 //: enumerated/ConstantSpecificMethod.java
 
-import java.util.*;
-import java.text.*;
+import java.text.DateFormat;
+import java.util.Date;
 
 public enum ConstantSpecificMethod {
     DATE_TIME {
         String getInfo() {
             return
-                    DateFormat.getDateInstance().format(new Date());
+                DateFormat.getDateInstance().format(new Date());
         }
     },
     CLASSPATH {

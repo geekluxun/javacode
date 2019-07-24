@@ -1,12 +1,10 @@
 package holding;
 //: holding/PriorityQueueDemo.java
 
-import holding.QueueDemo;
-
 import java.util.*;
 
 /**
- *  优先级队列
+ * 优先级队列
  */
 public class PriorityQueueDemo {
     public static void main(String[] args) {
@@ -43,7 +41,7 @@ public class PriorityQueueDemo {
         for (char c : fact.toCharArray())
             charSet.add(c); // Autoboxing
 
-        PriorityQueue<Character> characterPQ =  new PriorityQueue<Character>(charSet);
+        PriorityQueue<Character> characterPQ = new PriorityQueue<Character>(charSet);
         QueueDemo.printQ(characterPQ);
     }
 }

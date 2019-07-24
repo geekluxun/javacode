@@ -1,11 +1,12 @@
 package generics;
 //: generics/SimplerPets.java
 
-import typeinfo.pets.*;
+import net.mindview.util.New;
+import typeinfo.pets.Person;
+import typeinfo.pets.Pet;
 
-import java.util.*;
-
-import net.mindview.util.*;
+import java.util.List;
+import java.util.Map;
 
 public class SimplerPets {
     public static void main(String[] args) {

@@ -1,11 +1,16 @@
 package generics;
 //: generics/Functional.java
 
-import java.math.*;
-import java.util.concurrent.atomic.*;
-import java.util.*;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.MathContext;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 // Different types of function objects:
 interface Combiner<T> {
@@ -112,14 +117,14 @@ public class Functional {
     // We can even make a UnaryFunction with an "ulp"
     // (Units in the last place):
     static class BigDecimalUlp
-            implements UnaryFunction<BigDecimal, BigDecimal> {
+        implements UnaryFunction<BigDecimal, BigDecimal> {
         public BigDecimal function(BigDecimal x) {
             return x.ulp();
         }
     }
 
     static class GreaterThan<T extends Comparable<T>>
-            implements UnaryPredicate<T> {
+        implements UnaryPredicate<T> {
         private T bound;
 
         public GreaterThan(T bound) {
@@ -132,7 +137,7 @@ public class Functional {
     }
 
     static class MultiplyingIntegerCollector
-            implements Collector<Integer> {
+        implements Collector<Integer> {
         private Integer val = 1;
 
         public Integer function(Integer x) {
@@ -157,20 +162,20 @@ public class Functional {
         print(filter(li, new GreaterThan<Integer>(4)));
 
         print(forEach(li,
-                new MultiplyingIntegerCollector()).result());
+            new MultiplyingIntegerCollector()).result());
 
         print(forEach(filter(li, new GreaterThan<Integer>(4)),
-                new MultiplyingIntegerCollector()).result());
+            new MultiplyingIntegerCollector()).result());
 
         MathContext mc = new MathContext(7);
         List<BigDecimal> lbd = Arrays.asList(
-                new BigDecimal(1.1, mc), new BigDecimal(2.2, mc),
-                new BigDecimal(3.3, mc), new BigDecimal(4.4, mc));
+            new BigDecimal(1.1, mc), new BigDecimal(2.2, mc),
+            new BigDecimal(3.3, mc), new BigDecimal(4.4, mc));
         BigDecimal rbd = reduce(lbd, new BigDecimalAdder());
         print(rbd);
 
         print(filter(lbd,
-                new GreaterThan<BigDecimal>(new BigDecimal(3))));
+            new GreaterThan<BigDecimal>(new BigDecimal(3))));
 
         // Use the prime-generation facility of BigInteger:
         List<BigInteger> lbi = new ArrayList<BigInteger>();
@@ -187,8 +192,8 @@ public class Functional {
         print(rbi.isProbablePrime(5));
 
         List<AtomicLong> lal = Arrays.asList(
-                new AtomicLong(11), new AtomicLong(47),
-                new AtomicLong(74), new AtomicLong(133));
+            new AtomicLong(11), new AtomicLong(47),
+            new AtomicLong(74), new AtomicLong(133));
         AtomicLong ral = reduce(lal, new AtomicLongAdder());
         print(ral);
 

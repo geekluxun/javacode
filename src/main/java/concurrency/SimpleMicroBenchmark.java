@@ -2,7 +2,8 @@ package concurrency;
 //: concurrency/SimpleMicroBenchmark.java
 // The dangers of microbenchmarking.
 
-import java.util.concurrent.locks.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 abstract class Incrementable {
     protected long counter = 0;
@@ -43,7 +44,7 @@ public class SimpleMicroBenchmark {
         System.out.printf("synchronized: %1$10d\n", synchTime);
         System.out.printf("Lock:         %1$10d\n", lockTime);
         System.out.printf("Lock/synchronized = %1$.3f",
-                (double) lockTime / (double) synchTime);
+            (double) lockTime / (double) synchTime);
     }
 } /* Output: (75% match)
 synchronized:  244919117

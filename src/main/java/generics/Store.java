@@ -29,13 +29,13 @@ class Product {
     }
 
     public static Generator<Product> generator =
-            new Generator<Product>() {
-                private Random rand = new Random(47);
+        new Generator<Product>() {
+            private Random rand = new Random(47);
 
-                public Product next() {
-                    return new Product(rand.nextInt(1000), "Test", Math.round(rand.nextDouble() * 1000.0) + 0.99);
-                }
-            };
+            public Product next() {
+                return new Product(rand.nextInt(1000), "Test", Math.round(rand.nextDouble() * 1000.0) + 0.99);
+            }
+        };
 }
 
 class Shelf extends ArrayList<Product> {

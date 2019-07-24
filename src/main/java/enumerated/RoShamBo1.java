@@ -2,7 +2,7 @@
 // Demonstration of multiple dispatching.
 package enumerated;
 
-import java.util.*;
+import java.util.Random;
 
 import static enumerated.Outcome.*;
 
@@ -100,7 +100,7 @@ public class RoShamBo1 {
 
     public static void match(Item a, Item b) {
         System.out.println(
-                a + " vs. " + b + ": " + a.compete(b));
+            a + " vs. " + b + ": " + a.compete(b));
     }
 
     public static void main(String[] args) {

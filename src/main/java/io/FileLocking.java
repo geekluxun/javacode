@@ -1,8 +1,9 @@
 //: io/FileLocking.java
 package io;
-import java.nio.channels.*;
-import java.util.concurrent.*;
-import java.io.*;
+
+import java.io.FileOutputStream;
+import java.nio.channels.FileLock;
+import java.util.concurrent.TimeUnit;
 
 public class FileLocking {
     public static void main(String[] args) throws Exception {

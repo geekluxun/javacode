@@ -1,7 +1,7 @@
 //: annotations/Testable.java
 package annotations;
 
-import net.mindview.atunit.*;
+import net.mindview.atunit.Test;
 
 public class Testable {
     public void execute() {

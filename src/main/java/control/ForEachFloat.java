@@ -1,6 +1,6 @@
 //: control/ForEachFloat.java
 
-import java.util.*;
+import java.util.Random;
 
 public class ForEachFloat {
     public static void main(String[] args) {

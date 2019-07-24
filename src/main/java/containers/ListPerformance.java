@@ -3,17 +3,19 @@ package containers;
 // Demonstrates performance differences in Lists.
 // {Args: 100 500} Small to keep build testing short
 
-import java.util.*;
+import net.mindview.util.CountingGenerator;
+import net.mindview.util.CountingIntegerList;
+import net.mindview.util.Generated;
 
-import net.mindview.util.*;
+import java.util.*;
 
 public class ListPerformance {
     static Random rand = new Random();
     static int reps = 1000;
     static List<Test<List<Integer>>> tests =
-            new ArrayList<Test<List<Integer>>>();
+        new ArrayList<Test<List<Integer>>>();
     static List<Test<LinkedList<Integer>>> qTests =
-            new ArrayList<Test<LinkedList<Integer>>>();
+        new ArrayList<Test<LinkedList<Integer>>>();
 
     static {
         tests.add(new Test<List<Integer>>("add") {
@@ -103,19 +105,19 @@ public class ListPerformance {
             }
         });
         qTests.add(
-                new Test<LinkedList<Integer>>("rmFirst") {
-                    int test(LinkedList<Integer> list, TestParam tp) {
-                        int loops = tp.loops;
-                        int size = tp.size;
-                        for (int i = 0; i < loops; i++) {
-                            list.clear();
-                            list.addAll(new CountingIntegerList(size));
-                            while (list.size() > 0)
-                                list.removeFirst();
-                        }
-                        return loops * size;
+            new Test<LinkedList<Integer>>("rmFirst") {
+                int test(LinkedList<Integer> list, TestParam tp) {
+                    int loops = tp.loops;
+                    int size = tp.size;
+                    for (int i = 0; i < loops; i++) {
+                        list.clear();
+                        list.addAll(new CountingIntegerList(size));
+                        while (list.size() > 0)
+                            list.removeFirst();
                     }
-                });
+                    return loops * size;
+                }
+            });
         qTests.add(new Test<LinkedList<Integer>>("rmLast") {
             int test(LinkedList<Integer> list, TestParam tp) {
                 int loops = tp.loops;
@@ -157,20 +159,20 @@ public class ListPerformance {
             Tester.defaultParams = TestParam.array(args);
         // Can only do these two tests on an array:
         Tester<List<Integer>> arrayTest =
-                new Tester<List<Integer>>(null, tests.subList(1, 3)) {
-                    // This will be called before each test. It
-                    // produces a non-resizeable array-backed list:
-                    @Override
-                    protected List<Integer> initialize(int size) {
-                        Integer[] ia = Generated.array(Integer.class,
-                                new CountingGenerator.Integer(), size);
-                        return Arrays.asList(ia);
-                    }
-                };
+            new Tester<List<Integer>>(null, tests.subList(1, 3)) {
+                // This will be called before each test. It
+                // produces a non-resizeable array-backed list:
+                @Override
+                protected List<Integer> initialize(int size) {
+                    Integer[] ia = Generated.array(Integer.class,
+                        new CountingGenerator.Integer(), size);
+                    return Arrays.asList(ia);
+                }
+            };
         arrayTest.setHeadline("Array as List");
         arrayTest.timedTest();
         Tester.defaultParams = TestParam.array(
-                10, 5000, 100, 5000, 1000, 1000, 10000, 200);
+            10, 5000, 100, 5000, 1000, 1000, 10000, 200);
         if (args.length > 0)
             Tester.defaultParams = TestParam.array(args);
         ListTester.run(new ArrayList<Integer>(), tests);
@@ -178,8 +180,8 @@ public class ListPerformance {
         ListTester.run(new Vector<Integer>(), tests);
         Tester.fieldWidth = 12;
         Tester<LinkedList<Integer>> qTest =
-                new Tester<LinkedList<Integer>>(
-                        new LinkedList<Integer>(), qTests);
+            new Tester<LinkedList<Integer>>(
+                new LinkedList<Integer>(), qTests);
         qTest.setHeadline("Queue tests");
         qTest.timedTest();
     }

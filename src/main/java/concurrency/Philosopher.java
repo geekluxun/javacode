@@ -2,10 +2,10 @@ package concurrency;
 //: concurrency/Philosopher.java
 // A dining philosopher
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class Philosopher implements Runnable {
     private Chopstick left;

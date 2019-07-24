@@ -3,9 +3,9 @@ package arrays;
 //: arrays/ArrayOptions.java
 // Initialization & re-assignment of arrays.
 
-import java.util.*;
+import java.util.Arrays;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class ArrayOptions {
     public static void main(String[] args) {
@@ -21,11 +21,11 @@ public class ArrayOptions {
                 c[i] = new BerylliumSphere();
         // Aggregate initialization:
         BerylliumSphere[] d = {new BerylliumSphere(),
-                new BerylliumSphere(), new BerylliumSphere()
+            new BerylliumSphere(), new BerylliumSphere()
         };
         // Dynamic aggregate initialization:
         a = new BerylliumSphere[]{
-                new BerylliumSphere(), new BerylliumSphere(),
+            new BerylliumSphere(), new BerylliumSphere(),
         };
         // (Trailing comma is optional in both cases)
         print("a.length = " + a.length);

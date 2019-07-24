@@ -24,7 +24,7 @@ class Colored2<T extends HasColor> extends HoldItem<T> {
 }
 
 class ColoredDimension2<T extends Dimension & HasColor>
-        extends Colored2<T> {
+    extends Colored2<T> {
     ColoredDimension2(T item) {
         super(item);
     }
@@ -43,7 +43,7 @@ class ColoredDimension2<T extends Dimension & HasColor>
 }
 
 class Solid2<T extends Dimension & HasColor & Weight>
-        extends ColoredDimension2<T> {
+    extends ColoredDimension2<T> {
     Solid2(T item) {
         super(item);
     }
@@ -56,7 +56,7 @@ class Solid2<T extends Dimension & HasColor & Weight>
 public class InheritBounds {
     public static void main(String[] args) {
         Solid2<Bounded> solid2 =
-                new Solid2<Bounded>(new Bounded());
+            new Solid2<Bounded>(new Bounded());
         solid2.color();
         solid2.getY();
         solid2.weight();

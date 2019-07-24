@@ -2,8 +2,10 @@ package concurrency;
 //: concurrency/ThreadLocalVariableHolder.java
 // Automatically giving each thread its own storage.
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 class Accessor implements Runnable {
     private final int id;
@@ -22,19 +24,19 @@ class Accessor implements Runnable {
 
     public String toString() {
         return "#" + id + ": " +
-                ThreadLocalVariableHolder.get();
+            ThreadLocalVariableHolder.get();
     }
 }
 
 public class ThreadLocalVariableHolder {
     private static ThreadLocal<Integer> value =
-            new ThreadLocal<Integer>() {
-                private Random rand = new Random(47);
+        new ThreadLocal<Integer>() {
+            private Random rand = new Random(47);
 
-                protected synchronized Integer initialValue() {
-                    return rand.nextInt(10000);
-                }
-            };
+            protected synchronized Integer initialValue() {
+                return rand.nextInt(10000);
+            }
+        };
 
     //ThreadLocal 保证此方法是同步的，虽然value是静态的，但是多个任务都有一个自己的本地线程存储副本
     public static void increment() {

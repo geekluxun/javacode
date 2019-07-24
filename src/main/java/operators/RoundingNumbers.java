@@ -1,7 +1,8 @@
 //: operators/RoundingNumbers.java
 // Rounding floats and doubles.
 package operators;
-import static net.mindview.util.Print.*;
+
+import static net.mindview.util.Print.print;
 
 public class RoundingNumbers {
     public static void main(String[] args) {

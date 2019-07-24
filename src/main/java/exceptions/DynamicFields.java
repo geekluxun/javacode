@@ -4,7 +4,7 @@ package exceptions;
 // A Class that dynamically adds fields to itself.
 // Demonstrates exception chaining.
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class DynamicFieldsException extends Exception {
 }

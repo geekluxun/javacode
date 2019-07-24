@@ -3,9 +3,10 @@ package initialization;
 //: initialization/ArrayClassObj.java
 // Creating an array of nonprimitive objects.
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Random;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class ArrayClassObj {
     public static void main(String[] args) {

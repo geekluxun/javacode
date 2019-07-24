@@ -1,10 +1,11 @@
 package concurrency;
 //: concurrency/ExchangerDemo.java
 
-import java.util.concurrent.*;
-import java.util.*;
+import net.mindview.util.BasicGenerator;
+import net.mindview.util.Generator;
 
-import net.mindview.util.*;
+import java.util.List;
+import java.util.concurrent.*;
 
 class ExchangerProducer<T> implements Runnable {
     private Generator<T> generator;
@@ -76,8 +77,8 @@ public class ExchangerDemo {
         Exchanger<List<Fat>> xc = new Exchanger<List<Fat>>();
 
         List<Fat>
-                producerList = new CopyOnWriteArrayList<Fat>(),
-                consumerList = new CopyOnWriteArrayList<Fat>();
+            producerList = new CopyOnWriteArrayList<Fat>(),
+            consumerList = new CopyOnWriteArrayList<Fat>();
 
         exec.execute(new ExchangerProducer<Fat>(xc, BasicGenerator.create(Fat.class), producerList));
 

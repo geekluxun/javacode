@@ -1,7 +1,7 @@
 //: access/Dinner.java
 // Uses the library.
 
-import access.dessert.*;
+import access.dessert.Cookie;
 
 public class Dinner {
     public static void main(String[] args) {

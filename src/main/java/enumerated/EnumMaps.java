@@ -2,10 +2,12 @@
 // Basics of EnumMaps.
 package enumerated;
 
-import java.util.*;
+import java.util.EnumMap;
+import java.util.Map;
 
 import static enumerated.AlarmPoints.*;
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 interface Command {
     void action();
@@ -14,7 +16,7 @@ interface Command {
 public class EnumMaps {
     public static void main(String[] args) {
         EnumMap<AlarmPoints, Command> em =
-                new EnumMap<AlarmPoints, Command>(AlarmPoints.class);
+            new EnumMap<AlarmPoints, Command>(AlarmPoints.class);
         em.put(KITCHEN, new Command() {
             public void action() {
                 print("Kitchen fire!");

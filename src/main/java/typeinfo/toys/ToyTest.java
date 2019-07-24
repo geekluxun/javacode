@@ -2,7 +2,7 @@
 // Testing class Class.
 package typeinfo.toys;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 interface HasBatteries {
 }
@@ -24,7 +24,7 @@ class Toy {
 }
 
 class FancyToy extends Toy
-        implements HasBatteries, Waterproof, Shoots {
+    implements HasBatteries, Waterproof, Shoots {
     FancyToy() {
         super(1);
     }
@@ -33,7 +33,7 @@ class FancyToy extends Toy
 public class ToyTest {
     static void printInfo(Class cc) {
         print("Class name: " + cc.getName() +
-                " is interface? [" + cc.isInterface() + "]");
+            " is interface? [" + cc.isInterface() + "]");
         print("Simple name: " + cc.getSimpleName());
         print("Canonical name : " + cc.getCanonicalName());
     }

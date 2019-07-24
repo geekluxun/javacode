@@ -3,7 +3,8 @@ package arrays;
 //: arrays/ArrayOfGenerics.java
 // It is possible to create arrays of generics.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArrayOfGenerics {
     @SuppressWarnings("unchecked")
@@ -24,7 +25,7 @@ public class ArrayOfGenerics {
         // possible to create an array of generics, albeit
         // with an "unchecked" warning:
         List<BerylliumSphere>[] spheres =
-                (List<BerylliumSphere>[]) new List[10];
+            (List<BerylliumSphere>[]) new List[10];
         for (int i = 0; i < spheres.length; i++)
             spheres[i] = new ArrayList<BerylliumSphere>();
     }

@@ -31,11 +31,11 @@ public abstract class Tester<C> {
 
     Tester(String testId, int nReaders, int nWriters) {
         this.testId = testId + " " +
-                nReaders + "r " + nWriters + "w";
+            nReaders + "r " + nWriters + "w";
         this.nReaders = nReaders;
         this.nWriters = nWriters;
         writeData = Generated.array(Integer.class,
-                new RandomGenerator.Integer(), containerSize);
+            new RandomGenerator.Integer(), containerSize);
         for (int i = 0; i < testReps; i++) {
             runTest();
             readTime = 0;
@@ -53,10 +53,10 @@ public abstract class Tester<C> {
             System.out.println("endLatch interrupted");
         }
         System.out.printf("%-27s %14d %14d\n",
-                testId, readTime, writeTime);
+            testId, readTime, writeTime);
         if (readTime != 0 && writeTime != 0)
             System.out.printf("%-27s %14d\n",
-                    "readTime + writeTime =", readTime + writeTime);
+                "readTime + writeTime =", readTime + writeTime);
     }
 
     abstract class TestTask implements Runnable {

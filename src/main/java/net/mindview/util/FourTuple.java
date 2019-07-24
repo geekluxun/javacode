@@ -11,6 +11,6 @@ public class FourTuple<A, B, C, D> extends ThreeTuple<A, B, C> {
 
     public String toString() {
         return "(" + first + ", " + second + ", " +
-                third + ", " + fourth + ")";
+            third + ", " + fourth + ")";
     }
 } ///:~

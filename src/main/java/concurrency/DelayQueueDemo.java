@@ -1,11 +1,15 @@
 package concurrency;
 //: concurrency/DelayQueueDemo.java
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.*;
-import java.util.*;
 
-import static java.util.concurrent.TimeUnit.*;
-import static net.mindview.util.Print.*;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import static java.util.concurrent.TimeUnit.NANOSECONDS;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 class DelayedTask implements Runnable, Delayed {
     private static int counter = 0;
@@ -38,7 +42,7 @@ class DelayedTask implements Runnable, Delayed {
 
     public String toString() {
         return String.format("[%1$-4d]", delta) +
-                " Task " + id;
+            " Task " + id;
     }
 
     public String summary() {

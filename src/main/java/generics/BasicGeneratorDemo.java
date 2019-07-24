@@ -1,7 +1,8 @@
 package generics;
 //: generics/BasicGeneratorDemo.java
 
-import net.mindview.util.*;
+import net.mindview.util.BasicGenerator;
+import net.mindview.util.Generator;
 
 public class BasicGeneratorDemo {
     public static void main(String[] args) {

@@ -4,6 +4,7 @@ package generics;
 
 /**
  * 栈的泛型实现
+ *
  * @param <T>
  */
 public class LinkedStack<T> {

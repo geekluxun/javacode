@@ -3,8 +3,8 @@ package concurrency;
 // Locks in the concurrent library allow you
 // to give up on trying to acquire a lock.
 
-import java.util.concurrent.*;
-import java.util.concurrent.locks.*;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class AttemptLocking {
     private ReentrantLock lock = new ReentrantLock();

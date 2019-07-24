@@ -3,7 +3,8 @@ package initialization;
 //: initialization/PrimitiveOverloading.java
 // Promotion of primitives and overloading.
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 public class PrimitiveOverloading {
     void f1(char x) {
@@ -223,7 +224,7 @@ public class PrimitiveOverloading {
 
     public static void main(String[] args) {
         PrimitiveOverloading p =
-                new PrimitiveOverloading();
+            new PrimitiveOverloading();
         p.testConstVal();
         p.testChar();
         p.testByte();

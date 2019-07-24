@@ -1,7 +1,8 @@
 package generics;
 //: generics/ListMaker.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListMaker<T> {
     List<T> create() {

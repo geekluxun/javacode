@@ -4,12 +4,12 @@ package containers;
 
 import java.util.*;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class ListSortSearch {
     public static void main(String[] args) {
         List<String> list =
-                new ArrayList<String>(Utilities.list);
+            new ArrayList<String>(Utilities.list);
         list.addAll(Utilities.list);
         print(list);
         Collections.shuffle(list, new Random(47));
@@ -26,14 +26,14 @@ public class ListSortSearch {
         String key = list.get(7);
         int index = Collections.binarySearch(list, key);
         print("Location of " + key + " is " + index +
-                ", list.get(" + index + ") = " + list.get(index));
+            ", list.get(" + index + ") = " + list.get(index));
         Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
         print("Case-insensitive sorted: " + list);
         key = list.get(7);
         index = Collections.binarySearch(list, key,
-                String.CASE_INSENSITIVE_ORDER);
+            String.CASE_INSENSITIVE_ORDER);
         print("Location of " + key + " is " + index +
-                ", list.get(" + index + ") = " + list.get(index));
+            ", list.get(" + index + ") = " + list.get(index));
     }
 } /* Output:
 [one, Two, three, Four, five, six, one, one, Two, three, Four, five, six, one]

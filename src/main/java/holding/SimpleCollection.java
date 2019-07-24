@@ -1,7 +1,8 @@
 package holding;
 //: holding/SimpleCollection.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class SimpleCollection {
     public static void main(String[] args) {

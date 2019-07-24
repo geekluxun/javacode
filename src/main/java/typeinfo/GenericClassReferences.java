@@ -1,5 +1,6 @@
 //: typeinfo/GenericClassReferences.java
 package typeinfo;
+
 public class GenericClassReferences {
     public static void main(String[] args) {
         Class intClass = int.class;

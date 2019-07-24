@@ -2,7 +2,7 @@
 // The difference between instanceof and class
 package typeinfo;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Base {
 }
@@ -17,15 +17,15 @@ public class FamilyVsExactType {
         print("x instanceof Derived " + (x instanceof Derived));
         print("Base.isInstance(x) " + Base.class.isInstance(x));
         print("Derived.isInstance(x) " +
-                Derived.class.isInstance(x));
+            Derived.class.isInstance(x));
         print("x.getClass() == Base.class " +
-                (x.getClass() == Base.class));
+            (x.getClass() == Base.class));
         print("x.getClass() == Derived.class " +
-                (x.getClass() == Derived.class));
+            (x.getClass() == Derived.class));
         print("x.getClass().equals(Base.class)) " +
-                (x.getClass().equals(Base.class)));
+            (x.getClass().equals(Base.class)));
         print("x.getClass().equals(Derived.class)) " +
-                (x.getClass().equals(Derived.class)));
+            (x.getClass().equals(Derived.class)));
     }
 
     public static void main(String[] args) {

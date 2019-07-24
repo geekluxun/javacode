@@ -1,8 +1,11 @@
 //: io/StoreCADState.java
 // Saving the state of a pretend CAD system.
 package io;
+
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 abstract class Shape implements Serializable {
     public static final int RED = 1, BLUE = 2, GREEN = 3;
@@ -22,8 +25,8 @@ abstract class Shape implements Serializable {
 
     public String toString() {
         return getClass() +
-                "color[" + getColor() + "] xPos[" + xPos +
-                "] yPos[" + yPos + "] dim[" + dimension + "]\n";
+            "color[" + getColor() + "] xPos[" + xPos +
+            "] yPos[" + yPos + "] dim[" + dimension + "]\n";
     }
 
     public static Shape randomFactory() {
@@ -80,13 +83,13 @@ class Line extends Shape {
 
     public static void
     serializeStaticState(ObjectOutputStream os)
-            throws IOException {
+        throws IOException {
         os.writeInt(color);
     }
 
     public static void
     deserializeStaticState(ObjectInputStream os)
-            throws IOException {
+        throws IOException {
         color = os.readInt();
     }
 
@@ -106,7 +109,7 @@ class Line extends Shape {
 public class StoreCADState {
     public static void main(String[] args) throws Exception {
         List<Class<? extends Shape>> shapeTypes =
-                new ArrayList<Class<? extends Shape>>();
+            new ArrayList<Class<? extends Shape>>();
         // Add references to the class objects:
         shapeTypes.add(Circle.class);
         shapeTypes.add(Square.class);
@@ -120,7 +123,7 @@ public class StoreCADState {
             ((Shape) shapes.get(i)).setColor(Shape.GREEN);
         // Save the state vector:
         ObjectOutputStream out = new ObjectOutputStream(
-                new FileOutputStream("CADState.out"));
+            new FileOutputStream("CADState.out"));
         out.writeObject(shapeTypes);
         Line.serializeStaticState(out);
         out.writeObject(shapes);

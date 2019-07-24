@@ -2,8 +2,9 @@ package exceptions;
 //: exceptions/LoggingExceptions2.java
 // Logging caught exceptions.
 
-import java.util.logging.*;
-import java.io.*;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.logging.Logger;
 
 public class LoggingExceptions2 {
     private static Logger logger = Logger.getLogger("LoggingExceptions2");

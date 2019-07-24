@@ -3,13 +3,14 @@ package generics;
 
 //: generics/WatercolorSets.java
 
-import generics.watercolors.*;
+import generics.watercolors.Watercolors;
 
-import java.util.*;
+import java.util.EnumSet;
+import java.util.Set;
 
-import static net.mindview.util.Print.*;
-import static net.mindview.util.Sets.*;
 import static generics.watercolors.Watercolors.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Sets.*;
 
 public class WatercolorSets {
     public static void main(String[] args) {

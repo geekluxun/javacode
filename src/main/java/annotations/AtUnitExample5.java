@@ -1,10 +1,14 @@
 //: annotations/AtUnitExample5.java
 package annotations;
 
-import java.io.*;
+import net.mindview.atunit.Test;
+import net.mindview.atunit.TestObjectCleanup;
+import net.mindview.atunit.TestObjectCreate;
+import net.mindview.atunit.TestProperty;
+import net.mindview.util.OSExecute;
 
-import net.mindview.atunit.*;
-import net.mindview.util.*;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class AtUnitExample5 {
     private String text;
@@ -60,7 +64,7 @@ public class AtUnitExample5 {
 
     public static void main(String[] args) throws Exception {
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit AtUnitExample5");
+            "java net.mindview.atunit.AtUnit AtUnitExample5");
     }
 } /* Output:
 annotations.AtUnitExample5

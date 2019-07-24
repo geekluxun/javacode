@@ -1,12 +1,15 @@
 package generics;
 //: generics/DynamicProxyMixin.java
 
-import java.lang.reflect.*;
-import java.util.*;
+import net.mindview.util.TwoTuple;
 
-import net.mindview.util.*;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.HashMap;
+import java.util.Map;
 
-import static net.mindview.util.Tuple.*;
+import static net.mindview.util.Tuple.tuple;
 
 /**
  * 使用动态代理方式实现混型
@@ -16,7 +19,7 @@ class MixinProxy implements InvocationHandler {
 
     public MixinProxy(TwoTuple<Object, Class<?>>... pairs) {
         delegatesByMethod = new HashMap<String, Object>();
-        
+
         for (TwoTuple<Object, Class<?>> pair : pairs) {
             for (Method method : pair.second.getMethods()) {
                 String methodName = method.getName();
@@ -30,7 +33,7 @@ class MixinProxy implements InvocationHandler {
             }
         }
     }
-    
+
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         String methodName = method.getName();
@@ -44,7 +47,7 @@ class MixinProxy implements InvocationHandler {
     @SuppressWarnings("unchecked")
     public static Object newInstance(TwoTuple... pairs) {
         Class[] interfaces = new Class[pairs.length];
-        
+
         for (int i = 0; i < pairs.length; i++) {
             interfaces[i] = (Class) pairs[i].second;
         }
@@ -59,10 +62,10 @@ class MixinProxy implements InvocationHandler {
 public class DynamicProxyMixin {
     public static void main(String[] args) {
         Object mixin = MixinProxy.newInstance(
-                tuple(new BasicImp(), Basic.class),
-                tuple(new TimeStampedImp(), TimeStamped.class),
-                tuple(new SerialNumberedImp(), SerialNumbered.class));
-        
+            tuple(new BasicImp(), Basic.class),
+            tuple(new TimeStampedImp(), TimeStamped.class),
+            tuple(new SerialNumberedImp(), SerialNumbered.class));
+
         Basic b = (Basic) mixin;
         TimeStamped t = (TimeStamped) mixin;
         SerialNumbered s = (SerialNumbered) mixin;

@@ -1,7 +1,8 @@
 //: net/mindview/util/ProcessFiles.java
 package net.mindview.util;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 public class ProcessFiles {
     public interface Strategy {
@@ -30,7 +31,7 @@ public class ProcessFiles {
                         if (!arg.endsWith("." + ext))
                             arg += "." + ext;
                         strategy.process(
-                                new File(arg).getCanonicalFile());
+                            new File(arg).getCanonicalFile());
                     }
                 }
         } catch (IOException e) {
@@ -41,7 +42,7 @@ public class ProcessFiles {
     public void
     processDirectoryTree(File root) throws IOException {
         for (File file : Directory.walk(
-                root.getAbsolutePath(), ".*\\." + ext))
+            root.getAbsolutePath(), ".*\\." + ext))
             strategy.process(file.getCanonicalFile());
     }
 

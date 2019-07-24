@@ -1,7 +1,7 @@
 package generics;
 //: generics/ErasedTypeEquivalence.java
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class ErasedTypeEquivalence {
     public static void main(String[] args) {

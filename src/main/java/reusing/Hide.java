@@ -3,7 +3,7 @@ package reusing;
 // Overloading a base-class method name in a derived
 // class does not hide the base-class versions.
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Homer {
     char doh(char c) {

@@ -4,7 +4,7 @@ package interfaces.music4;
 
 import polymorphism.music.Note;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 abstract class Instrument {
     private int i; // Storage allocated for each
@@ -93,11 +93,11 @@ public class Music4 {
     public static void main(String[] args) {
         // Upcasting during addition to the array:
         Instrument[] orchestra = {
-                new Wind(),
-                new Percussion(),
-                new Stringed(),
-                new Brass(),
-                new Woodwind()
+            new Wind(),
+            new Percussion(),
+            new Stringed(),
+            new Brass(),
+            new Woodwind()
         };
         tuneAll(orchestra);
     }

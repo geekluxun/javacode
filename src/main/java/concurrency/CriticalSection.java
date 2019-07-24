@@ -4,9 +4,13 @@
 // with a thread-safe one.
 package concurrency;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class Pair { // Not thread-safe
     private int x, y;
@@ -119,7 +123,7 @@ class PairManipulator implements Runnable {
 
     public String toString() {
         return "Pair: " + pm.getPair() +
-                " checkCounter = " + pm.checkCounter.get();
+            " checkCounter = " + pm.checkCounter.get();
     }
 }
 
@@ -144,9 +148,9 @@ public class CriticalSection {
     testApproaches(PairManager pman1, PairManager pman2) {
         ExecutorService exec = Executors.newCachedThreadPool();
         PairManipulator pm1 = new PairManipulator(pman1),
-                        pm2 = new PairManipulator(pman2);
+            pm2 = new PairManipulator(pman2);
         PairChecker pcheck1 = new PairChecker(pman1),
-                    pcheck2 = new PairChecker(pman2);
+            pcheck2 = new PairChecker(pman2);
         exec.execute(pm1);
         exec.execute(pm2);
         exec.execute(pcheck1);
@@ -162,7 +166,7 @@ public class CriticalSection {
 
     public static void main(String[] args) {
         PairManager pman1 = new PairManager1(),
-                    pman2 = new PairManager2();
+            pman2 = new PairManager2();
         testApproaches(pman1, pman2);
     }
 } /* Output: (Sample)

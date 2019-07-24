@@ -3,11 +3,13 @@ package arrays;
 //: arrays/CompType.java
 // Implementing Comparable in a class.
 
-import java.util.*;
+import net.mindview.util.Generated;
+import net.mindview.util.Generator;
 
-import net.mindview.util.*;
+import java.util.Arrays;
+import java.util.Random;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class CompType implements Comparable<CompType> {
     int i;
@@ -42,7 +44,7 @@ public class CompType implements Comparable<CompType> {
 
     public static void main(String[] args) {
         CompType[] a =
-                Generated.array(new CompType[12], generator());
+            Generated.array(new CompType[12], generator());
         print("before sorting:");
         print(Arrays.toString(a));
         Arrays.sort(a);

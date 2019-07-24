@@ -3,9 +3,10 @@ package holding;
 //: holding/UniqueWordsAlphabetic.java
 // Producing an alphabetic listing.
 
-import java.util.*;
+import net.mindview.util.TextFile;
 
-import net.mindview.util.*;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class UniqueWordsAlphabetic {
     public static void main(String[] args) {

@@ -2,7 +2,7 @@
 // Sneaking around an interface.
 package typeinfo;
 
-import typeinfo.interfacea.*;
+import typeinfo.interfacea.A;
 
 class B3 implements A {
     public void f() {

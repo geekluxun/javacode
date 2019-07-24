@@ -4,7 +4,7 @@ package holding;
 
 import java.util.*;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class PrintingContainers {
     static Collection fill(Collection<String> collection) {

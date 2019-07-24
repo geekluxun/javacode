@@ -3,7 +3,8 @@ package generics;
 // Autoboxing compensates for the inability to use
 // primitives in generics.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListOfInt {
     public static void main(String[] args) {

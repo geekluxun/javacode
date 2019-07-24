@@ -1,6 +1,7 @@
 //: reusing/FinalArguments.java
 // Using "final" with method arguments.
 package reusing;
+
 class Gizmo {
     public void spin() {
     }

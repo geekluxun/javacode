@@ -3,27 +3,28 @@
 // number of files given on the command line.
 // {Args: ZipCompress.java}
 package io;
-import java.util.zip.*;
-import java.io.*;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import java.io.*;
+import java.util.Enumeration;
+import java.util.zip.*;
+
+import static net.mindview.util.Print.print;
 
 public class ZipCompress {
     public static void main(String[] args)
-            throws IOException {
+        throws IOException {
         FileOutputStream f = new FileOutputStream("test.zip");
         CheckedOutputStream csum =
-                new CheckedOutputStream(f, new Adler32());
+            new CheckedOutputStream(f, new Adler32());
         ZipOutputStream zos = new ZipOutputStream(csum);
         BufferedOutputStream out =
-                new BufferedOutputStream(zos);
+            new BufferedOutputStream(zos);
         zos.setComment("A test of Java Zipping");
         // No corresponding getComment(), though.
         for (String arg : args) {
             print("Writing file " + arg);
             BufferedReader in =
-                    new BufferedReader(new FileReader(arg));
+                new BufferedReader(new FileReader(arg));
             zos.putNextEntry(new ZipEntry(arg));
             int c;
             while ((c = in.read()) != -1)
@@ -38,7 +39,7 @@ public class ZipCompress {
         print("Reading file");
         FileInputStream fi = new FileInputStream("test.zip");
         CheckedInputStream csumi =
-                new CheckedInputStream(fi, new Adler32());
+            new CheckedInputStream(fi, new Adler32());
         ZipInputStream in2 = new ZipInputStream(csumi);
         BufferedInputStream bis = new BufferedInputStream(in2);
         ZipEntry ze;
@@ -59,6 +60,6 @@ public class ZipCompress {
             print("File: " + ze2);
             // ... and extract the data as before
         }
-    /* if(args.length == 1) */
+        /* if(args.length == 1) */
     }
 } /* (Execute to see output) *///:~

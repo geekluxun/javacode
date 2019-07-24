@@ -1,6 +1,7 @@
 //: interfaces/RandomDoubles.java
 package interfaces;
-import java.util.*;
+
+import java.util.Random;
 
 public class RandomDoubles {
     private static Random rand = new Random(47);

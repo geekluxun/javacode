@@ -1,8 +1,9 @@
 //: arrays/TestGenerated.java
 
-import java.util.*;
+import net.mindview.util.CountingGenerator;
+import net.mindview.util.Generated;
 
-import net.mindview.util.*;
+import java.util.Arrays;
 
 public class TestGenerated {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class TestGenerated {
         a = Generated.array(a, new CountingGenerator.Integer());
         System.out.println(Arrays.toString(a));
         Integer[] b = Generated.array(Integer.class,
-                new CountingGenerator.Integer(), 15);
+            new CountingGenerator.Integer(), 15);
         System.out.println(Arrays.toString(b));
     }
 } /* Output:

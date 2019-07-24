@@ -1,7 +1,7 @@
 package generics;
 //: generics/Mixins.java
 
-import java.util.*;
+import java.util.Date;
 
 interface TimeStamped {
     long getStamp();
@@ -13,6 +13,7 @@ class TimeStampedImp implements TimeStamped {
     public TimeStampedImp() {
         timeStamp = new Date().getTime();
     }
+
     @Override
     public long getStamp() {
         return timeStamp;
@@ -62,6 +63,7 @@ class Mixin extends BasicImp implements TimeStamped, SerialNumbered {
     public long getStamp() {
         return timeStamp.getStamp();
     }
+
     @Override
     public long getSerialNumber() {
         return serialNumber.getSerialNumber();

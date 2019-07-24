@@ -1,7 +1,7 @@
 //: net/mindview/util/Hex.java
 package net.mindview.util;
 
-import java.io.*;
+import java.io.File;
 
 public class Hex {
     public static String format(byte[] data) {
@@ -22,10 +22,10 @@ public class Hex {
         if (args.length == 0)
             // Test by displaying this class file:
             System.out.println(
-                    format(BinaryFile.read("Hex.class")));
+                format(BinaryFile.read("Hex.class")));
         else
             System.out.println(
-                    format(BinaryFile.read(new File(args[0]))));
+                format(BinaryFile.read(new File(args[0]))));
     }
 } /* Output: (Sample)
 00000: CA FE BA BE 00 00 00 31 00 52 0A 00 05 00 22 07

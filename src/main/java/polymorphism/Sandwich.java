@@ -2,7 +2,7 @@
 // Order of constructor calls.
 package polymorphism;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Meal {
     Meal() {

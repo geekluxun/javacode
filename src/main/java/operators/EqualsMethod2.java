@@ -1,6 +1,7 @@
 //: operators/EqualsMethod2.java
 // Default equals() does not compare contents.
 package operators;
+
 class Value {
     int i;
 }

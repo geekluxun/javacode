@@ -2,9 +2,11 @@ package arrays;
 
 //: arrays/ContainerComparison.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class BerylliumSphere {
     private static long counter;
@@ -24,7 +26,7 @@ public class ContainerComparison {
         print(spheres[4]);
 
         List<BerylliumSphere> sphereList =
-                new ArrayList<BerylliumSphere>();
+            new ArrayList<BerylliumSphere>();
         for (int i = 0; i < 5; i++)
             sphereList.add(new BerylliumSphere());
         print(sphereList);
@@ -35,7 +37,7 @@ public class ContainerComparison {
         print(integers[4]);
 
         List<Integer> intList = new ArrayList<Integer>(
-                Arrays.asList(0, 1, 2, 3, 4, 5));
+            Arrays.asList(0, 1, 2, 3, 4, 5));
         intList.add(97);
         print(intList);
         print(intList.get(4));

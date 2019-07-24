@@ -2,6 +2,7 @@
 // Downcasting & Runtime type information (RTTI).
 // {ThrowsException}
 package polymorphism;
+
 class Useful {
     public void f() {
     }
@@ -30,8 +31,8 @@ class MoreUseful extends Useful {
 public class RTTI {
     public static void main(String[] args) {
         Useful[] x = {
-                new Useful(),
-                new MoreUseful()
+            new Useful(),
+            new MoreUseful()
         };
         x[0].f();
         x[1].g();

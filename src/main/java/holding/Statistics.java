@@ -3,7 +3,9 @@ package holding;
 //: holding/Statistics.java
 // Simple demonstration of HashMap.
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class Statistics {
     public static void main(String[] args) {

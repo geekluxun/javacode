@@ -2,7 +2,7 @@
 // Demonstrates initialization order.
 package initialization;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 // When the constructor is called to create a
 // Window object, you'll see a message:

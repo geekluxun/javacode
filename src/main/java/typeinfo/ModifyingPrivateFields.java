@@ -1,6 +1,7 @@
 //: typeinfo/ModifyingPrivateFields.java
 package typeinfo;
-import java.lang.reflect.*;
+
+import java.lang.reflect.Field;
 
 class WithPrivateFinalField {
     private int i = 1;

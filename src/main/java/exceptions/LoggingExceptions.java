@@ -2,8 +2,9 @@ package exceptions;
 //: exceptions/LoggingExceptions.java
 // An exception that reports through a Logger.
 
-import java.util.logging.*;
-import java.io.*;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.logging.Logger;
 
 class LoggingException extends Exception {
     private static Logger logger = Logger.getLogger("LoggingException");

@@ -1,7 +1,7 @@
 //: enumerated/Input.java
 package enumerated;
 
-import java.util.*;
+import java.util.Random;
 
 public enum Input {
     NICKEL(5), DIME(10), QUARTER(25), DOLLAR(100),

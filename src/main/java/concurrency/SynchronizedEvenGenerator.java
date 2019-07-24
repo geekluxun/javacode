@@ -6,6 +6,7 @@ package concurrency;
 public class
 SynchronizedEvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
+
     //保护共享资源
     public synchronized int next() {
         ++currentEvenValue;

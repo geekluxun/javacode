@@ -21,7 +21,7 @@ class Person {
     }
 
     public static class NullPerson
-            extends Person implements Null {
+        extends Person implements Null {
         private NullPerson() {
             super("None", "None", "None");
         }

@@ -3,11 +3,13 @@ package concurrency;
 // Using a Semaphore inside a Pool, to restrict
 // the number of tasks that can use a resource.
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Semaphore;
 
 /**
  * Semaphore示例
+ *
  * @param <T>
  */
 public class Pool<T> {

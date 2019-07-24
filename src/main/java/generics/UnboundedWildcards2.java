@@ -1,7 +1,8 @@
 package generics;
 //: generics/UnboundedWildcards2.java
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UnboundedWildcards2 {
     static Map map1;

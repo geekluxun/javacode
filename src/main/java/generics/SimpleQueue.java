@@ -2,7 +2,8 @@ package generics;
 //: generics/SimpleQueue.java
 // A different kind of container that is Iterable
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class SimpleQueue<T> implements Iterable<T> {
     private LinkedList<T> storage = new LinkedList<T>();

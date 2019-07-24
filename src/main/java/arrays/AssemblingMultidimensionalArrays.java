@@ -1,7 +1,7 @@
 //: arrays/AssemblingMultidimensionalArrays.java
 // Creating multidimensional arrays.
 
-import java.util.*;
+import java.util.Arrays;
 
 public class AssemblingMultidimensionalArrays {
     public static void main(String[] args) {

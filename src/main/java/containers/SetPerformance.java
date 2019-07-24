@@ -7,7 +7,7 @@ import java.util.*;
 
 public class SetPerformance {
     static List<Test<Set<Integer>>> tests =
-            new ArrayList<Test<Set<Integer>>>();
+        new ArrayList<Test<Set<Integer>>>();
 
     static {
         tests.add(new Test<Set<Integer>>("add") {

@@ -1,7 +1,8 @@
 package generics;
 //: generics/GenericWriting.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GenericWriting {
     static <T> void writeExact(List<T> list, T item) {
@@ -10,7 +11,7 @@ public class GenericWriting {
 
     static List<Apple> apples = new ArrayList<Apple>();
     static List<Fruit> fruit = new ArrayList<Fruit>();
-    
+
     static void f1() {
         writeExact(apples, new Apple());
         // writeExact(fruit, new Apple()); // Error:
@@ -19,6 +20,7 @@ public class GenericWriting {
 
     /**
      * 此处使用了通配符? super T，这样就可以把一个Apple传给List<Fruit>
+     *
      * @param list
      * @param item
      * @param <T>

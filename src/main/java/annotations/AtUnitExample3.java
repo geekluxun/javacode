@@ -1,8 +1,9 @@
 //: annotations/AtUnitExample3.java
 package annotations;
 
-import net.mindview.atunit.*;
-import net.mindview.util.*;
+import net.mindview.atunit.Test;
+import net.mindview.atunit.TestObjectCreate;
+import net.mindview.util.OSExecute;
 
 public class AtUnitExample3 {
     private int n;
@@ -46,7 +47,7 @@ public class AtUnitExample3 {
 
     public static void main(String[] args) throws Exception {
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit AtUnitExample3");
+            "java net.mindview.atunit.AtUnit AtUnitExample3");
     }
 } /* Output:
 annotations.AtUnitExample3

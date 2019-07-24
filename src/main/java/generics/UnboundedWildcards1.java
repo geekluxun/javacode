@@ -1,7 +1,8 @@
 package generics;
 //: generics/UnboundedWildcards1.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UnboundedWildcards1 {
     static List list1;

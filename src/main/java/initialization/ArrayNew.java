@@ -3,9 +3,10 @@ package initialization;
 //: initialization/ArrayNew.java
 // Creating arrays with new.
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Random;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class ArrayNew {
     public static void main(String[] args) {

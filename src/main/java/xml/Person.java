@@ -4,10 +4,15 @@
 // the XOM library from http://www.xom.nu }
 package xml;
 
-import nu.xom.*;
+import nu.xom.Document;
+import nu.xom.Element;
+import nu.xom.Serializer;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.Arrays;
+import java.util.List;
 
 public class Person {
     private String first, last;
@@ -51,9 +56,9 @@ public class Person {
 
     public static void main(String[] args) throws Exception {
         List<Person> people = Arrays.asList(
-                new Person("Dr. Bunsen", "Honeydew"),
-                new Person("Gonzo", "The Great"),
-                new Person("Phillip J.", "Fry"));
+            new Person("Dr. Bunsen", "Honeydew"),
+            new Person("Gonzo", "The Great"),
+            new Person("Phillip J.", "Fry"));
         System.out.println(people);
         Element root = new Element("people");
         for (Person p : people)
@@ -61,7 +66,7 @@ public class Person {
         Document doc = new Document(root);
         format(System.out, doc);
         format(new BufferedOutputStream(new FileOutputStream(
-                "People.xml")), doc);
+            "People.xml")), doc);
     }
 } /* Output:
 [Dr. Bunsen Honeydew, Gonzo The Great, Phillip J. Fry]

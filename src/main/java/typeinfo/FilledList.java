@@ -1,6 +1,8 @@
 //: typeinfo/FilledList.java
 package typeinfo;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 class CountedInteger {
     private static long counter;
@@ -31,7 +33,7 @@ public class FilledList<T> {
 
     public static void main(String[] args) {
         FilledList<CountedInteger> fl =
-                new FilledList<CountedInteger>(CountedInteger.class);
+            new FilledList<CountedInteger>(CountedInteger.class);
         System.out.println(fl.create(15));
     }
 } /* Output:

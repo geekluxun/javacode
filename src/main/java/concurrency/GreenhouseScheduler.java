@@ -4,8 +4,9 @@ package concurrency;
 // to use a ScheduledThreadPoolExecutor.
 // {Args: 5000}
 
-import java.util.concurrent.*;
 import java.util.*;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class GreenhouseScheduler {
     private volatile boolean light = false;

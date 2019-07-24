@@ -29,9 +29,9 @@ public class Burrito {
 
     public static void main(String[] args) {
         Burrito
-                plain = new Burrito(Spiciness.NOT),
-                greenChile = new Burrito(Spiciness.MEDIUM),
-                jalapeno = new Burrito(Spiciness.HOT);
+            plain = new Burrito(Spiciness.NOT),
+            greenChile = new Burrito(Spiciness.MEDIUM),
+            jalapeno = new Burrito(Spiciness.HOT);
         plain.describe();
         greenChile.describe();
         jalapeno.describe();

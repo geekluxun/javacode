@@ -2,7 +2,7 @@
 // Demonstrates WeakHashMap.
 package containers;
 
-import java.util.*;
+import java.util.WeakHashMap;
 
 class Element {
     private String ident;
@@ -21,12 +21,12 @@ class Element {
 
     public boolean equals(Object r) {
         return r instanceof Element &&
-                ident.equals(((Element) r).ident);
+            ident.equals(((Element) r).ident);
     }
 
     protected void finalize() {
         System.out.println("Finalizing " +
-                getClass().getSimpleName() + " " + ident);
+            getClass().getSimpleName() + " " + ident);
     }
 }
 
@@ -50,7 +50,7 @@ public class CanonicalMapping {
             size = new Integer(args[0]);
         Key[] keys = new Key[size];
         WeakHashMap<Key, Value> map =
-                new WeakHashMap<Key, Value>();
+            new WeakHashMap<Key, Value>();
         for (int i = 0; i < size; i++) {
             Key k = new Key(Integer.toString(i));
             Value v = new Value(Integer.toString(i));

@@ -4,10 +4,11 @@ package bangbean;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.TooManyListenersException;
 
-import static net.mindview.util.SwingConsole.*;
+import static net.mindview.util.SwingConsole.run;
 
 public class BangBeanTest extends JFrame {
     private JTextField txt = new JTextField(20);

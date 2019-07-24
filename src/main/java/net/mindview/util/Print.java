@@ -3,7 +3,7 @@
 // qualifiers, using Java SE5 static imports:
 package net.mindview.util;
 
-import java.io.*;
+import java.io.PrintStream;
 
 public class Print {
     // Print with a newline:

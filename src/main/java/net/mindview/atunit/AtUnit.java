@@ -3,13 +3,18 @@
 // {RunByHand}
 package net.mindview.atunit;
 
-import java.lang.reflect.*;
-import java.io.*;
-import java.util.*;
+import net.mindview.util.BinaryFile;
+import net.mindview.util.ProcessFiles;
 
-import net.mindview.util.*;
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.List;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 public class AtUnit implements ProcessFiles.Strategy {
     static Class<?> testClass;
@@ -19,14 +24,14 @@ public class AtUnit implements ProcessFiles.Strategy {
 
     public static void main(String[] args) throws Exception {
         ClassLoader.getSystemClassLoader()
-                .setDefaultAssertionStatus(true); // Enable asserts
+            .setDefaultAssertionStatus(true); // Enable asserts
         new ProcessFiles(new AtUnit(), "class").start(args);
         if (failures == 0)
             print("OK (" + testsRun + " tests)");
         else {
             print("(" + testsRun + " tests)");
             print("\n>>> " + failures + " FAILURE" +
-                    (failures > 1 ? "S" : "") + " <<<");
+                (failures > 1 ? "S" : "") + " <<<");
             for (String failed : failedTests)
                 print("  " + failed);
         }
@@ -35,7 +40,7 @@ public class AtUnit implements ProcessFiles.Strategy {
     public void process(File cFile) {
         try {
             String cName = ClassNameFinder.thisClass(
-                    BinaryFile.read(cFile));
+                BinaryFile.read(cFile));
             if (!cName.contains("."))
                 return; // Ignore unpackaged classes
             testClass = Class.forName(cName);
@@ -56,9 +61,9 @@ public class AtUnit implements ProcessFiles.Strategy {
             if (creator == null)
                 try {
                     if (!Modifier.isPublic(testClass
-                            .getDeclaredConstructor().getModifiers())) {
+                        .getDeclaredConstructor().getModifiers())) {
                         print("Error: " + testClass +
-                                " default constructor must be public");
+                            " default constructor must be public");
                         System.exit(1);
                     }
                 } catch (NoSuchMethodException e) {
@@ -87,7 +92,7 @@ public class AtUnit implements ProcessFiles.Strategy {
                 if (!success) {
                     failures++;
                     failedTests.add(testClass.getName() +
-                            ": " + m.getName());
+                        ": " + m.getName());
                 }
                 if (cleanup != null)
                     cleanup.invoke(testObject, testObject);
@@ -102,9 +107,9 @@ public class AtUnit implements ProcessFiles.Strategy {
             if (m.getAnnotation(Test.class) == null)
                 return;
             if (!(m.getReturnType().equals(boolean.class) ||
-                    m.getReturnType().equals(void.class)))
+                m.getReturnType().equals(void.class)))
                 throw new RuntimeException("@Test method" +
-                        " must return boolean or void");
+                    " must return boolean or void");
             m.setAccessible(true); // In case it's private, etc.
             add(m);
         }
@@ -115,11 +120,11 @@ public class AtUnit implements ProcessFiles.Strategy {
             return null;
         if (!m.getReturnType().equals(testClass))
             throw new RuntimeException("@TestObjectCreate " +
-                    "must return instance of Class to be tested");
+                "must return instance of Class to be tested");
         if ((m.getModifiers() &
-                java.lang.reflect.Modifier.STATIC) < 1)
+            java.lang.reflect.Modifier.STATIC) < 1)
             throw new RuntimeException("@TestObjectCreate " +
-                    "must be static.");
+                "must be static.");
         m.setAccessible(true);
         return m;
     }
@@ -129,15 +134,15 @@ public class AtUnit implements ProcessFiles.Strategy {
             return null;
         if (!m.getReturnType().equals(void.class))
             throw new RuntimeException("@TestObjectCleanup " +
-                    "must return void");
+                "must return void");
         if ((m.getModifiers() &
-                java.lang.reflect.Modifier.STATIC) < 1)
+            java.lang.reflect.Modifier.STATIC) < 1)
             throw new RuntimeException("@TestObjectCleanup " +
-                    "must be static.");
+                "must be static.");
         if (m.getParameterTypes().length == 0 ||
-                m.getParameterTypes()[0] != testClass)
+            m.getParameterTypes()[0] != testClass)
             throw new RuntimeException("@TestObjectCleanup " +
-                    "must take an argument of the tested type.");
+                "must take an argument of the tested type.");
         m.setAccessible(true);
         return m;
     }
@@ -148,14 +153,14 @@ public class AtUnit implements ProcessFiles.Strategy {
                 return creator.invoke(testClass);
             } catch (Exception e) {
                 throw new RuntimeException("Couldn't run " +
-                        "@TestObject (creator) method.");
+                    "@TestObject (creator) method.");
             }
         } else { // Use the default constructor:
             try {
                 return testClass.newInstance();
             } catch (Exception e) {
                 throw new RuntimeException("Couldn't create a " +
-                        "test object. Try using a @TestObject method.");
+                    "test object. Try using a @TestObject method.");
             }
         }
     }

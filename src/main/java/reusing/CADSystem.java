@@ -2,7 +2,7 @@
 // Ensuring proper cleanup.
 package reusing;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Shape {
     Shape(int i) {

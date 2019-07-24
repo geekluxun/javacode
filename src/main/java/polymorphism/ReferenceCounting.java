@@ -1,7 +1,8 @@
 //: polymorphism/ReferenceCounting.java
 // Cleaning up shared member objects.
 package polymorphism;
-import static net.mindview.util.Print.*;
+
+import static net.mindview.util.Print.print;
 
 class Shared {
     private int refcount = 0;
@@ -51,8 +52,8 @@ public class ReferenceCounting {
     public static void main(String[] args) {
         Shared shared = new Shared();
         Composing[] composing = {new Composing(shared),
-                new Composing(shared), new Composing(shared),
-                new Composing(shared), new Composing(shared)};
+            new Composing(shared), new Composing(shared),
+            new Composing(shared), new Composing(shared)};
         for (Composing c : composing)
             c.dispose();
     }

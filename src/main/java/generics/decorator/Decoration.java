@@ -1,7 +1,7 @@
 //: generics/decorator/Decoration.java
 package generics.decorator;
 
-import java.util.*;
+import java.util.Date;
 
 class Basic {
     private String value;

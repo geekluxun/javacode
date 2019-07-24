@@ -2,10 +2,13 @@ package concurrency;
 //: concurrency/ToastOMatic.java
 // A toaster that uses queues.
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Toast {
     public enum Status {DRY, BUTTERED, JAMMED}
@@ -54,7 +57,7 @@ class Toaster implements Runnable {
         try {
             while (!Thread.interrupted()) {
                 TimeUnit.MILLISECONDS.sleep(
-                        100 + rand.nextInt(500));
+                    100 + rand.nextInt(500));
                 // Make toast
                 Toast t = new Toast(count++);
                 print(t);
@@ -135,7 +138,7 @@ class Eater implements Runnable {
                 // Verify that the toast is coming in order,
                 // and that all pieces are getting jammed:
                 if (t.getId() != counter++ ||
-                        t.getStatus() != Toast.Status.JAMMED) {
+                    t.getStatus() != Toast.Status.JAMMED) {
                     print(">>>> Error: " + t);
                     System.exit(1);
                 } else
@@ -151,8 +154,8 @@ class Eater implements Runnable {
 public class ToastOMatic {
     public static void main(String[] args) throws Exception {
         ToastQueue dryQueue = new ToastQueue(),
-                butteredQueue = new ToastQueue(),
-                finishedQueue = new ToastQueue();
+            butteredQueue = new ToastQueue(),
+            finishedQueue = new ToastQueue();
         ExecutorService exec = Executors.newCachedThreadPool();
         exec.execute(new Toaster(dryQueue));
         exec.execute(new Butterer(dryQueue, butteredQueue));

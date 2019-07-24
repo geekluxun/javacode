@@ -2,16 +2,17 @@
 // Generate different types of Coffee:
 package generics.coffee;
 
-import java.util.*;
+import net.mindview.util.Generator;
 
-import net.mindview.util.*;
+import java.util.Iterator;
+import java.util.Random;
 
 public class CoffeeGenerator implements Generator<Coffee>, Iterable<Coffee> {
-    private Class[] types = {   Latte.class,
-                                Mocha.class,
-                                Cappuccino.class,
-                                Americano.class,
-                                Breve.class,};
+    private Class[] types = {Latte.class,
+        Mocha.class,
+        Cappuccino.class,
+        Americano.class,
+        Breve.class,};
 
     private static Random rand = new Random(47);
 
@@ -42,11 +43,13 @@ public class CoffeeGenerator implements Generator<Coffee>, Iterable<Coffee> {
         public boolean hasNext() {
             return count > 0;
         }
+
         @Override
         public Coffee next() {
             count--;
             return CoffeeGenerator.this.next();
         }
+
         @Override
         public void remove() { // Not implemented
             throw new UnsupportedOperationException();

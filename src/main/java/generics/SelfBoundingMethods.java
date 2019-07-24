@@ -1,4 +1,3 @@
-
 package generics;
 //: generics/SelfBoundingMethods.java
 

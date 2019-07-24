@@ -47,11 +47,11 @@ public class StormyInning extends Inning implements Storm {
     // OK to add new exceptions for constructors, but you
     // must deal with the base constructor exceptions:
     public StormyInning()
-            throws RainedOut, BaseballException {
+        throws RainedOut, BaseballException {
     }
 
     public StormyInning(String s)
-            throws Foul, BaseballException {
+        throws Foul, BaseballException {
     }
 
     // Regular methods must conform to base class:

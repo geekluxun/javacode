@@ -3,7 +3,7 @@ package containers;
 // Does Math.random() produce 0.0 and 1.0?
 // {RunByHand}
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class RandomBounds {
     static void usage() {

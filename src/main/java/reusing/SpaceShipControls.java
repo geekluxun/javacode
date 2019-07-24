@@ -1,5 +1,6 @@
 //: reusing/SpaceShipControls.java
 package reusing;
+
 public class SpaceShipControls {
     void up(int velocity) {
     }

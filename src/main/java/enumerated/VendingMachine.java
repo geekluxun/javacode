@@ -2,12 +2,14 @@
 // {Args: VendingMachineInput.txt}
 package enumerated;
 
-import java.util.*;
+import net.mindview.util.Generator;
+import net.mindview.util.TextFile;
 
-import net.mindview.util.*;
+import java.util.EnumMap;
+import java.util.Iterator;
 
 import static enumerated.Input.*;
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 enum Category {
     MONEY(NICKEL, DIME, QUARTER, DOLLAR),
@@ -21,7 +23,7 @@ enum Category {
     }
 
     private static EnumMap<Input, Category> categories =
-            new EnumMap<Input, Category>(Input.class);
+        new EnumMap<Input, Category>(Input.class);
 
     static {
         for (Category c : Category.class.getEnumConstants())
@@ -108,12 +110,12 @@ public class VendingMachine {
 
         void next(Input input) {
             throw new RuntimeException("Only call " +
-                    "next(Input input) for non-transient states");
+                "next(Input input) for non-transient states");
         }
 
         void next() {
             throw new RuntimeException("Only call next() for " +
-                    "StateDuration.TRANSIENT states");
+                "StateDuration.TRANSIENT states");
         }
 
         void output() {

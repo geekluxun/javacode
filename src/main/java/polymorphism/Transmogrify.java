@@ -2,7 +2,8 @@
 // Dynamically changing the behavior of an object
 // via composition (the "State" design pattern).
 package polymorphism;
-import static net.mindview.util.Print.*;
+
+import static net.mindview.util.Print.print;
 
 class Actor {
     public void act() {

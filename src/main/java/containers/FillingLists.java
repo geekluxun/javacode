@@ -2,7 +2,9 @@ package containers;
 //: containers/FillingLists.java
 // The Collections.fill() & Collections.nCopies() methods.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 class StringAddress {
     private String s;

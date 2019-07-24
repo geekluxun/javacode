@@ -3,8 +3,14 @@ package concurrency;
 // Using queues and multithreading.
 // {Args: 5}
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Random;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 // Read-only objects don't require synchronization:
 class Customer {
@@ -79,7 +85,7 @@ class Teller implements Runnable, Comparable<Teller> {
             while (!Thread.interrupted()) {
                 Customer customer = customers.take();
                 TimeUnit.MILLISECONDS.sleep(
-                        customer.getServiceTime());
+                    customer.getServiceTime());
                 synchronized (this) {
                     customersServed++;
                     while (!servingCustomerLine)
@@ -114,7 +120,7 @@ class Teller implements Runnable, Comparable<Teller> {
     // Used by priority queue:
     public synchronized int compareTo(Teller other) {
         return customersServed < other.customersServed ? -1 :
-                (customersServed == other.customersServed ? 0 : 1);
+            (customersServed == other.customersServed ? 0 : 1);
     }
 }
 
@@ -122,9 +128,9 @@ class TellerManager implements Runnable {
     private ExecutorService exec;
     private CustomerLine customers;
     private PriorityQueue<Teller> workingTellers =
-            new PriorityQueue<Teller>();
+        new PriorityQueue<Teller>();
     private Queue<Teller> tellersDoingOtherThings =
-            new LinkedList<Teller>();
+        new LinkedList<Teller>();
     private int adjustmentPeriod;
     private static Random rand = new Random(47);
 
@@ -161,7 +167,7 @@ class TellerManager implements Runnable {
         }
         // If line is short enough, remove a teller:
         if (workingTellers.size() > 1 &&
-                customers.size() / workingTellers.size() < 2)
+            customers.size() / workingTellers.size() < 2)
             reassignOneTeller();
 
         // If there is no line, we only need one teller:

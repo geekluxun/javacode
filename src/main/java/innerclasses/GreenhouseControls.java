@@ -5,7 +5,8 @@ package innerclasses;
 // classes allow you to encapsulate different
 // functionality for each type of event.
 
-import innerclasses.controller.*;
+import innerclasses.controller.Controller;
+import innerclasses.controller.Event;
 
 public class GreenhouseControls extends Controller {
     private boolean light = false;

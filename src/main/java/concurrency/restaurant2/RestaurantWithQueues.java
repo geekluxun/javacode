@@ -2,12 +2,15 @@
 // {Args: 5}
 package concurrency.restaurant2;
 
-import enumerated.menu.*;
+import enumerated.menu.Course;
+import enumerated.menu.Food;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.*;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 // This is given to the waiter, who gives it to the chef:
 class Order { // (A data-transfer object)
@@ -37,8 +40,8 @@ class Order { // (A data-transfer object)
 
     public String toString() {
         return "Order: " + id + " item: " + food +
-                " for: " + customer +
-                " served by: " + waitPerson;
+            " for: " + customer +
+            " served by: " + waitPerson;
     }
 }
 
@@ -71,7 +74,7 @@ class Customer implements Runnable {
     private final WaitPerson waitPerson;
     // Only one course at a time can be received:
     private SynchronousQueue<Plate> placeSetting =
-            new SynchronousQueue<Plate>();
+        new SynchronousQueue<Plate>();
 
     public Customer(WaitPerson w) {
         waitPerson = w;
@@ -93,7 +96,7 @@ class Customer implements Runnable {
                 print(this + "eating " + placeSetting.take());
             } catch (InterruptedException e) {
                 print(this + "waiting for " +
-                        course + " interrupted");
+                    course + " interrupted");
                 break;
             }
         }
@@ -110,7 +113,7 @@ class WaitPerson implements Runnable {
     private final int id = counter++;
     private final Restaurant restaurant;
     BlockingQueue<Plate> filledOrders =
-            new LinkedBlockingQueue<Plate>();
+        new LinkedBlockingQueue<Plate>();
 
     public WaitPerson(Restaurant rest) {
         restaurant = rest;
@@ -132,8 +135,8 @@ class WaitPerson implements Runnable {
                 // Blocks until a course is ready
                 Plate plate = filledOrders.take();
                 print(this + "received " + plate +
-                        " delivering to " +
-                        plate.getOrder().getCustomer());
+                    " delivering to " +
+                    plate.getOrder().getCustomer());
                 plate.getOrder().getCustomer().deliver(plate);
             }
         } catch (InterruptedException e) {
@@ -181,12 +184,12 @@ class Chef implements Runnable {
 
 class Restaurant implements Runnable {
     private List<WaitPerson> waitPersons =
-            new ArrayList<WaitPerson>();
+        new ArrayList<WaitPerson>();
     private List<Chef> chefs = new ArrayList<Chef>();
     private ExecutorService exec;
     private static Random rand = new Random(47);
     BlockingQueue<Order>
-            orders = new LinkedBlockingQueue<Order>();
+        orders = new LinkedBlockingQueue<Order>();
 
     public Restaurant(ExecutorService e, int nWaitPersons,
                       int nChefs) {
@@ -208,7 +211,7 @@ class Restaurant implements Runnable {
             while (!Thread.interrupted()) {
                 // A new customer arrives; assign a WaitPerson:
                 WaitPerson wp = waitPersons.get(
-                        rand.nextInt(waitPersons.size()));
+                    rand.nextInt(waitPersons.size()));
                 Customer c = new Customer(wp);
                 exec.execute(c);
                 TimeUnit.MILLISECONDS.sleep(100);

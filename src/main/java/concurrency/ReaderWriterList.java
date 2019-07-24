@@ -1,21 +1,26 @@
 package concurrency;
 //: concurrency/ReaderWriterList.java
 
-import java.util.concurrent.*;
-import java.util.concurrent.locks.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class ReaderWriterList<T> {
     private ArrayList<T> lockedList;
     // Make the ordering fair:
     private ReentrantReadWriteLock lock =
-            new ReentrantReadWriteLock(true);
+        new ReentrantReadWriteLock(true);
 
     public ReaderWriterList(int size, T initialValue) {
         lockedList = new ArrayList<T>(
-                Collections.nCopies(size, initialValue));
+            Collections.nCopies(size, initialValue));
     }
 
     public T set(int index, T element) {
@@ -52,7 +57,7 @@ class ReaderWriterListTest {
     private final static int SIZE = 100;
     private static Random rand = new Random(47);
     private ReaderWriterList<Integer> list =
-            new ReaderWriterList<Integer>(SIZE, 0);
+        new ReaderWriterList<Integer>(SIZE, 0);
 
     private class Writer implements Runnable {
         public void run() {

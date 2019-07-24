@@ -10,6 +10,7 @@ public class Groundhog2 extends Groundhog {
 
     /**
      * 使用 编号作为hashcode
+     *
      * @return
      */
     public int hashCode() {
@@ -18,6 +19,6 @@ public class Groundhog2 extends Groundhog {
 
     public boolean equals(Object o) {
         return o instanceof Groundhog2 &&
-                (number == ((Groundhog2) o).number);
+            (number == ((Groundhog2) o).number);
     }
 } ///:~

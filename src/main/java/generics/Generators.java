@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- *  泛型和容器
+ * 泛型和容器
  */
 public class Generators {
     public static <T> Collection<T>

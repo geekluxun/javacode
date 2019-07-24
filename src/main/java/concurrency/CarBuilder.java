@@ -2,15 +2,16 @@ package concurrency;
 //: concurrency/CarBuilder.java
 // A complex example of tasks working together.
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.*;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Car {
     private final int id;
     private boolean
-            engine = false, driveTrain = false, wheels = false;
+        engine = false, driveTrain = false, wheels = false;
 
     public Car(int idn) {
         id = idn;
@@ -39,8 +40,8 @@ class Car {
 
     public synchronized String toString() {
         return "Car " + id + " [" + " engine: " + engine
-                + " driveTrain: " + driveTrain
-                + " wheels: " + wheels + " ]";
+            + " driveTrain: " + driveTrain
+            + " wheels: " + wheels + " ]";
     }
 }
 
@@ -235,7 +236,7 @@ class RobotPool {
 
     public synchronized void
     hire(Class<? extends Robot> robotType, Assembler d)
-            throws InterruptedException {
+        throws InterruptedException {
         for (Robot r : pool)
             if (r.getClass().equals(robotType)) {
                 pool.remove(r);
@@ -255,14 +256,14 @@ class RobotPool {
 public class CarBuilder {
     public static void main(String[] args) throws Exception {
         CarQueue chassisQueue = new CarQueue(),
-                finishingQueue = new CarQueue();
+            finishingQueue = new CarQueue();
         ExecutorService exec = Executors.newCachedThreadPool();
         RobotPool robotPool = new RobotPool();
         exec.execute(new EngineRobot(robotPool));
         exec.execute(new DriveTrainRobot(robotPool));
         exec.execute(new WheelRobot(robotPool));
         exec.execute(new Assembler(
-                chassisQueue, finishingQueue, robotPool));
+            chassisQueue, finishingQueue, robotPool));
         exec.execute(new Reporter(finishingQueue));
         // Start everything running by producing chassis:
         exec.execute(new ChassisBuilder(chassisQueue));

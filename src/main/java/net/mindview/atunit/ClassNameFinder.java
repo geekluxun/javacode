@@ -1,22 +1,26 @@
 //: net/mindview/atunit/ClassNameFinder.java
 package net.mindview.atunit;
 
-import java.io.*;
-import java.util.*;
+import net.mindview.util.BinaryFile;
+import net.mindview.util.Directory;
 
-import net.mindview.util.*;
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class ClassNameFinder {
     public static String thisClass(byte[] classBytes) {
         Map<Integer, Integer> offsetTable =
-                new HashMap<Integer, Integer>();
+            new HashMap<Integer, Integer>();
         Map<Integer, String> classNameTable =
-                new HashMap<Integer, String>();
+            new HashMap<Integer, String>();
         try {
             DataInputStream data = new DataInputStream(
-                    new ByteArrayInputStream(classBytes));
+                new ByteArrayInputStream(classBytes));
             int magic = data.readInt();  // 0xcafebabe
             int minorVersion = data.readShort();
             int majorVersion = data.readShort();
@@ -62,7 +66,7 @@ public class ClassNameFinder {
             int this_class = data.readShort();
             int super_class = data.readShort();
             return classNameTable.get(
-                    offsetTable.get(this_class)).replace('/', '.');
+                offsetTable.get(this_class)).replace('/', '.');
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

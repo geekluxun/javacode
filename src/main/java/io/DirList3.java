@@ -2,9 +2,11 @@
 // Building the anonymous inner class "in-place."
 // {Args: "D.*\.java"}
 package io;
-import java.util.regex.*;
-import java.io.*;
-import java.util.*;
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class DirList3 {
     public static void main(final String[] args) {

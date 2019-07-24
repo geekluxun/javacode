@@ -1,7 +1,7 @@
 //: control/LabeledWhile.java
 // While loops with "labeled break" and "labeled continue."
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class LabeledWhile {
     public static void main(String[] args) {

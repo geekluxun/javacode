@@ -2,13 +2,17 @@
 // Managing and executing a queue of tasks.
 package net.mindview.util;
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class TaskManager<R, C extends Callable<R>>
-        extends ArrayList<TaskItem<R, C>> {
+    extends ArrayList<TaskItem<R, C>> {
     private ExecutorService exec =
-            Executors.newSingleThreadExecutor();
+        Executors.newSingleThreadExecutor();
 
     public void add(C task) {
         add(new TaskItem<R, C>(exec.submit(task), task));

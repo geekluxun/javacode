@@ -1,14 +1,16 @@
 package containers;
 //: containers/CollectionDataTest.java
 
-import java.util.*;
+import net.mindview.util.CollectionData;
+import net.mindview.util.Generator;
 
-import net.mindview.util.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 class Government implements Generator<String> {
     String[] foundation = ("strange women lying in ponds " +
-            "distributing swords is no basis for a system of " +
-            "government").split(" ");
+        "distributing swords is no basis for a system of " +
+        "government").split(" ");
     private int index;
 
     public String next() {

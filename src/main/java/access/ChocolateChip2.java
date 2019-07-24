@@ -1,7 +1,7 @@
 package access;
 //: access/ChocolateChip2.java
 
-import access.cookie2.*;
+import access.cookie2.Cookie;
 
 public class ChocolateChip2 extends Cookie {
     public ChocolateChip2() {

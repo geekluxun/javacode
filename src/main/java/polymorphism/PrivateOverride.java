@@ -2,7 +2,7 @@
 // Trying to override a private method.
 package polymorphism;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class PrivateOverride {
     private void f() {

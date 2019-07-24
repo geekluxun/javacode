@@ -68,6 +68,7 @@ interface Weight {
 /**
  * 泛型参数T通过继承一个类和多个接口，实现了更多的类行为
  * 注意：第一个必须是类
+ *
  * @param <T>
  */
 class Solid<T extends Dimension & HasColor & Weight> {

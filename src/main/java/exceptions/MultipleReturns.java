@@ -1,7 +1,7 @@
 package exceptions;
 //: exceptions/MultipleReturns.java
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class MultipleReturns {
     public static void f(int i) {

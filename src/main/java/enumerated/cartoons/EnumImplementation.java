@@ -2,12 +2,12 @@
 // An enum can implement an interface
 package enumerated.cartoons;
 
-import java.util.*;
+import net.mindview.util.Generator;
 
-import net.mindview.util.*;
+import java.util.Random;
 
 enum CartoonCharacter
-        implements Generator<CartoonCharacter> {
+    implements Generator<CartoonCharacter> {
     SLAPPY, SPANKY, PUNCHY, SILLY, BOUNCY, NUTTY, BOB;
     private Random rand = new Random(47);
 

@@ -1,7 +1,7 @@
 //: enumerated/SecurityCategory.java
 // More succinct subcategorization of enums.
 
-import net.mindview.util.*;
+import net.mindview.util.Enums;
 
 enum SecurityCategory {
     STOCK(Security.Stock.class), BOND(Security.Bond.class);
@@ -24,9 +24,9 @@ enum SecurityCategory {
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
             SecurityCategory category =
-                    Enums.random(SecurityCategory.class);
+                Enums.random(SecurityCategory.class);
             System.out.println(category + ": " +
-                    category.randomSelection());
+                category.randomSelection());
         }
     }
 } /* Output:

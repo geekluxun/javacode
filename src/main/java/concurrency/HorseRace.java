@@ -2,10 +2,12 @@ package concurrency;
 //: concurrency/HorseRace.java
 // Using CyclicBarriers.
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.*;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Horse implements Runnable {
     private static int counter = 0;

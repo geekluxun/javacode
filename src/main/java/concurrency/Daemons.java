@@ -1,9 +1,9 @@
 //: concurrency/Daemons.java
 // Daemon threads spawn other daemon threads.
 
-import java.util.concurrent.*;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.printnb;
 
 class Daemon implements Runnable {
     private Thread[] t = new Thread[10];
@@ -17,7 +17,7 @@ class Daemon implements Runnable {
         }
         for (int i = 0; i < t.length; i++)
             printnb("t[" + i + "].isDaemon() = " +
-                    t[i].isDaemon() + ", ");
+                t[i].isDaemon() + ", ");
         while (true)
             Thread.yield();
     }

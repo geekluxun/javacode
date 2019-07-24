@@ -2,9 +2,9 @@ package generics;
 //: generics/LatentReflection.java
 // Using Reflection to produce latent typing.
 
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 // Does not implement Performs:
 class Mime {

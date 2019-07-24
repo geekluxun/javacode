@@ -1,8 +1,10 @@
 //: strings/ArrayListDisplay.java
 package strings;
-import generics.coffee.*;
 
-import java.util.*;
+import generics.coffee.Coffee;
+import generics.coffee.CoffeeGenerator;
+
+import java.util.ArrayList;
 
 public class ArrayListDisplay {
     public static void main(String[] args) {

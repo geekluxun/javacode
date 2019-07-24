@@ -3,7 +3,7 @@ package initialization;
 //: initialization/Flower.java
 // Calling constructors with "this"
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class Flower {
     int petalCount = 0;
@@ -12,7 +12,7 @@ public class Flower {
     Flower(int petals) {
         petalCount = petals;
         print("Constructor w/ int arg only, petalCount= "
-                + petalCount);
+            + petalCount);
     }
 
     Flower(String ss) {

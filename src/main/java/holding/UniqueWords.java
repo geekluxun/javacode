@@ -1,9 +1,10 @@
 package holding;
 //: holding/UniqueWords.java
 
-import java.util.*;
+import net.mindview.util.TextFile;
 
-import net.mindview.util.*;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class UniqueWords {
     public static void main(String[] args) {

@@ -1,9 +1,10 @@
 //: operators/BitManipulation.java
 // Using the bitwise operators.
 package operators;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import java.util.Random;
+
+import static net.mindview.util.Print.print;
 
 public class BitManipulation {
     public static void main(String[] args) {
@@ -53,12 +54,12 @@ public class BitManipulation {
 
     static void printBinaryInt(String s, int i) {
         print(s + ", int: " + i + ", binary:\n   " +
-                Integer.toBinaryString(i));
+            Integer.toBinaryString(i));
     }
 
     static void printBinaryLong(String s, long l) {
         print(s + ", long: " + l + ", binary:\n    " +
-                Long.toBinaryString(l));
+            Long.toBinaryString(l));
     }
 } /* Output:
 -1, int: -1, binary:

@@ -1,7 +1,7 @@
 package holding;
 //: holding/EnvironmentVariables.java
 
-import java.util.*;
+import java.util.Map;
 
 public class EnvironmentVariables {
     public static void main(String[] args) {

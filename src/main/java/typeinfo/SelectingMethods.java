@@ -3,9 +3,11 @@ package typeinfo;
 //: typeinfo/SelectingMethods.java
 // Looking for particular methods in a dynamic proxy.
 
-import java.lang.reflect.*;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class MethodSelector implements InvocationHandler {
     private Object proxied;
@@ -16,7 +18,7 @@ class MethodSelector implements InvocationHandler {
 
     public Object
     invoke(Object proxy, Method method, Object[] args)
-            throws Throwable {
+        throws Throwable {
         if (method.getName().equals("interesting"))
             print("Proxy detected the interesting method");
 
@@ -55,9 +57,9 @@ class Implementation implements SomeMethods {
 class SelectingMethods {
     public static void main(String[] args) {
         SomeMethods proxy = (SomeMethods) Proxy.newProxyInstance(
-                SomeMethods.class.getClassLoader(),
-                new Class[]{SomeMethods.class},
-                new MethodSelector(new Implementation()));
+            SomeMethods.class.getClassLoader(),
+            new Class[]{SomeMethods.class},
+            new MethodSelector(new Implementation()));
 
 
         proxy.boring1();

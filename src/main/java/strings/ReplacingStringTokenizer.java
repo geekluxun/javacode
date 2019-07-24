@@ -1,6 +1,9 @@
 //: strings/ReplacingStringTokenizer.java
 package strings;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class ReplacingStringTokenizer {
     public static void main(String[] args) {

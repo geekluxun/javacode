@@ -3,7 +3,10 @@ package exceptions;
 //: exceptions/InputFile.java
 // Paying attention to exceptions in constructors.
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class InputFile {
     private BufferedReader in;

@@ -4,15 +4,17 @@ package xml;
 // the XOM library from http://www.xom.nu }
 // {RunFirst: Person}
 
-import nu.xom.*;
+import nu.xom.Builder;
+import nu.xom.Document;
+import nu.xom.Elements;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class People extends ArrayList<Person> {
     public People(String fileName) throws Exception {
         Document doc = new Builder().build(fileName);
         Elements elements =
-                doc.getRootElement().getChildElements();
+            doc.getRootElement().getChildElements();
         for (int i = 0; i < elements.size(); i++)
             add(new Person(elements.get(i)));
     }

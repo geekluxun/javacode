@@ -2,7 +2,7 @@ package exceptions;
 //: exceptions/AlwaysFinally.java
 // Finally is always executed.
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class FourException extends Exception {
 }

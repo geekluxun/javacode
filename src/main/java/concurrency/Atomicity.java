@@ -2,9 +2,15 @@
 // {Exec: javap -c Atomicity}
 
 public class Atomicity {
-  int i;
-  void f1() { i++; }
-  void f2() { i += 3; }
+    int i;
+
+    void f1() {
+        i++;
+    }
+
+    void f2() {
+        i += 3;
+    }
 } /* Output: (Sample)
 ...
 void f1();

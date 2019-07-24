@@ -1,6 +1,7 @@
 //: innerclasses/Parcel11.java
 // Nested classes (static inner classes).
 package innerclasses;
+
 public class Parcel11 {
     private static class ParcelContents implements Contents {
         private int i = 11;
@@ -11,7 +12,7 @@ public class Parcel11 {
     }
 
     protected static class ParcelDestination
-            implements Destination {
+        implements Destination {
         private String label;
 
         private ParcelDestination(String whereTo) {

@@ -2,9 +2,9 @@ package concurrency;
 //: concurrency/ThreadVariations.java
 // Creating threads with inner classes.
 
-import java.util.concurrent.*;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 // Using a named inner class:
 class InnerThread1 {
@@ -123,7 +123,7 @@ class InnerRunnable2 {
 
             public String toString() {
                 return Thread.currentThread().getName() +
-                        ": " + countDown;
+                    ": " + countDown;
             }
         }, name);
         t.start();

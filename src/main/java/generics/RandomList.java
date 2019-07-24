@@ -1,7 +1,8 @@
 package generics;
 //: generics/RandomList.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class RandomList<T> {
     private ArrayList<T> storage = new ArrayList<T>();

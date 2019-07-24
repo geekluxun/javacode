@@ -57,7 +57,7 @@ class ApplyTest {
         Apply.apply(shapes, Shape.class.getMethod("rotate"));
         Apply.apply(shapes, Shape.class.getMethod("resize", int.class), 5);
         List<Square> squares = new ArrayList<Square>();
-        
+
         for (int i = 0; i < 10; i++)
             squares.add(new Square());
         Apply.apply(squares, Shape.class.getMethod("rotate"));

@@ -1,11 +1,13 @@
 package generics;
 //: generics/GenericVarargs.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GenericVarargs {
     /**
      * 可变参数和泛型
+     *
      * @param args
      * @param <T>
      * @return

@@ -2,7 +2,7 @@ package holding;
 
 //: holding/ArrayIsNotIterable.java
 
-import java.util.*;
+import java.util.Arrays;
 
 public class ArrayIsNotIterable {
 

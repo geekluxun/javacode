@@ -2,9 +2,9 @@ package concurrency;
 //: concurrency/SimpleDaemons.java
 // Daemon threads don't prevent the program from ending.
 
-import java.util.concurrent.*;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class SimpleDaemons implements Runnable {
     public void run() {

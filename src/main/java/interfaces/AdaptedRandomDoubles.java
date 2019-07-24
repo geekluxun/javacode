@@ -1,11 +1,12 @@
 //: interfaces/AdaptedRandomDoubles.java
 // Creating an adapter with inheritance.
 package interfaces;
-import java.nio.*;
-import java.util.*;
+
+import java.nio.CharBuffer;
+import java.util.Scanner;
 
 public class AdaptedRandomDoubles extends RandomDoubles
-        implements Readable {
+    implements Readable {
     private int count;
 
     public AdaptedRandomDoubles(int count) {

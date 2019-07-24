@@ -1,13 +1,15 @@
 package holding;
 //: holding/CrossContainerIteration.java
 
-import typeinfo.pets.*;
+import typeinfo.pets.Pet;
+import typeinfo.pets.Pets;
 
 import java.util.*;
 
 public class CrossContainerIteration {
     /**
-     *  不必知道容器的确切类型
+     * 不必知道容器的确切类型
+     *
      * @param it
      */
     public static void display(Iterator<Pet> it) {

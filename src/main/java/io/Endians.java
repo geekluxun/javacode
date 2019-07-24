@@ -1,10 +1,12 @@
 //: io/Endians.java
 // Endian differences and data storage.
 package io;
-import java.nio.*;
-import java.util.*;
 
-import static net.mindview.util.Print.*;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.Arrays;
+
+import static net.mindview.util.Print.print;
 
 public class Endians {
     public static void main(String[] args) {

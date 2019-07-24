@@ -2,11 +2,12 @@ package polymorphism;
 //: polymorphism/Shapes.java
 // Polymorphism in Java.
 
-import polymorphism.shape.*;
+import polymorphism.shape.RandomShapeGenerator;
+import polymorphism.shape.Shape;
 
 public class Shapes {
     private static RandomShapeGenerator gen =
-            new RandomShapeGenerator();
+        new RandomShapeGenerator();
 
     public static void main(String[] args) {
         Shape[] s = new Shape[9];

@@ -2,7 +2,7 @@
 // Generators that produce random values.
 package net.mindview.util;
 
-import java.util.*;
+import java.util.Random;
 
 public class RandomGenerator {
     private static Random r = new Random(47);
@@ -22,7 +22,7 @@ public class RandomGenerator {
     public static class Character implements Generator<java.lang.Character> {
         public java.lang.Character next() {
             return CountingGenerator.chars[
-                    r.nextInt(CountingGenerator.chars.length)];
+                r.nextInt(CountingGenerator.chars.length)];
         }
     }
 

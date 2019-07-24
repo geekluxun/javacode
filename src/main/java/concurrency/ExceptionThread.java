@@ -2,7 +2,8 @@ package concurrency;
 //: concurrency/ExceptionThread.java
 // {ThrowsException}
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ExceptionThread implements Runnable {
     public void run() {

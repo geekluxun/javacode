@@ -3,7 +3,7 @@ package initialization;
 //: initialization/Demotion.java
 // Demotion of primitives and overloading.
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class Demotion {
     void f1(char x) {

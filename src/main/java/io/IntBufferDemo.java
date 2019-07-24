@@ -1,7 +1,9 @@
 //: io/IntBufferDemo.java
 // Manipulating ints in a ByteBuffer with an IntBuffer
 package io;
-import java.nio.*;
+
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 
 public class IntBufferDemo {
     private static final int BSIZE = 1024;

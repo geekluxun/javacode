@@ -1,7 +1,7 @@
 //: interfaces/Factories.java
 package interfaces;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 interface Service {
     void method1();

@@ -2,7 +2,8 @@
 // Initializing interface fields with
 // non-constant initializers.
 package interfaces;
-import java.util.*;
+
+import java.util.Random;
 
 public interface RandVals {
     Random RAND = new Random(47);

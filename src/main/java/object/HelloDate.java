@@ -1,7 +1,7 @@
 //: object/HelloDate.java
 package object;
 
-import java.util.*;
+import java.util.Date;
 
 /**
  * The first Thinking in Java example program.

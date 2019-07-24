@@ -2,9 +2,12 @@
 // Basic task cooperation.
 package concurrency.waxomatic;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 class Car {
     private boolean waxOn = false;
@@ -20,13 +23,14 @@ class Car {
     }
 
     public synchronized void waitForWaxing()
-            throws InterruptedException {
+        throws InterruptedException {
         while (waxOn == false)
             wait();
     }
+
     //调用对象的wait方法，必须先获取到该对象上的同步锁
     public synchronized void waitForBuffing()
-            throws InterruptedException {
+        throws InterruptedException {
         //这里用while？？？
         while (waxOn == true)
             wait();

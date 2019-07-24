@@ -2,10 +2,10 @@ package typeinfo;
 //: typeinfo/HiddenImplementation.java
 // Sneaking around package access.
 
-import typeinfo.interfacea.*;
-import typeinfo.packageaccess.*;
+import typeinfo.interfacea.A;
+import typeinfo.packageaccess.HiddenC;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
 
 public class HiddenImplementation {
     public static void main(String[] args) throws Exception {
@@ -26,7 +26,7 @@ public class HiddenImplementation {
     }
 
     static void callHiddenMethod(Object a, String methodName)
-            throws Exception {
+        throws Exception {
         Method g = a.getClass().getDeclaredMethod(methodName);
         g.setAccessible(true);
         g.invoke(a);

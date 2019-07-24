@@ -2,7 +2,9 @@ package holding;
 //: holding/QueueDemo.java
 // Upcasting to a Queue from a LinkedList.
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
 
 public class QueueDemo {
 

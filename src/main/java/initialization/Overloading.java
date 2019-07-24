@@ -2,7 +2,7 @@
 // Demonstration of both constructor
 // and ordinary method overloading.
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 class Tree {
     int height;
@@ -15,7 +15,7 @@ class Tree {
     Tree(int initialHeight) {
         height = initialHeight;
         print("Creating new Tree that is " +
-                height + " feet tall");
+            height + " feet tall");
     }
 
     void info() {

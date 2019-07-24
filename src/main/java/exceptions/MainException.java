@@ -1,7 +1,7 @@
-package  exceptions;
+package exceptions;
 //: exceptions/MainException.java
 
-import java.io.*;
+import java.io.FileInputStream;
 
 public class MainException {
     // Pass all exceptions to the console:

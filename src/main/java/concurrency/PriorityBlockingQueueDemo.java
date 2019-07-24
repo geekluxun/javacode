@@ -1,10 +1,17 @@
 package concurrency;
 //: concurrency/PriorityBlockingQueueDemo.java
 
-import java.util.concurrent.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 class PrioritizedTask implements Runnable, Comparable<PrioritizedTask> {
     private Random rand = new Random(47);
@@ -33,7 +40,7 @@ class PrioritizedTask implements Runnable, Comparable<PrioritizedTask> {
 
     public String toString() {
         return String.format("[%1$-3d]", priority) +
-                " Task " + id;
+            " Task " + id;
     }
 
     public String summary() {
@@ -101,7 +108,7 @@ class PrioritizedTaskConsumer implements Runnable {
     private PriorityBlockingQueue<Runnable> q;
 
     public PrioritizedTaskConsumer(
-            PriorityBlockingQueue<Runnable> q) {
+        PriorityBlockingQueue<Runnable> q) {
         this.q = q;
     }
 

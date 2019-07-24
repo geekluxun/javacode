@@ -1,6 +1,6 @@
 //: enumerated/BigEnumSet.java
 
-import java.util.*;
+import java.util.EnumSet;
 
 public class BigEnumSet {
     enum Big {

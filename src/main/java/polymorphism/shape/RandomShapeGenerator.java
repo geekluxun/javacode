@@ -2,7 +2,7 @@
 // A "factory" that randomly creates shapes.
 package polymorphism.shape;
 
-import java.util.*;
+import java.util.Random;
 
 public class RandomShapeGenerator {
     private Random rand = new Random(47);

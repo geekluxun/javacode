@@ -1,17 +1,19 @@
 //: annotations/AtUnitExample4.java
 package annotations;
 
+import net.mindview.atunit.Test;
+import net.mindview.atunit.TestObjectCreate;
+import net.mindview.atunit.TestProperty;
+import net.mindview.util.OSExecute;
+
 import java.util.*;
 
-import net.mindview.atunit.*;
-import net.mindview.util.*;
-
-import static net.mindview.util.Print.*;
+import static net.mindview.util.Print.print;
 
 public class AtUnitExample4 {
     static String theory = "All brontosauruses " +
-            "are thin at one end, much MUCH thicker in the " +
-            "middle, and then thin again at the far end.";
+        "are thin at one end, much MUCH thicker in the " +
+        "middle, and then thin again at the far end.";
     private String word;
     private Random rand = new Random(); // Time-based seed
 
@@ -36,7 +38,7 @@ public class AtUnitExample4 {
 
     @TestProperty
     static List<String> input =
-            Arrays.asList(theory.split(" "));
+        Arrays.asList(theory.split(" "));
     @TestProperty
     static Iterator<String> words = input.iterator();
 
@@ -76,7 +78,7 @@ public class AtUnitExample4 {
     public static void main(String[] args) throws Exception {
         System.out.println("starting");
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit AtUnitExample4");
+            "java net.mindview.atunit.AtUnit AtUnitExample4");
     }
 } /* Output:
 starting

@@ -12,6 +12,7 @@ public class ClassTypeCapture<T> {
 
     /**
      * 编译器保证类型标签Class匹配泛型参数
+     *
      * @param kind
      */
     public ClassTypeCapture(Class<T> kind) {
@@ -20,6 +21,7 @@ public class ClassTypeCapture<T> {
 
     /**
      * 通过类的Class对象实现 instanceof
+     *
      * @param arg
      * @return
      */

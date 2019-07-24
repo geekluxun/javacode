@@ -1,10 +1,12 @@
 package generics;
 //: generics/ListOfGenerics.java
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 泛型数组的实现
+ *
  * @param <T>
  */
 public class ListOfGenerics<T> {

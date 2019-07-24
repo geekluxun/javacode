@@ -2,7 +2,7 @@
 // A stack built on a linkedList.
 package annotations;
 
-import java.util.*;
+import java.util.LinkedList;
 
 public class StackL<T> {
     private LinkedList<T> list = new LinkedList<T>();
